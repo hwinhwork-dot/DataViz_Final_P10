@@ -1,0 +1,47 @@
+# ---------- Python ----------
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# ---------- Môi trường ảo ----------
+.venv/
+venv/
+env/
+.conda/
+
+# ---------- Jupyter ----------
+.ipynb_checkpoints/
+*/.ipynb_checkpoints/*
+
+# ---------- Biến môi trường / secrets ----------
+.env
+.env.*
+!.env.example
+
+# ---------- Dữ liệu ----------
+*.parquet.tmp
+*.sqlite-journal
+
+# ---------- Bằng chứng thực địa ----------
+# Ảnh bảng giá, form khảo sát, ghi âm và ghi chú phỏng vấn có thông tin người bán và sinh viên,
+# nên không đưa lên git. Nhóm giữ chúng trong thư mục chung và trong file ZIP nộp bài.
+evidence/*
+!evidence/.gitkeep
+!evidence/README.md
+
+# ---------- Streamlit / Dash ----------
+.streamlit/secrets.toml
+
+# ---------- Editor / OS ----------
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+*.swp
+
+# ---------- Công cụ AI ----------
+.playwright-mcp/
+.claude/settings.local.json
