@@ -54,13 +54,19 @@ git push origin thao
 
 Last, open GitHub, go to Pull requests, and choose New pull request. Set the base branch to `dev` and the compare branch to your own branch.
 
+## Website, rules and changelog
+
+The project website (in Vietnamese) is https://p10-price-of-dinner.vercel.app. It shows the brief and the charts of every module.
+
+Before you write text or draw a chart, read `AGENTS.md` and the latest entries of `CHANGELOG.md`. After every change, add an entry at the top of `CHANGELOG.md`. If you use an AI agent, tell it to read `AGENTS.md` first. The file keeps the writing style and the charts of all six members the same.
+
 ## Folders
 
 The folders follow the list of deliverables in the project brief.
 
 ```
 .
-├── notebooks/        01_data to 06_story, and house_style.py (one notebook for each module)
+├── notebooks/        P10_Final_Team10.ipynb (the whole project, M0 to M10) and house_style.py
 ├── data/
 │   ├── raw/          the public files, or the scripts that download them; we never edit them
 │   └── clean/        the tidy master table and the anonymised primary data

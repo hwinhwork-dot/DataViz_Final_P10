@@ -1,0 +1,597 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Giá một bữa tối · P10</title>
+<meta name="description" content="Đồ án cuối kỳ môn Trực quan hoá dữ liệu, UEH: so sánh giá thực phẩm ở chợ, siêu thị và app giao hàng tại Quận 10 và Quận 3 với chỉ số giá tiêu dùng.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,700;1,6..72,400&family=Be+Vietnam+Pro:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#FAF7F1; --paper-2:#F2EDE3; --ink:#1A1A1A; --ink-2:#4A4740; --grey:#8C8C8C; --rule:#D8D1C3;
+  --cho:#B85C38; --sieuthi:#1F3D55; --app:#9BBDD6; --cho-soft:#F1DED3; --app-soft:#E3EDF4;
+  --serif:"Newsreader", Georgia, "Times New Roman", serif;
+  --sans:"Be Vietnam Pro", "Helvetica Neue", Arial, sans-serif;
+  color-scheme: light;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--serif);font-size:19px;line-height:1.6;
+  -webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+a{color:var(--sieuthi);text-decoration-thickness:1px;text-underline-offset:3px}
+img{max-width:100%;display:block}
+.wrap{max-width:1120px;margin:0 auto;padding:0 28px}
+.col{max-width:700px}
+.label{font-family:var(--sans);font-size:12px;letter-spacing:.12em;text-transform:uppercase;font-weight:600;color:var(--ink-2)}
+.muted{color:var(--ink-2)}
+hr{border:0;border-top:1px solid var(--rule);margin:0}
+
+/* ---------- top bar */
+.topbar{border-bottom:1px solid var(--ink);background:var(--paper)}
+.topbar .wrap{display:flex;justify-content:space-between;align-items:center;gap:16px;padding-top:12px;padding-bottom:12px;flex-wrap:wrap}
+.topbar nav{display:flex;gap:18px;flex-wrap:wrap}
+.topbar nav a{font-family:var(--sans);font-size:13px;font-weight:500;color:var(--ink);text-decoration:none}
+.topbar nav a:hover{color:var(--cho)}
+.sticky{position:sticky;top:0;z-index:5}
+
+/* ---------- masthead */
+.mast{padding:64px 0 40px;border-bottom:3px double var(--ink)}
+.mast h1{font-size:clamp(46px,8vw,96px);line-height:.98;font-weight:500;letter-spacing:-.02em;margin:14px 0 18px}
+.mast h1 em{font-style:italic;color:var(--cho)}
+.mast .deck{font-size:clamp(20px,2.4vw,25px);line-height:1.45;max-width:760px;margin:0;color:var(--ink)}
+.byline{display:flex;flex-wrap:wrap;gap:8px 28px;margin-top:28px;font-family:var(--sans);font-size:14px;color:var(--ink-2)}
+.byline b{color:var(--ink);font-weight:600}
+
+/* ---------- key numbers */
+.keys{display:grid;grid-template-columns:repeat(5,1fr);border-bottom:1px solid var(--rule)}
+.key{padding:26px 18px 24px;border-right:1px solid var(--rule)}
+.key:last-child{border-right:0}
+.key .n{font-size:44px;line-height:1;font-weight:500;letter-spacing:-.02em}
+.key .n small{font-size:22px;color:var(--ink-2)}
+.key p{margin:10px 0 0;font-family:var(--sans);font-size:13px;line-height:1.45;color:var(--ink-2)}
+.key.hl .n{color:var(--cho)}
+
+/* ---------- sections */
+section{padding:72px 0 24px}
+.sec-head{display:grid;grid-template-columns:120px 1fr;gap:24px;align-items:start;margin-bottom:28px}
+.sec-num{font-size:64px;line-height:.9;font-weight:500;color:var(--cho);letter-spacing:-.03em}
+.sec-head h2{font-size:clamp(30px,4vw,44px);line-height:1.1;font-weight:500;margin:6px 0 10px;letter-spacing:-.01em}
+.sec-head .lede{margin:0;font-size:21px;color:var(--ink-2);max-width:720px}
+.status{display:inline-block;font-family:var(--sans);font-size:11.5px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;padding:3px 8px;border:1px solid currentColor;margin-left:2px;vertical-align:middle}
+.st-done{color:var(--sieuthi)} .st-part{color:var(--cho)} .st-todo{color:var(--grey)}
+h3{font-size:25px;font-weight:500;margin:44px 0 10px;line-height:1.25}
+h4{font-family:var(--sans);font-size:14px;font-weight:600;margin:24px 0 6px;letter-spacing:.02em}
+p{margin:0 0 16px}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:40px}
+.three{display:grid;grid-template-columns:repeat(3,1fr);gap:28px}
+
+/* ---------- module track */
+.track{margin:12px 0 8px;overflow-x:auto}
+.track-inner{min-width:820px}
+.track-row{display:grid;grid-template-columns:repeat(11,1fr);gap:4px}
+.mod{padding:12px 10px 10px;border-top:6px solid var(--rule);background:var(--paper-2);min-height:112px}
+.mod .id{font-family:var(--sans);font-weight:600;font-size:13px}
+.mod .nm{font-size:15px;line-height:1.3;margin-top:4px}
+.mod.done{border-top-color:var(--sieuthi)}
+.mod.part{border-top-color:var(--cho)}
+.mod.todo .nm{color:var(--ink-2)}
+.cps{display:grid;grid-template-columns:repeat(11,1fr);gap:4px;margin-top:6px;font-family:var(--sans);font-size:12px;color:var(--ink-2)}
+.legend{display:flex;gap:22px;flex-wrap:wrap;font-family:var(--sans);font-size:13px;color:var(--ink-2);margin-top:14px}
+.legend i{display:inline-block;width:22px;height:6px;margin-right:7px;vertical-align:middle}
+
+/* ---------- figures */
+figure{margin:28px 0 8px}
+figure img{background:#fff;border:1px solid var(--rule);cursor:zoom-in}
+figcaption{font-family:var(--sans);font-size:14px;line-height:1.55;color:var(--ink-2);margin-top:10px;max-width:760px}
+figcaption b{color:var(--ink);font-weight:600}
+.fig-wide{margin-left:-28px;margin-right:-28px}
+.pair{display:grid;grid-template-columns:1fr 1.25fr;gap:24px;align-items:start}
+.tag{font-family:var(--sans);font-size:11px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;display:inline-block;margin-bottom:8px}
+.tag.bad{color:var(--cho)} .tag.good{color:var(--sieuthi)}
+
+/* ---------- quotes and notes */
+.finds{display:grid;grid-template-columns:1fr 1fr;gap:0 40px;margin-top:8px}
+.find{padding:16px 0;border-top:1px solid var(--rule)}
+.find .t{font-family:var(--sans);font-size:12px;color:var(--cho);font-weight:600;letter-spacing:.04em}
+.find p{margin:6px 0 0;font-size:17.5px;line-height:1.5}
+.find .q{display:inline-block;margin-top:4px;font-style:italic;color:var(--ink-2)}
+.callout{border-left:4px solid var(--cho);background:var(--cho-soft);padding:16px 20px;margin:24px 0;font-size:17.5px}
+.callout.blue{border-left-color:var(--sieuthi);background:var(--app-soft)}
+.bigidea{font-size:clamp(22px,2.6vw,28px);line-height:1.45;border-top:2px solid var(--ink);border-bottom:1px solid var(--ink);padding:22px 0;margin:20px 0}
+.bigidea .blank{border-bottom:2px solid var(--cho);color:var(--cho);padding:0 4px}
+
+/* ---------- question tree */
+.tree{margin-top:20px}
+.tree .root{border:2px solid var(--ink);padding:18px 22px;font-size:21px;max-width:760px;margin:0 auto;text-align:center;background:var(--paper)}
+.tree .stem{width:2px;height:26px;background:var(--ink);margin:0 auto}
+.tree .bar{height:2px;background:var(--ink);margin:0 12.5%}
+.tree .kids{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.tree .kid{position:relative;padding-top:24px}
+.tree .kid::before{content:"";position:absolute;top:0;left:50%;width:2px;height:24px;background:var(--ink)}
+.tree .box{border-top:4px solid var(--sieuthi);background:var(--paper-2);padding:14px 14px 12px;height:100%}
+.tree .box .q{font-family:var(--sans);font-weight:600;font-size:13px;color:var(--sieuthi)}
+.tree .box h5{font-size:17px;line-height:1.35;margin:4px 0 8px;font-weight:500}
+.tree .box ul{margin:0;padding-left:16px;font-family:var(--sans);font-size:13px;line-height:1.5;color:var(--ink-2)}
+
+/* ---------- pipeline */
+.pipe{display:grid;grid-template-columns:1fr 40px 1.2fr 40px 1fr;align-items:stretch;margin-top:20px}
+.pipe .stage{background:var(--paper-2);padding:16px 18px;border-top:4px solid var(--ink)}
+.pipe .stage.mid{border-top-color:var(--cho)}
+.pipe .stage.out{border-top-color:var(--sieuthi)}
+.pipe .join{position:relative}
+.pipe .join::before{content:"";position:absolute;top:50%;left:6px;right:6px;height:2px;background:var(--ink)}
+.pipe .join::after{content:"";position:absolute;top:calc(50% - 5px);right:4px;border:6px solid transparent;border-left:8px solid var(--ink);border-right:0}
+.pipe ul{margin:8px 0 0;padding:0;list-style:none;font-family:var(--sans);font-size:13.5px;line-height:1.5}
+.pipe li{padding:5px 0;border-top:1px solid var(--rule);display:flex;justify-content:space-between;gap:10px}
+.pipe li span:last-child{font-weight:600;white-space:nowrap}
+
+/* ---------- tables */
+table{border-collapse:collapse;width:100%;font-family:var(--sans);font-size:14px;line-height:1.45;margin:16px 0}
+th{text-align:left;font-weight:600;border-bottom:2px solid var(--ink);padding:8px 10px 8px 0;font-size:12.5px;letter-spacing:.03em}
+td{border-bottom:1px solid var(--rule);padding:9px 10px 9px 0;vertical-align:top}
+td.num{font-variant-numeric:tabular-nums;text-align:right}
+.ok{color:var(--sieuthi);font-weight:600}
+.half{color:var(--cho);font-weight:600}
+
+/* ---------- progress bar */
+.prog{margin:18px 0 6px}
+.prog .barbox{position:relative;height:30px;background:#fff;border:1px solid var(--rule)}
+.prog .fill{position:absolute;top:0;bottom:0;left:0;background:var(--sieuthi)}
+.prog .target{position:absolute;top:-8px;bottom:-8px;width:2px;background:var(--ink)}
+.prog .scale{position:relative;height:22px;font-family:var(--sans);font-size:12px;color:var(--ink-2)}
+.prog .scale span{position:absolute;transform:translateX(-50%);top:6px;white-space:nowrap}
+
+/* ---------- future modules */
+.future{display:grid;grid-template-columns:repeat(3,1fr);gap:0 32px}
+.fut{padding:18px 0;border-top:1px solid var(--rule)}
+.fut .id{font-family:var(--sans);font-size:13px;font-weight:600;color:var(--grey)}
+.fut h4{font-family:var(--serif);font-size:20px;font-weight:500;margin:2px 0 6px;letter-spacing:0}
+.fut p{font-size:16px;line-height:1.5;color:var(--ink-2);margin:0}
+
+/* ---------- footer */
+footer{margin-top:72px;border-top:3px double var(--ink);padding:36px 0 60px;font-family:var(--sans);font-size:14px;color:var(--ink-2)}
+footer .three div{line-height:1.7}
+footer b{color:var(--ink)}
+
+/* ---------- lightbox */
+.lb{position:fixed;inset:0;background:rgba(250,247,241,.97);display:none;align-items:center;justify-content:center;padding:24px;z-index:20;cursor:zoom-out}
+.lb.on{display:flex}
+.lb img{max-height:94vh;width:auto;max-width:96vw;border:1px solid var(--rule);background:#fff}
+
+@media (max-width:860px){
+  body{font-size:18px}
+  .keys{grid-template-columns:repeat(2,1fr)}
+  .key{border-bottom:1px solid var(--rule)}
+  .key:nth-child(2n){border-right:0}
+  .sec-head{grid-template-columns:1fr;gap:4px}
+  .sec-num{font-size:48px}
+  .two,.three,.finds,.pair,.future{grid-template-columns:1fr;gap:0}
+  .tree .kids{grid-template-columns:1fr 1fr}
+  .tree .bar{display:none}
+  .pipe{grid-template-columns:1fr}
+  .pipe .join{height:30px}
+  .pipe .join::before{top:4px;bottom:4px;left:50%;right:auto;width:2px;height:auto}
+  .pipe .join::after{top:auto;bottom:0;right:auto;left:calc(50% - 5px);border:6px solid transparent;border-top:8px solid var(--ink);border-bottom:0}
+  .fig-wide{margin-left:0;margin-right:0}
+}
+@media (max-width:520px){
+  .wrap{padding:0 16px}
+  .tree .kids{grid-template-columns:1fr}
+  .key .n{font-size:36px}
+}
+</style>
+</head>
+<body>
+
+<div class="topbar sticky">
+  <div class="wrap">
+    <span class="label">P10 · Giá một bữa tối</span>
+    <nav>
+      <a href="#tien-do">Tiến độ</a>
+      <a href="#m1">M1</a>
+      <a href="#m2">M2</a>
+      <a href="#m3">M3</a>
+      <a href="#m4">M4</a>
+      <a href="#sap-toi">M5 đến M10</a>
+      <a href="#nhom">Nhóm</a>
+    </nav>
+  </div>
+</div>
+
+<header class="mast">
+  <div class="wrap">
+    <div class="label">Đồ án cuối kỳ · Trực quan hoá dữ liệu · UEH · Nhóm 10</div>
+    <h1>Giá một <em>bữa tối</em></h1>
+    <p class="deck">Đồ án tìm hiểu xem sinh viên mua thực phẩm ở chợ, ở siêu thị hay qua app giao hàng thì đỡ tốn hơn. Nhóm em ghi giá 12 mặt hàng ở Quận 10 và Quận 3 trong 8 tuần, sau đó so với chỉ số giá tiêu dùng (CPI) của Cục Thống kê.</p>
+    <div class="byline">
+      <span><b>Khách hàng:</b> Consumer Lab (hội bảo vệ người tiêu dùng, tình huống giả định của đề bài)</span>
+      <span><b>Cập nhật:</b> 26/10/2026, đã đủ dữ liệu tuần 1 và tuần 2</span>
+      <span><b>Mã nguồn:</b> <a href="https://github.com/hwinhwork-dot/DataViz_Final_P10">GitHub</a></span>
+    </div>
+  </div>
+</header>
+
+<div class="wrap">
+  <div class="keys">
+    <div class="key"><div class="n">576</div><p>giá cần ghi theo kế hoạch (12 món, 3 kênh, 2 quận, 8 tuần)</p></div>
+    <div class="key hl"><div class="n">141</div><p>giá dùng được sau khi làm sạch; đề yêu cầu ít nhất 500</p></div>
+    <div class="key"><div class="n">2<small>/8</small></div><p>tuần đã thu xong (12/10 đến 25/10/2026)</p></div>
+    <div class="key"><div class="n">+28%</div><p>giỏ hàng mua qua app đắt hơn mua ở chợ, chưa tính phí giao (số tạm)</p></div>
+    <div class="key"><div class="n">4</div><p>nguồn dữ liệu: bảng giá nhóm tự thu, NSO, FAOSTAT, World Bank</p></div>
+  </div>
+</div>
+
+<!-- ============================================================ PROGRESS -->
+<section id="tien-do">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="sec-num">00</div>
+      <div>
+        <div class="label">Tổng quan</div>
+        <h2>Tiến độ đồ án</h2>
+        <p class="lede">Đề bài có 10 module, nhóm em thêm M0 cho phần chuẩn bị. Hiện tại M0 đến M3 đã có bản nháp. M4 mới có vài biểu đồ thử. Từ M5 trở đi cần dữ liệu của 6 tuần còn lại và kết quả khảo sát sinh viên nên chưa làm.</p>
+      </div>
+    </div>
+    <div class="track"><div class="track-inner">
+      <div class="track-row">
+        <div class="mod done"><div class="id">M0</div><div class="nm">Chuẩn bị</div></div>
+        <div class="mod done"><div class="id">M1</div><div class="nm">Đặt vấn đề</div></div>
+        <div class="mod done"><div class="id">M2</div><div class="nm">Thu thập và làm sạch</div></div>
+        <div class="mod done"><div class="id">M3</div><div class="nm">Quy tắc trình bày</div></div>
+        <div class="mod part"><div class="id">M4</div><div class="nm">Biểu đồ chính</div></div>
+        <div class="mod todo"><div class="id">M5</div><div class="nm">Dashboard</div></div>
+        <div class="mod todo"><div class="id">M6</div><div class="nm">PCA và phân cụm</div></div>
+        <div class="mod todo"><div class="id">M7</div><div class="nm">Dữ liệu nhiều chiều</div></div>
+        <div class="mod todo"><div class="id">M8</div><div class="nm">Thử nghiệm 2D và 3D</div></div>
+        <div class="mod todo"><div class="id">M9</div><div class="nm">Tương tác và storyboard</div></div>
+        <div class="mod todo"><div class="id">M10</div><div class="nm">Kiểm thử người dùng</div></div>
+      </div>
+      <div class="cps">
+        <span></span><span>CP0, CP1</span><span>CP1</span><span></span><span></span><span></span><span></span><span>CP2</span><span></span><span>CP3</span><span>CP4</span>
+      </div>
+    </div></div>
+    <div class="legend">
+      <span><i style="background:var(--sieuthi)"></i>Đã có bản nháp</span>
+      <span><i style="background:var(--cho)"></i>Đang làm</span>
+      <span><i style="background:var(--rule)"></i>Chưa làm</span>
+    </div>
+
+    <div class="prog col">
+      <h4>Số giá dùng được so với yêu cầu 500 giá</h4>
+      <div class="barbox">
+        <div class="fill" style="width:24.5%"></div>
+        <div class="target" style="left:86.8%"></div>
+      </div>
+      <div class="scale">
+        <span style="left:0;transform:none">0</span>
+        <span style="left:24.5%">141</span>
+        <span style="left:86.8%">500</span>
+        <span style="right:0;left:auto;transform:none">576</span>
+      </div>
+      <p class="muted" style="font-size:16px;margin-top:10px">Muốn đủ 500 giá thì mỗi tuần còn lại phải có ít nhất 60 trên 72 giá dùng được, tức là gần như không được thiếu ô nào.</p>
+    </div>
+  </div>
+</section>
+
+<hr>
+
+<!-- ============================================================ M1 -->
+<section id="m1">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="sec-num">M1</div>
+      <div>
+        <div class="label">Đặt vấn đề <span class="status st-done">đã có bản nháp</span></div>
+        <h2>Phỏng vấn và cây câu hỏi</h2>
+        <p class="lede">Nhóm em phỏng vấn một người đi chợ cho gia đình để biết người mua thật chọn nơi mua dựa vào điều gì. Từ buổi phỏng vấn, nhóm em chốt câu hỏi lớn, bốn câu hỏi con và bản Big Idea đầu tiên.</p>
+      </div>
+    </div>
+
+    <div class="two">
+      <div>
+        <h3 style="margin-top:0">Thông tin buổi phỏng vấn</h3>
+        <table>
+          <tr><td>Ngày</td><td>22/10/2026, gọi qua Microsoft Teams, có ghi âm</td></tr>
+          <tr><td>Người trả lời</td><td>Một chị đi chợ cho gia đình, sống ở quận Tân Phú. Nhóm em không ghi tên chị.</td></tr>
+          <tr><td>Đồng ý</td><td>Chị đồng ý ở phút 04:22. Cuối buổi (phút 22:57) nhóm em hứa chỉ dùng câu trả lời cho bài tập.</td></tr>
+          <tr><td>Thời lượng</td><td>Phần hỏi đáp khoảng 19 phút, cả bản ghi dài 24 phút 16 giây</td></tr>
+          <tr><td>Câu hỏi</td><td>8 câu hỏi mở. Theo sách <i>The Mom Test</i>, nhóm em hỏi về những lần mua đã xảy ra thay vì hỏi chị nghĩ gì.</td></tr>
+        </table>
+      </div>
+      <div>
+        <div class="callout">
+          <b>Còn thiếu.</b> Đề yêu cầu phỏng vấn ít nhất 20 phút, phần chính của nhóm em mới khoảng 19 phút. Nhóm em sẽ gọi lại chị thêm khoảng 10 phút, hỏi lại hai đoạn ghi âm nghe không rõ và xin số điện thoại để giảng viên có thể liên hệ.
+        </div>
+      </div>
+    </div>
+
+    <h3>Những ý chính từ buổi phỏng vấn</h3>
+    <div class="finds">
+      <div class="find"><div class="t">Phút 06:56 · liên quan Q1</div><p>Chị mua rau, đậu hũ, gia vị ở chợ vì rẻ hơn, trả giá được và mua ít cũng được. Thịt, trứng, sữa thì chị mua ở siêu thị vì yên tâm hơn về khâu bảo quản lạnh.</p></div>
+      <div class="find"><div class="t">Phút 08:54 · liên quan Q1</div><p>Cùng một bó rau muống khoảng 300 g, siêu thị gần nhà bán 9 nghìn còn một siêu thị khác bán 12 nghìn.</p></div>
+      <div class="find"><div class="t">Phút 11:03 · liên quan Q2</div><p>Ở khu khác, giá cũng khác. Đậu hũ gần nhà chị 5 đến 6 nghìn một miếng, ở chợ gần nhà bạn chị chỉ 3,5 đến 4 nghìn.</p></div>
+      <div class="find"><div class="t">Phút 14:58 · liên quan Q4</div><p>Từ khi chia ra mua ở cả chợ và siêu thị, mỗi tuần chị tiết kiệm được vài chục nghìn nhưng mất thêm thời gian. Hôm nào bận thì chị chỉ đi siêu thị.</p></div>
+      <div class="find"><div class="t">Phút 18:01 và 21:16 · liên quan Q4</div><p>Có lần chị mua rau giảm giá buổi tối, về nhà mới thấy bên trong bị úng và phải bỏ khá nhiều. Những hôm về khuya, chị vẫn đặt GrabMart dù giá cao hơn.</p></div>
+      <div class="find"><div class="t">Thay đổi sau phỏng vấn</div><p>Nhóm em quyết định ghi giờ của từng giá, đổi mọi giá về giá một kg, và ở câu hỏi 4 sẽ tính thêm thời gian đi lại, phí giao và phần thực phẩm bị bỏ đi.</p></div>
+    </div>
+
+    <h3>Cây câu hỏi</h3>
+    <div class="tree">
+      <div class="root">Sinh viên ít tiền nên mua thực phẩm ở đâu tại TP.HCM, và chọn đúng nơi mua thì tiết kiệm được bao nhiêu?</div>
+      <div class="stem"></div>
+      <div class="bar"></div>
+      <div class="kids">
+        <div class="kid"><div class="box"><div class="q">Q1</div><h5>Cùng một món, giá ở ba kênh chênh nhau bao nhiêu và mức chênh có thay đổi qua 8 tuần không?</h5><ul><li>So giá một kg của 12 món ở 3 kênh</li><li>Theo dõi mức chênh theo từng tuần</li></ul></div></div>
+        <div class="kid"><div class="box"><div class="q">Q2</div><h5>Giá ở Quận 10 và Quận 3 có khác nhau không?</h5><ul><li>So giá hai quận theo từng món, từng kênh</li><li>Tìm những món chênh nhiều nhất</li></ul></div></div>
+        <div class="kid"><div class="box"><div class="q">Q3</div><h5>Giá nhóm em ghi được thay đổi giống hay khác CPI thực phẩm?</h5><ul><li>Lập chỉ số giá, lấy tuần 1 bằng 100</li><li>So với CPI của NSO cho TP.HCM</li></ul></div></div>
+        <div class="kid"><div class="box"><div class="q">Q4</div><h5>Một giỏ hàng mỗi tuần của sinh viên tốn bao nhiêu, đổi nơi mua thì tiết kiệm được bao nhiêu?</h5><ul><li>Tính giỏ hàng cho 3 kiểu sinh viên</li><li>Cộng thêm thời gian, phí giao, đồ bỏ đi</li></ul></div></div>
+      </div>
+    </div>
+
+    <h3>Big Idea v0</h3>
+    <p class="col">Đây là câu mẫu theo đề bài. Các chỗ trong ngoặc sẽ được điền sau khi có đủ 8 tuần dữ liệu.</p>
+    <div class="bigidea col">Một sinh viên <span class="blank">[kiểu sinh viên]</span> có thể tiết kiệm <span class="blank">[X đến Y]%</span> tiền giỏ hàng mỗi tuần nếu mua <span class="blank">[nhóm hàng]</span> ở <span class="blank">[kênh]</span>, nhưng số tiền này <span class="blank">[giữ nguyên hay giảm]</span> khi tính thêm <span class="blank">[thời gian, phí giao, đồ bỏ đi]</span>.</div>
+
+    <h3>Rủi ro và cách xử lý</h3>
+    <table>
+      <tr><th>Rủi ro</th><th>Khi nào biết</th><th>Cách xử lý</th></tr>
+      <tr><td>Không đủ 500 giá</td><td>Một tuần có dưới 60 giá dùng được</td><td>Trưởng nhóm nhắc vào tối Chủ nhật. Bạn nào xong phần mình thì nhận thêm ô còn trống và ghi tên mình là người thu.</td></tr>
+      <tr><td>Món hết hàng</td><td>Cột tồn kho ghi "Hết hàng"</td><td>Giữ dòng đó nhưng để trống giá. Nếu hết hàng 3 tuần thì đổi sang món gần giống nhất.</td></tr>
+      <tr><td>Luật mỗi người thu ít nhất 20%</td><td>Nhóm có 6 người, mỗi giá chỉ ghi một người thu, nên mỗi người tối đa 16,7%</td><td>Hỏi giảng viên xem một giá do hai người cùng thu có được ghi cả hai tên không.</td></tr>
+      <tr><td>CPI tháng 10, tháng 11 ra muộn</td><td>NSO công bố CPI vào đầu tháng sau</td><td>Câu hỏi 3 dùng những tháng đã có và ghi rõ tháng nào còn thiếu.</td></tr>
+      <tr><td>Khảo sát chưa đủ 60 sinh viên</td><td>Dưới 40 câu trả lời khi còn 1 tuần nữa là đến CP2</td><td>Mỗi người gửi khảo sát vào thêm hai nhóm lớp và nhờ bạn bè trả lời trực tiếp.</td></tr>
+    </table>
+  </div>
+</section>
+
+<hr>
+
+<!-- ============================================================ M2 -->
+<section id="m2">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="sec-num">M2</div>
+      <div>
+        <div class="label">Thu thập, trừu tượng hoá, làm sạch <span class="status st-done">đủ tuần 1 và 2</span></div>
+        <h2>Thu thập và làm sạch dữ liệu</h2>
+        <p class="lede">Nhóm em không sửa trực tiếp trên file gốc. Mỗi bước sửa là một hàm Python và được ghi lại trong nhật ký làm sạch, nên ai chạy lại notebook cũng ra cùng một kết quả.</p>
+      </div>
+    </div>
+
+    <div class="pipe">
+      <div class="stage">
+        <div class="label">Dữ liệu gốc</div>
+        <ul>
+          <li><span>Bảng giá của nhóm (Google Sheet)</span><span>8 tuần</span></li>
+          <li><span>NSO, CPI hằng tháng</span><span>T5 đến T9</span></li>
+          <li><span>FAOSTAT, CPI thực phẩm</span><span>đến T6</span></li>
+          <li><span>World Bank, giá thế giới</span><span>đến T9</span></li>
+        </ul>
+      </div>
+      <div class="join"></div>
+      <div class="stage mid">
+        <div class="label">Các bước làm sạch (số dòng bị sửa)</div>
+        <ul>
+          <li><span>Gộp Grab Mart và Shopee Mart thành kênh App</span><span>192</span></li>
+          <li><span>Đưa giờ về một kiểu ghi HH:MM</span><span>131</span></li>
+          <li><span>Đổi gram sang kg, đổi giá trứng về giá một quả</span><span>28</span></li>
+          <li><span>Sửa năm gõ nhầm 2027 thành 2026</span><span>1</span></li>
+          <li><span>Sửa số lượng bị Sheets tự đổi thành ngày</span><span>1</span></li>
+          <li><span>Bỏ giá của món hết hàng, vẫn giữ dòng</span><span>1</span></li>
+          <li><span>Đánh dấu giá lệch quá xa trung vị</span><span>2</span></li>
+        </ul>
+      </div>
+      <div class="join"></div>
+      <div class="stage out">
+        <div class="label">Kết quả</div>
+        <ul>
+          <li><span>Bảng chính dạng dài</span><span>576 dòng</span></li>
+          <li><span>Bảng giá theo tuần</span><span>72 dòng</span></li>
+          <li><span>Nhật ký làm sạch</span><span>10 bước</span></li>
+          <li><span>Bảng quy đổi đơn vị</span><span>7 dòng</span></li>
+          <li><span>Từ điển dữ liệu</span><span>34 cột</span></li>
+          <li><span>Dữ liệu công khai theo tháng</span><span>333 dòng</span></li>
+        </ul>
+      </div>
+    </div>
+
+    <figure class="fig-wide">
+      <img src="figures/m2_data_status.png" alt="Lưới cột 3D số giá mỗi thành viên nhập mỗi tuần; cả 6 thành viên đều nhập đủ 12 giá ở tuần 1 và tuần 2. Bên phải là thanh tiến độ 141 trên 500 giá." loading="lazy">
+      <figcaption><b>Hình 1. Tình trạng dữ liệu sau 2 tuần.</b> Mỗi cột xanh là 12 giá mà một thành viên nhập trong một tuần. Sau khi bổ sung 12 giá thịt heo ba chỉ và thịt bò của tuần 2 (nhập ngày 26/10), cả 6 thành viên đều đủ 12 giá ở hai tuần đầu. Các ô phẳng màu xám là 6 tuần chưa tới. Nhóm em dùng cột 3D ở đây vì ô nào đủ thì cao bằng nhau, nếu có ô thiếu sẽ thấy ngay.</figcaption>
+    </figure>
+
+    <div class="two">
+      <div>
+        <h3>Một số lỗi gặp trong 2 tuần đầu</h3>
+        <p><b>Số thập phân bị đổi thành ngày.</b> Google Sheets đang để định dạng tiếng Việt nên khi gõ "2.5" kg, ô đó tự đổi thành ngày 2 tháng 5. Nhóm em đã sửa bằng code và nhắc mọi người từ nay gõ "2,5".</p>
+        <p><b>Đậu hũ ghi theo nhiều đơn vị.</b> Có bạn ghi giá theo miếng, có bạn ghi theo hộp 280 g, có bạn ghi theo kg. Nhóm em đổi hết về kg và tạm tính một miếng nặng 0,2 kg. Tuần 3 sẽ có người cân thử để kiểm tra con số này.</p>
+        <p><b>CPI ra chậm một tháng.</b> CPI tháng 10 phải đến đầu tháng 11 NSO mới công bố, nên cột CPI của tuần 1 và tuần 2 hiện còn trống.</p>
+      </div>
+      <div>
+        <h3>So với yêu cầu của đề</h3>
+        <table>
+          <tr><th>Yêu cầu</th><th>Tình trạng</th></tr>
+          <tr><td>Tải các nguồn công khai, thu đợt dữ liệu đầu</td><td class="ok">Đã có</td></tr>
+          <tr><td>Data card cho từng nguồn</td><td class="ok">Đã có</td></tr>
+          <tr><td>Bảng data abstraction</td><td class="ok">Đã có</td></tr>
+          <tr><td>Hàm làm sạch có nhật ký, bảng tidy, từ điển dữ liệu</td><td class="ok">Đã có</td></tr>
+          <tr><td>Item spec, bảng theo tuần, chỉ số giá, bảng quy đổi đơn vị</td><td class="ok">Đã có</td></tr>
+          <tr><td>Nối CPI theo tháng</td><td class="half">Chờ CPI tháng 10</td></tr>
+          <tr><td>Cột giá thành viên (loyalty) trong phiếu thu</td><td class="half">Chưa có, nhóm cần quyết định</td></tr>
+          <tr><td>Ghi lại tuần thử với 14 món ứng viên</td><td class="half">Cần bổ sung</td></tr>
+        </table>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr>
+
+<!-- ============================================================ M3 -->
+<section id="m3">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="sec-num">M3</div>
+      <div>
+        <div class="label">Cảm thụ và phong cách <span class="status st-done">đã có bản nháp</span></div>
+        <h2>Quy tắc trình bày biểu đồ</h2>
+        <p class="lede">Mục này gom toàn bộ phần M3: quy tắc về màu và kiểu biểu đồ, kết quả kiểm tra mù màu, bài làm lại một biểu đồ của NSO, và một cặp biểu đồ trung thực và gây hiểu lầm.</p>
+      </div>
+    </div>
+
+    <h3 style="margin-top:0">1. Màu và kiểu biểu đồ</h3>
+    <div class="two">
+      <p>Mỗi kênh có một màu cố định: chợ màu cam đất, siêu thị màu xanh đậm, app màu xanh nhạt. Ba kênh luôn xếp theo thứ tự chợ, siêu thị, app. Hai quận không dùng màu mà phân biệt bằng nét liền và nét đứt. Số tiền dùng dải xanh từ nhạt đến đậm; mức tăng giảm dùng dải màu hai đầu với điểm giữa là 100.</p>
+      <p>Các biểu đồ của nhóm dùng cột 3D, mặt trên sáng hơn và hai mặt bên tối hơn. Để cột 3D không làm người xem đọc sai, nhóm em đặt ba quy định: cột luôn bắt đầu từ 0, số quan trọng được in ngay trên cột, và góc nhìn để thấp.</p>
+    </div>
+    <figure>
+      <img src="figures/m3_house_style.png" alt="Trang quy tắc trình bày: màu của ba kênh, kiểu nét cho hai quận, cách ghi số, dải màu, mẫu cột 3D và các màu xám." loading="lazy">
+      <figcaption><b>Hình 2. Quy tắc trình bày.</b> Màu, font và cách ghi số đều nằm trong file <code>house_style.py</code>. Mọi biểu đồ đều lấy từ file này nên các bạn không phải tự chọn màu.</figcaption>
+    </figure>
+
+    <h3>2. Kiểm tra mù màu và in trắng đen</h3>
+    <p class="col">Nhóm em mô phỏng cách người mù màu đỏ, mù màu lục, mù màu lam nhìn bộ màu, và thử in trắng đen. Sau đó nhóm em đo khoảng cách màu (ΔE) giữa hai màu gần nhau nhất. Nếu khoảng cách lớn hơn 20 thì mắt thường phân biệt được dễ dàng.</p>
+    <table class="col">
+      <tr><th>Cách nhìn</th><th class="num">ΔE nhỏ nhất</th></tr>
+      <tr><td>Mắt bình thường và ba dạng mù màu</td><td class="num">50</td></tr>
+      <tr><td>In trắng đen</td><td class="num">25</td></tr>
+    </table>
+    <figure class="fig-wide">
+      <img src="figures/m3_cvd_check.png" alt="Năm biểu đồ cột 3D giống nhau, mỗi biểu đồ là cách một kiểu mắt nhìn ba màu kênh." loading="lazy">
+      <figcaption><b>Hình 3. Cùng một biểu đồ vẽ năm lần.</b> Mỗi lần là cách một kiểu mắt nhìn thấy ba màu kênh. Ở cả năm lần, ba cột vẫn phân biệt được với nhau. Lần kiểm tra đầu, bản in trắng đen chỉ đạt 17, nên nhóm em đã đổi màu siêu thị đậm hơn và màu app nhạt hơn.</figcaption>
+    </figure>
+
+    <h3>3. Làm lại một biểu đồ lạm phát</h3>
+    <p class="col">Nhóm em chọn Hình 5 trong báo cáo giá tháng 9 năm 2026 của Cục Thống kê. Hình này vẽ mức tăng giá của 11 nhóm hàng bằng cột trụ 3D màu đỏ, và vẽ CPI chung thành một cột màu tím đứng cạnh.</p>
+    <div class="pair">
+      <figure style="margin-top:8px">
+        <span class="tag bad">Bản gốc</span>
+        <img src="figures/m3_makeover_original.png" alt="Hình 5 của NSO: cột trụ 3D màu đỏ cho 11 nhóm hàng và một cột tím cho CPI chung." loading="lazy">
+        <figcaption>Nguồn: Cục Thống kê, <i>Tổng quan thị trường giá cả tháng 9, quý III và 9 tháng năm 2026</i>, trang 13.</figcaption>
+      </figure>
+      <figure style="margin-top:8px">
+        <span class="tag good">Bản nhóm em vẽ lại</span>
+        <img src="figures/m3_makeover_redesign.png" alt="Bản vẽ lại: đường CPI năm 2025 và 2026 ở trên; bên dưới là hai biểu đồ cột ngang cho mức tăng giá và mức đóng góp vào CPI." loading="lazy">
+        <figcaption>Chỉ nhóm thực phẩm được tô màu. Đường nét đứt là CPI bình quân 4,52%.</figcaption>
+      </figure>
+    </div>
+    <table>
+      <tr><th>Vấn đề ở bản gốc</th><th>Nguyên lý</th><th>Cách sửa</th></tr>
+      <tr><td>Cột trụ 3D có nắp hình bầu dục; nhóm thấp nhất (0,12%) chỉ còn là một cái đĩa đỏ</td><td>Data ink, expressiveness</td><td>Dùng cột phẳng, cùng bắt đầu từ 0</td></tr>
+      <tr><td>CPI chung (4,52%) được vẽ như một nhóm hàng thứ 12, màu tím</td><td>Gestalt similarity</td><td>Vẽ thành một đường kẻ ngang qua các nhóm</td></tr>
+      <tr><td>Cả 11 nhóm cùng một màu đỏ đậm</td><td>Preattentive attention</td><td>Để các nhóm màu xám, chỉ tô màu nhóm thực phẩm</td></tr>
+      <tr><td>Nhãn có số La Mã và bị xuống dòng đến năm lần</td><td>Short term memory</td><td>Xoay cột nằm ngang, ghi tên ngắn trên một dòng</td></tr>
+      <tr><td>Có đường lưới nhưng trục không ghi số</td><td>Data ink</td><td>Bỏ lưới, ghi giá trị lên từng cột</td></tr>
+      <tr><td>Biểu đồ chỉ cho thấy nhóm nào tăng nhanh, trong khi bài viết hỏi nhóm nào làm CPI tăng</td><td>Expressiveness</td><td>Thêm một biểu đồ cho mức đóng góp vào CPI</td></tr>
+    </table>
+    <div class="callout blue col">
+      <b>Vì sao bản vẽ lại không dùng 3D.</b> Các biểu đồ khác của nhóm em đều dùng cột 3D, riêng bài này thì không. Lỗi đầu tiên nhóm em chỉ ra ở bản gốc là cột trụ 3D, nên nếu vẽ lại bằng 3D thì sẽ mắc lại đúng lỗi đó.
+    </div>
+    <p class="col">Khi vẽ lại, nhóm em thấy giá thực phẩm tăng chậm hơn nhà ở và giao thông, nhưng thực phẩm lại đóng góp nhiều nhất vào mức tăng CPI (1,69 điểm phần trăm) vì chiếm tỷ trọng lớn nhất trong rổ hàng. Bản gốc không cho người đọc thấy điều này.</p>
+
+    <h3>4. Biểu đồ trung thực và biểu đồ gây hiểu lầm</h3>
+    <p class="col">Hai biểu đồ dưới đây dùng cùng ba số liệu: tiền mua một giỏ 12 món ở mỗi kênh. Biểu đồ bên trái cắt trục ở khoảng 1.030.000 đồng, nhìn từ góc cao và không ghi số, nên cột app trông cao gần gấp 7 lần cột chợ. Biểu đồ bên phải cho cột bắt đầu từ 0, nhìn từ góc thấp và ghi số trên từng cột, nên người xem thấy app chỉ đắt hơn chợ 28%.</p>
+    <figure class="fig-wide">
+      <img src="figures/m3_honest_vs_misleading.png" alt="Bên trái là cột 3D bị cắt trục, tiêu đề ghi app đắt gấp 7 lần. Bên phải là cột 3D bắt đầu từ 0, tiêu đề ghi app đắt hơn 28%." loading="lazy">
+      <figcaption><b>Hình 4.</b> Muốn biết một biểu đồ cột có bị cắt trục hay không, hãy nhìn con số nhỏ nhất trên trục giá trị. Nếu số đó khác 0 thì chiều cao của cột không còn đúng tỉ lệ với giá trị.</figcaption>
+    </figure>
+  </div>
+</section>
+
+<hr>
+
+<!-- ============================================================ M4 -->
+<section id="m4">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="sec-num">M4</div>
+      <div>
+        <div class="label">Biểu đồ chính <span class="status st-part">bản nháp, dữ liệu 2/8 tuần</span></div>
+        <h2>Biểu đồ thử với dữ liệu 2 tuần</h2>
+        <p class="lede">Các biểu đồ dưới đây mới dùng dữ liệu của 2 tuần nên chỉ để tham khảo. Khi có đủ 8 tuần, số liệu và tiêu đề có thể thay đổi.</p>
+      </div>
+    </div>
+    <figure class="fig-wide">
+      <img src="figures/m4_chart1_channel_prices.png" alt="Lưới cột 3D: 12 món theo chiều ngang, 3 kênh theo chiều sâu. Cột app ở hàng sau cao nhất ở 11 món." loading="lazy">
+      <figcaption><b>Hình 5. Giá từng món ở ba kênh, lấy giá chợ bằng 100.</b> Hàng trước là chợ, hàng giữa là siêu thị, hàng sau là app; số in trên hàng sau là chỉ số giá của app. Có 11 trên 12 món mua qua app đắt nhất. Dưa hấu và hành tây trên app đắt gần gấp đôi ở chợ. Đề bài yêu cầu có thêm dot plot cho số liệu này nên notebook giữ cả hai bản.</figcaption>
+    </figure>
+    <div class="two">
+      <figure>
+        <img src="figures/m4_chart2_premium.png" alt="Hai cột 3D: siêu thị đắt hơn chợ 13%, app đắt hơn chợ 37%." loading="lazy">
+        <figcaption><b>Hình 6.</b> Tính theo trung vị của 12 món, siêu thị đắt hơn chợ 13%, app đắt hơn chợ 37%. Giá app chưa gồm phí giao, trung bình khoảng 29.000 đồng mỗi đơn.</figcaption>
+      </figure>
+      <figure>
+        <img src="figures/m4_chart1b_dotplot.png" alt="Dot plot: mỗi món một hàng, ba chấm tròn cho ba kênh." loading="lazy">
+        <figcaption><b>Hình 7.</b> Dot plot theo yêu cầu của đề, cùng số liệu với Hình 5. Ở M8, nhóm em sẽ cho người xem dùng thử cả hai bản để biết bản nào đọc chính xác hơn.</figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<hr>
+
+<!-- ============================================================ M5 to M10 -->
+<section id="sap-toi">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="sec-num">M5+</div>
+      <div>
+        <div class="label">Các module tiếp theo <span class="status st-todo">chưa làm</span></div>
+        <h2>Kế hoạch cho M5 đến M10</h2>
+        <p class="lede">Các module này cần đủ dữ liệu 8 tuần và ít nhất 60 câu trả lời khảo sát. Nhóm em sẽ cập nhật trang này sau mỗi checkpoint.</p>
+      </div>
+    </div>
+    <div class="future">
+      <div class="fut"><div class="id">M5</div><h4>Dashboard giỏ hàng tuần</h4><p>Một trang gồm tiền giỏ hàng tuần này so với tuần trước, giá theo kênh và CPI. Nhóm em làm lại bằng Looker Studio rồi viết 300 chữ so sánh hai công cụ.</p></div>
+      <div class="fut"><div class="id">M6</div><h4>PCA và phân cụm</h4><p>Phân nhóm 12 món theo mức giá, mức thay đổi và độ dao động ở từng kênh, và ghi rõ các nhóm này không nói lên điều gì.</p></div>
+      <div class="fut"><div class="id">M7 · CP2</div><h4>Dữ liệu nhiều chiều</h4><p>Heatmap theo món và tuần, treemap tiền giỏ hàng, parallel coordinates theo kênh và quận. Nhận đề bổ sung (sealed twist) ở CP2.</p></div>
+      <div class="fut"><div class="id">M8</div><h4>Thử nghiệm 2D và 3D</h4><p>Đặt khối 3D (món, tuần, kênh) cạnh ba heatmap phẳng. Ít nhất 5 người ngoài nhóm trả lời cùng 3 câu hỏi trên cả hai bản.</p></div>
+      <div class="fut"><div class="id">M9 · CP3</div><h4>Tương tác và storyboard</h4><p>Công cụ để người dùng tự chọn món cho giỏ hàng, có ít nhất 3 nút điều khiển. Thêm một animation giá giỏ hàng theo tuần và storyboard vẽ tay.</p></div>
+      <div class="fut"><div class="id">M10 · CP4</div><h4>Kiểm thử và chỉnh sửa</h4><p>Cho ít nhất 5 sinh viên tự nấu ăn dùng thử, đổi bản nháp với một nhóm khác để góp ý, và ghi lại ít nhất 8 chỗ sửa kèm lý do.</p></div>
+    </div>
+  </div>
+</section>
+
+<footer id="nhom">
+  <div class="wrap">
+    <div class="three">
+      <div>
+        <b>Nhóm 10</b><br>
+        Nguyễn Hoàng Minh (trưởng nhóm)<br>
+        Phạm Quang Minh<br>
+        Phạm Tuấn Anh<br>
+        Trần Nhã Đoan<br>
+        Nguyễn Minh Nguyệt<br>
+        Trần Nguyễn Thanh Thảo
+      </div>
+      <div>
+        <b>Nguồn dữ liệu</b><br>
+        Bảng giá nhóm em tự thu<br>
+        Cục Thống kê (NSO), CPI hằng tháng<br>
+        FAOSTAT, Consumer Price Indices<br>
+        World Bank, Commodity Price Data<br>
+        <a href="https://github.com/hwinhwork-dot/DataViz_Final_P10">Notebook và mã nguồn trên GitHub</a>
+      </div>
+      <div>
+        <b>Sử dụng AI</b><br>
+        Nhóm em dùng Claude Code để hỗ trợ viết code, vẽ biểu đồ và làm trang web này. Các lần dùng AI đều được ghi trong AI log của đồ án. Giá và câu trả lời khảo sát đều do nhóm em tự thu, không có số liệu nào do AI tạo ra.
+      </div>
+    </div>
+  </div>
+</footer>
+
+<div class="lb" id="lb" aria-hidden="true"><img alt=""></div>
+<script>
+  (function () {
+    var lb = document.getElementById("lb"), big = lb.querySelector("img");
+    document.querySelectorAll("figure img").forEach(function (im) {
+      im.addEventListener("click", function () { big.src = im.src; big.alt = im.alt; lb.classList.add("on"); });
+    });
+    lb.addEventListener("click", function () { lb.classList.remove("on"); });
+    document.addEventListener("keydown", function (e) { if (e.key === "Escape") lb.classList.remove("on"); });
+  })();
+</script>
+</body>
+</html>

@@ -45,3 +45,8 @@ Thumbs.db
 # ---------- Công cụ AI ----------
 .playwright-mcp/
 .claude/settings.local.json
+
+# ---------- Website (built by tools/build_site.py) ----------
+site/figures/
+.vercel/
+site/.vercel/
