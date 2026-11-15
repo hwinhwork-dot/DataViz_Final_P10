@@ -2,7 +2,7 @@
 
 **Project:** P10 · The Price of Dinner
 **Module lead (Design lead):** *(fill in)*
-**Last update:** 26 October 2026
+**Last update:** 15 November 2026
 
 This page collects the evidence for Module M3 for the report. The code is in Module M3 of `notebooks/P10_Final_Team10.ipynb`, and every figure is in `report/figures/`.
 
@@ -22,7 +22,7 @@ Every notebook starts with `from house_style import *` and `apply_style()`. The 
 | Text | Serif font (Georgia), bold title that states the finding, italic subtitle with the units, source line at the bottom | The reader gets the message from the title and the units from the subtitle |
 | Numbers | "45k" in charts, "45,000 VND" in tables, "+12%" for changes, "108.2 (week 1 = 100)" for an index | One format for each kind of number avoids confusion |
 | Labels | Labels sit next to the data; a legend is the last choice | The eye does not need to move between the chart and a legend |
-| 3D columns | Charts are 3D columns from `bars3d()`: a light top, the base colour in front, darker sides; columns start at zero, key values are printed, the view stays low | One look for the whole project, kept honest by three fixed rules |
+| 3D columns | A chart that compares a few magnitudes uses 3D columns from `bars3d()`: a light top, the base colour in front, darker sides; columns start at zero, key values are printed, the view stays low. Every other idiom (lines, dot plots, dumbbells, heatmaps, biplots, dendrograms, dashboard panels) stays flat | One look for every comparison of magnitudes, kept honest by three fixed rules, while each other task keeps the idiom that fits it |
 
 ## 2. Colour vision and greyscale check
 
@@ -54,20 +54,20 @@ The critique table with six named principles, the hand sketch and the code of th
 
 ## 4. Honest and misleading pair
 
-Both charts show the same three numbers: the cost of one basket of our twelve items in each channel. The basket holds 1 kg of each item sold by weight, 1 kg of tofu and 10 eggs, at the average price of weeks 1 and 2 in both districts.
+Both charts show the same three numbers: the cost of one basket of our twelve items in each channel. The basket holds 1 kg of each item sold by weight (tofu included) and 10 eggs, at the average price of weeks 1 to 8 in both districts.
 
 ![Honest and misleading pair](figures/m3_honest_vs_misleading.png)
 
 | | Misleading chart | Honest chart |
 |---|---|---|
 | Form | 3D columns, steep view, no values | 3D columns, low view, values printed |
-| Value axis | Starts at about 1,030,000 VND | Starts at zero |
-| What the eye sees | The app column is almost seven times as tall as the wet market column | The app column is about 28% taller than the wet market column |
-| Title | "Delivery apps cost 7 TIMES more!" | "The app basket costs 28% more than the wet market" |
+| Value axis | Starts at about 980,000 VND | Starts at zero |
+| What the eye sees | The app column is about six times as tall as the wet market column | The app column is about 27% taller than the wet market column |
+| Title | "Delivery apps cost 6 TIMES more!" | "The app basket costs 27% more than the wet market" |
 | Labels | None, the reader must guess from the axis | The cost and the gap against the wet market sit on each bar |
 
-**How the misleading chart misleads.** It uses the 3D column style of spreadsheet tools and a cut axis. A bar chart asks the reader to compare lengths. When the axis starts just below the cheapest basket, the reader compares only the tops of the bars, and a gap of 28% looks like a gap of almost 600%. The title repeats the false ratio. In Tufte's terms, the Lie Factor of the left chart is far above 1.
+**How the misleading chart misleads.** It uses the 3D column style of spreadsheet tools and a cut axis. A bar chart asks the reader to compare lengths. When the axis starts just below the cheapest basket, the reader compares only the tops of the bars, and a gap of 27% makes the app column look about six times as tall as the wet market column. The title repeats the false ratio. In Tufte's terms, the Lie Factor of the left chart is far above 1.
 
 **How a reader can spot it.** The reader can check the lowest number on the y axis. If it is not zero, the bar lengths do not show the values. The reader can also divide the two values on the axis instead of trusting the picture.
 
-**A limit of both charts.** The app basket leaves out the delivery fee, which was about 29,000 VND per order on average in weeks 1 and 2. The final analysis in Q4 will add the fee and show it as a separate part of the bar.
+**A limit of both charts.** The app basket leaves out the delivery fee, about 23,000 VND for one order on average in weeks 1 to 8. Chart 6 of M4 adds the fee and shows it as a separate part of the bar.

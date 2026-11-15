@@ -79,9 +79,9 @@ The model is the one page figure in the style of a newspaper graphic: serif font
 * Never use a rainbow colour map, red against green, or more than four colours in one chart.
 * After a new palette or a new colour map, run `cvd_report()`. Every value must stay above 20.
 
-**3D is the team style (required)**
+**3D columns are the team style for magnitudes (required)**
 
-9. Draw every data chart as 3D columns with the helpers of `house_style.py`:
+9. Draw every chart whose job is to compare a few magnitudes (prices, costs, premiums, counts) as 3D columns with the helpers of `house_style.py`:
    * `bars3d(ax, x, y, heights, colors)` draws the columns with a light top, the base colour in front and darker sides;
    * `style3d(ax, elev, azim, aspect, zoom)` removes the panes, fades the grid and sets a low view;
    * `label3d(ax, x, y, z, text)` prints a value on top, drawn in 2D so that no column hides it;
@@ -91,7 +91,7 @@ The model is the one page figure in the style of a newspaper graphic: serif font
     * every value that carries the finding is printed with `label3d()`, and a code cell prints the full table;
     * the view stays low (`elev` between 10 and 25), and the rows are ordered so that the lower columns stand in front.
 11. Two categories (items × channels, members × weeks) go on the two floor axes; one category goes on the x axis with `y = 0`.
-12. Exceptions, which stay flat: the M3 makeover redesign (its critique is about 3D cylinders), swatches and colour maps, tables, and charts that the brief names as a fixed idiom (the M4 dot plot is kept next to its 3D version). Lines over time may stay flat when a 3D version would hide the trend; say why in the *Why this chart* line.
+12. Every other idiom keeps its own form and stays flat, because the brief asks for at least 5 idioms in M4 and 8 idioms in the whole project: lines over time, the two panel CPI chart, dot plots, dumbbells, heatmaps, treemaps, parallel coordinates, scatter plots, biplots, scree plots, dendrograms and the small panels of the M5 dashboard. The M3 makeover redesign, swatches, colour maps and tables also stay flat. Say in the *Why this chart* line why the idiom fits the task.
 13. Never use a dual axis, a pie chart, a rainbow colour map, shadows or pictures behind data.
 
 **Text that goes with each chart in the notebook**
@@ -134,7 +134,7 @@ Every chart has a Markdown cell before its code, in this form:
 * [ ] The notebook runs from top to bottom without an error.
 * [ ] Every title states a finding, and a cell prints the numbers behind it.
 * [ ] Colours come from `house_style.py`; at most one highlight per chart; channel order Chợ, Siêu thị, App.
-* [ ] Charts use the 3D column style; columns start at zero; values are printed; the view is low; no dual axis.
+* [ ] Magnitude charts use the 3D column style (columns start at zero, values printed, low view); other idioms keep their own flat form; no dual axis.
 * [ ] The text has no dashes, no hyphenated words in prose, no arrows and none of the banned words.
 * [ ] Every sentence has a subject and a verb and uses "My group" where the team speaks.
 * [ ] No number is invented; every gap is marked *(fill in)*.

@@ -10,26 +10,26 @@ week_start,datetime64[us],Monday of the collection week,0
 year_month,str,"Month of week_start, the key for the official CPI",0
 collector,string,Member who collected the price,0
 assigned_to,str,Member the schedule assigned to this row,0
-date,datetime64[us],Date the price was seen,432
-time,string,Time the price was seen (HH:MM),445
-price_vnd,object,"Price as written on the tag or app, VND",433
-qty,float64,Pack size as written,432
-unit,string,Unit of the pack as written,432
+date,datetime64[us],Date the price was seen,0
+time,string,Time the price was seen (HH:MM),13
+price_vnd,object,"Price as written on the tag or app, VND",1
+qty,float64,Pack size as written,0
+unit,string,Unit of the pack as written,0
 std_unit,object,Standard unit of the item (kg or piece),0
-qty_std,float64,Pack size in the standard unit,432
-price_std,object,"Price per standard unit, VND",433
+qty_std,float64,Pack size in the standard unit,1
+price_std,object,"Price per standard unit, VND",2
 promo,bool,True if the price was a promotion,0
 in_stock,boolean,False if the item was out of stock,0
-delivery_fee,float64,"Delivery and service fee of the App order, VND",542
+delivery_fee,float64,"Delivery and service fee of the App order, VND",452
 collected,bool,True if a price was entered,0
 usable,bool,True if price_std exists and the row is not an outlier,0
 flags,str,Data quality flags separated by ';',0
 base_week,int64,Week used as 100 in index_w1,0
-index_w1,object,price_std / price_std in base_week × 100,435
+index_w1,object,price_std / price_std in base_week × 100,26
 photo,string,Photo file name or link (optional),576
 note,string,Free note by the collector,570
-cpi_hcmc_mom_all_items,float64,"NSO CPI, Ho Chi Minh City, all items, previous month = 100",576
-cpi_hcmc_mom_eating_out,float64,"NSO CPI, Ho Chi Minh City, eating out, previous month = 100",576
-cpi_hcmc_mom_food_and_foodstuff,float64,"NSO CPI, Ho Chi Minh City, food and foodstuff, previous month = 100",576
-cpi_hcmc_mom_food_grain,float64,"NSO CPI, Ho Chi Minh City, food grain, previous month = 100",576
-cpi_hcmc_mom_foodstuff,float64,"NSO CPI, Ho Chi Minh City, foodstuff, previous month = 100",576
+cpi_hcmc_mom_all_items,float64,"NSO CPI, Ho Chi Minh City, all items, previous month = 100",360
+cpi_hcmc_mom_eating_out,float64,"NSO CPI, Ho Chi Minh City, eating out, previous month = 100",360
+cpi_hcmc_mom_food_and_foodstuff,float64,"NSO CPI, Ho Chi Minh City, food and foodstuff, previous month = 100",360
+cpi_hcmc_mom_food_grain,float64,"NSO CPI, Ho Chi Minh City, food grain, previous month = 100",360
+cpi_hcmc_mom_foodstuff,float64,"NSO CPI, Ho Chi Minh City, foodstuff, previous month = 100",360

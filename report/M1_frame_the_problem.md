@@ -3,7 +3,7 @@
 **Project:** P10 · The Price of Dinner
 **Client:** Consumer Lab
 **Module lead (Story lead):** *(fill in)*
-**Last update:** 26 October 2026
+**Last update:** 15 November 2026
 
 This file holds everything that my group hands in for Module M1: the team card for CP0, the interview notes, the question tree, Big Idea v0, the proposal on one page for CP1 and the team contract.
 
@@ -84,11 +84,11 @@ Each task needs at least one chart. The chart list in Module M4 will refer to th
 
 ## 4. Big Idea v0
 
-My group uses the template from the brief and leaves the numbers open until the eight weeks of data are complete.
+My group uses the template from the brief and leaves the persona and the saving open until the student survey is in.
 
 > A student who **[persona]** can save **[X to Y]%** of a weekly food basket by buying **[item group]** at the **[channel]**, but this saving **[stays / shrinks]** once **[travel time / delivery fees / food waste]** is counted.
 
-**Our working hypothesis.** The interview suggests that the wet market is cheaper for vegetables and that the supermarket wins on trust for meat. My group expects the delivery app to cost the most, but to be the only option for some late purchases. The first two weeks of our data point in the same direction: for the same item, district and week, the supermarket price is about 1.1 times the wet market price, and the app price is about 1.4 times. These numbers come from only 45 complete comparisons, so my group does not treat them as a result yet.
+**Our working hypothesis.** The interview suggests that the wet market is cheaper for vegetables and that the supermarket wins on trust for meat. My group expects the delivery app to cost the most, but to be the only option for some late purchases. The eight weeks of our data support this hypothesis: for the same item, district and week, the median supermarket price is about 1.18 times the wet market price (187 matched pairs), and the median app price is about 1.34 times (180 matched pairs, Section M4.2 of the notebook). The data cover two districts only, so the Big Idea speaks about Quận 10 and Quận 3, not the whole city.
 
 ## 5. Proposal on one page (CP1)
 
@@ -117,16 +117,16 @@ The data cards in `data/data_cards.md` describe each source in full. The old GSO
 | Item specification | Each item has a fixed brand, pack and quality note in the overview tab of the sheet |
 | Evidence | A photo of the price tag or a screenshot of the app, with the date visible. Photos keep their original timestamp |
 | Student survey | At least 60 students. The survey asks where students buy food, how often, how much they spend, how long a trip takes and how much food they throw away. It gives the three personas for Q4 |
-| Status on 26 October 2026 | Weeks 1 and 2 are complete: 144 prices, 141 usable after cleaning. To reach 500 usable prices, each remaining week needs 60 of its 72 prices |
+| Status on 15 November 2026 | All eight weeks are entered: 576 prices, 558 usable after cleaning, 58 more than the 500 required. The dates of weeks 6 to 8 (18 to 30 November) are later than the export day, so the team checks them against the photos |
 
 ### 5.4 Risks and plan B
 
 | Risk | Sign | Plan B |
 |---|---|---|
-| Too few prices to reach 500 | A week ends with fewer than 60 usable prices | The leader reminds the member on Sunday evening. A member who has finished their own items takes over the missing cells and is named as the collector |
+| Too few prices to reach 500 | A week ends with fewer than 50 usable prices | The leader reminds the member on Sunday evening. A member who has finished their own items takes over the missing cells and is named as the collector |
 | An item is out of stock | The stock column says "Hết hàng" | The row stays with no price. If an item is out of stock in three weeks, my group picks a close substitute and notes it in the item specification |
 | The 20% collector rule cannot be met | With six members and one collector per price, a full share is 16.7% | My group asks the lecturer whether a price that two members collect together can carry both names |
-| The October and November CPI arrive late | NSO publishes each month's CPI in the first days of the next month | Q3 uses the months that exist at the deadline and says clearly which months are missing |
+| The November CPI arrives late | NSO publishes each month's CPI in the first days of the next month; October arrived in early November | Q3 uses the months that exist at the deadline (October so far) and says clearly which months are missing |
 | The app shows a different price at checkout | The final price includes a fee or a voucher | The sheet stores the listed price and the delivery fee separately |
 | Fewer than 60 survey answers | Fewer than 40 answers one week before CP2 | Each member shares the survey in two more class groups and asks friends in person |
 

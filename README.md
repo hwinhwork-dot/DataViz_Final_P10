@@ -86,3 +86,17 @@ source .venv/bin/activate
 pip install -r requirements.txt
 jupyter lab
 ```
+
+## Data and how to run the notebook
+
+The notebook reads only files that are in the repository, so every member can run it without a download.
+
+| Folder | What it holds |
+|---|---|
+| `data/raw/primary/` | Dated exports of our price sheet, named `price_sheet_YYYYMMDD.xlsx`. The notebook reads the newest one. `price_sheet_20261115.xlsx` holds all eight weeks (576 prices); the older files stay for comparison |
+| `data/raw/public/` | NSO monthly CPI (May to October 2026), FAOSTAT (to June 2026) and the World Bank Pink Sheet (to October 2026) |
+| `data/clean/` | The tables that Module M2 writes (master table, weekly table, cleaning log, data dictionary) and the three small tables of Module M6 |
+
+Open `notebooks/P10_Final_Team10.ipynb` and choose *Restart and run all*. The notebook rewrites everything in `data/clean/` and `report/figures/`, so a rerun on the same export must give the same numbers. To load a newer export of the Google Sheet, run `python data/raw/download_raw.py` once from the repository root, and then run the notebook again.
+
+Never edit a file in `data/raw/`; every change to the data is a logged function in Module M2. Prices dated after the day of the export carry the flag `future_date`, so the team can check their dates against the photos. The sources, the cleaning rules and the known limits are in `data/data_cards.md`.

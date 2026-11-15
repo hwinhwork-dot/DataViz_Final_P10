@@ -194,7 +194,9 @@ footer b{color:var(--ink)}
       <a href="#m2">M2</a>
       <a href="#m3">M3</a>
       <a href="#m4">M4</a>
-      <a href="#sap-toi">M5 đến M10</a>
+      <a href="#m5">M5</a>
+      <a href="#m6">M6</a>
+      <a href="#sap-toi">M7 đến M10</a>
       <a href="#nhom">Nhóm</a>
     </nav>
   </div>
@@ -207,7 +209,7 @@ footer b{color:var(--ink)}
     <p class="deck">Đồ án tìm hiểu xem sinh viên mua thực phẩm ở chợ, ở siêu thị hay qua app giao hàng thì đỡ tốn hơn. Nhóm em ghi giá 12 mặt hàng ở Quận 10 và Quận 3 trong 8 tuần, sau đó so với chỉ số giá tiêu dùng (CPI) của Cục Thống kê.</p>
     <div class="byline">
       <span><b>Khách hàng:</b> Consumer Lab (hội bảo vệ người tiêu dùng, tình huống giả định của đề bài)</span>
-      <span><b>Cập nhật:</b> 26/10/2026, đã đủ dữ liệu tuần 1 và tuần 2</span>
+      <span><b>Cập nhật:</b> 15/11/2026, đã đủ dữ liệu 8 tuần</span>
       <span><b>Mã nguồn:</b> <a href="https://github.com/hwinhwork-dot/DataViz_Final_P10">GitHub</a></span>
     </div>
   </div>
@@ -216,9 +218,9 @@ footer b{color:var(--ink)}
 <div class="wrap">
   <div class="keys">
     <div class="key"><div class="n">576</div><p>giá cần ghi theo kế hoạch (12 món, 3 kênh, 2 quận, 8 tuần)</p></div>
-    <div class="key hl"><div class="n">141</div><p>giá dùng được sau khi làm sạch; đề yêu cầu ít nhất 500</p></div>
-    <div class="key"><div class="n">2<small>/8</small></div><p>tuần đã thu xong (12/10 đến 25/10/2026)</p></div>
-    <div class="key"><div class="n">+28%</div><p>giỏ hàng mua qua app đắt hơn mua ở chợ, chưa tính phí giao (số tạm)</p></div>
+    <div class="key hl"><div class="n">558</div><p>giá dùng được sau khi làm sạch; đề yêu cầu ít nhất 500</p></div>
+    <div class="key"><div class="n">8<small>/8</small></div><p>tuần đã nhập đủ giá, từ 12/10/2026</p></div>
+    <div class="key"><div class="n">+22<small> đến 29%</small></div><p>giỏ hàng mua qua app đắt hơn mua ở chợ trong mỗi tuần đủ dữ liệu, chưa tính phí giao</p></div>
     <div class="key"><div class="n">4</div><p>nguồn dữ liệu: bảng giá nhóm tự thu, NSO, FAOSTAT, World Bank</p></div>
   </div>
 </div>
@@ -231,7 +233,7 @@ footer b{color:var(--ink)}
       <div>
         <div class="label">Tổng quan</div>
         <h2>Tiến độ đồ án</h2>
-        <p class="lede">Đề bài có 10 module, nhóm em thêm M0 cho phần chuẩn bị. Hiện tại M0 đến M3 đã có bản nháp. M4 mới có vài biểu đồ thử. Từ M5 trở đi cần dữ liệu của 6 tuần còn lại và kết quả khảo sát sinh viên nên chưa làm.</p>
+        <p class="lede">Đề bài có 10 module, nhóm em thêm M0 cho phần chuẩn bị. Hiện tại M0 đến M6 đã có bản nháp với đủ dữ liệu 8 tuần. Ở M4 còn biểu đồ 7, vì biểu đồ này cần kết quả khảo sát sinh viên, và phần kiểm tra một biểu đồ do AI vẽ. M7 đến M10 là các phần làm tiếp theo.</p>
       </div>
     </div>
     <div class="track"><div class="track-inner">
@@ -241,8 +243,8 @@ footer b{color:var(--ink)}
         <div class="mod done"><div class="id">M2</div><div class="nm">Thu thập và làm sạch</div></div>
         <div class="mod done"><div class="id">M3</div><div class="nm">Quy tắc trình bày</div></div>
         <div class="mod part"><div class="id">M4</div><div class="nm">Biểu đồ chính</div></div>
-        <div class="mod todo"><div class="id">M5</div><div class="nm">Dashboard</div></div>
-        <div class="mod todo"><div class="id">M6</div><div class="nm">PCA và phân cụm</div></div>
+        <div class="mod done"><div class="id">M5</div><div class="nm">Dashboard</div></div>
+        <div class="mod done"><div class="id">M6</div><div class="nm">PCA và phân cụm</div></div>
         <div class="mod todo"><div class="id">M7</div><div class="nm">Dữ liệu nhiều chiều</div></div>
         <div class="mod todo"><div class="id">M8</div><div class="nm">Thử nghiệm 2D và 3D</div></div>
         <div class="mod todo"><div class="id">M9</div><div class="nm">Tương tác và storyboard</div></div>
@@ -261,16 +263,16 @@ footer b{color:var(--ink)}
     <div class="prog col">
       <h4>Số giá dùng được so với yêu cầu 500 giá</h4>
       <div class="barbox">
-        <div class="fill" style="width:24.5%"></div>
+        <div class="fill" style="width:96.9%"></div>
+        <div style="position:absolute;left:10px;top:5px;color:#fff;font-family:var(--sans);font-size:13px;font-weight:600">558 giá dùng được</div>
         <div class="target" style="left:86.8%"></div>
       </div>
       <div class="scale">
         <span style="left:0;transform:none">0</span>
-        <span style="left:24.5%">141</span>
         <span style="left:86.8%">500</span>
         <span style="right:0;left:auto;transform:none">576</span>
       </div>
-      <p class="muted" style="font-size:16px;margin-top:10px">Muốn đủ 500 giá thì mỗi tuần còn lại phải có ít nhất 60 trên 72 giá dùng được, tức là gần như không được thiếu ô nào.</p>
+      <p class="muted" style="font-size:16px;margin-top:10px">Nhóm em đã nhập đủ 576 giá của 8 tuần. Sau khi làm sạch còn 558 giá dùng được, nhiều hơn mức 500 giá của đề 58 giá.</p>
     </div>
   </div>
 </section>
@@ -331,16 +333,16 @@ footer b{color:var(--ink)}
     </div>
 
     <h3>Big Idea v0</h3>
-    <p class="col">Đây là câu mẫu theo đề bài. Các chỗ trong ngoặc sẽ được điền sau khi có đủ 8 tuần dữ liệu.</p>
+    <p class="col">Đây là câu mẫu theo đề bài. Các chỗ trong ngoặc sẽ được điền sau khi có kết quả khảo sát sinh viên.</p>
     <div class="bigidea col">Một sinh viên <span class="blank">[kiểu sinh viên]</span> có thể tiết kiệm <span class="blank">[X đến Y]%</span> tiền giỏ hàng mỗi tuần nếu mua <span class="blank">[nhóm hàng]</span> ở <span class="blank">[kênh]</span>, nhưng số tiền này <span class="blank">[giữ nguyên hay giảm]</span> khi tính thêm <span class="blank">[thời gian, phí giao, đồ bỏ đi]</span>.</div>
 
     <h3>Rủi ro và cách xử lý</h3>
     <table>
       <tr><th>Rủi ro</th><th>Khi nào biết</th><th>Cách xử lý</th></tr>
-      <tr><td>Không đủ 500 giá</td><td>Một tuần có dưới 60 giá dùng được</td><td>Trưởng nhóm nhắc vào tối Chủ nhật. Bạn nào xong phần mình thì nhận thêm ô còn trống và ghi tên mình là người thu.</td></tr>
+      <tr><td>Không đủ 500 giá</td><td>Một tuần có dưới 50 giá dùng được</td><td>Trưởng nhóm nhắc vào tối Chủ nhật. Bạn nào xong phần mình thì nhận thêm ô còn trống và ghi tên mình là người thu.</td></tr>
       <tr><td>Món hết hàng</td><td>Cột tồn kho ghi "Hết hàng"</td><td>Giữ dòng đó nhưng để trống giá. Nếu hết hàng 3 tuần thì đổi sang món gần giống nhất.</td></tr>
       <tr><td>Luật mỗi người thu ít nhất 20%</td><td>Nhóm có 6 người, mỗi giá chỉ ghi một người thu, nên mỗi người tối đa 16,7%</td><td>Hỏi giảng viên xem một giá do hai người cùng thu có được ghi cả hai tên không.</td></tr>
-      <tr><td>CPI tháng 10, tháng 11 ra muộn</td><td>NSO công bố CPI vào đầu tháng sau</td><td>Câu hỏi 3 dùng những tháng đã có và ghi rõ tháng nào còn thiếu.</td></tr>
+      <tr><td>CPI tháng 11 ra muộn</td><td>NSO công bố CPI vào đầu tháng sau</td><td>Câu hỏi 3 dùng những tháng đã có (hiện đến tháng 10) và ghi rõ tháng nào còn thiếu.</td></tr>
       <tr><td>Khảo sát chưa đủ 60 sinh viên</td><td>Dưới 40 câu trả lời khi còn 1 tuần nữa là đến CP2</td><td>Mỗi người gửi khảo sát vào thêm hai nhóm lớp và nhờ bạn bè trả lời trực tiếp.</td></tr>
     </table>
   </div>
@@ -354,7 +356,7 @@ footer b{color:var(--ink)}
     <div class="sec-head">
       <div class="sec-num">M2</div>
       <div>
-        <div class="label">Thu thập, trừu tượng hoá, làm sạch <span class="status st-done">đủ tuần 1 và 2</span></div>
+        <div class="label">Thu thập, trừu tượng hoá, làm sạch <span class="status st-done">đủ 8 tuần</span></div>
         <h2>Thu thập và làm sạch dữ liệu</h2>
         <p class="lede">Nhóm em không sửa trực tiếp trên file gốc. Mỗi bước sửa là một hàm Python và được ghi lại trong nhật ký làm sạch, nên ai chạy lại notebook cũng ra cùng một kết quả.</p>
       </div>
@@ -365,9 +367,9 @@ footer b{color:var(--ink)}
         <div class="label">Dữ liệu gốc</div>
         <ul>
           <li><span>Bảng giá của nhóm (Google Sheet)</span><span>8 tuần</span></li>
-          <li><span>NSO, CPI hằng tháng</span><span>T5 đến T9</span></li>
+          <li><span>NSO, CPI hằng tháng</span><span>T5 đến T10</span></li>
           <li><span>FAOSTAT, CPI thực phẩm</span><span>đến T6</span></li>
-          <li><span>World Bank, giá thế giới</span><span>đến T9</span></li>
+          <li><span>World Bank, giá thế giới</span><span>đến T10</span></li>
         </ul>
       </div>
       <div class="join"></div>
@@ -375,12 +377,13 @@ footer b{color:var(--ink)}
         <div class="label">Các bước làm sạch (số dòng bị sửa)</div>
         <ul>
           <li><span>Gộp Grab Mart và Shopee Mart thành kênh App</span><span>192</span></li>
-          <li><span>Đưa giờ về một kiểu ghi HH:MM</span><span>131</span></li>
-          <li><span>Đổi gram sang kg, đổi giá trứng về giá một quả</span><span>28</span></li>
+          <li><span>Đưa giờ về một kiểu ghi HH:MM</span><span>563</span></li>
+          <li><span>Đổi gram sang kg, đổi giá trứng về giá một quả</span><span>106</span></li>
+          <li><span>Đánh dấu giá ghi ngày sau ngày tải dữ liệu</span><span>216</span></li>
           <li><span>Sửa năm gõ nhầm 2027 thành 2026</span><span>1</span></li>
-          <li><span>Sửa số lượng bị Sheets tự đổi thành ngày</span><span>1</span></li>
+          <li><span>Sửa số lượng bị Sheets tự đổi thành ngày</span><span>2</span></li>
           <li><span>Bỏ giá của món hết hàng, vẫn giữ dòng</span><span>1</span></li>
-          <li><span>Đánh dấu giá lệch quá xa trung vị</span><span>2</span></li>
+          <li><span>Đánh dấu giá lệch quá xa trung vị</span><span>16</span></li>
         </ul>
       </div>
       <div class="join"></div>
@@ -389,25 +392,27 @@ footer b{color:var(--ink)}
         <ul>
           <li><span>Bảng chính dạng dài</span><span>576 dòng</span></li>
           <li><span>Bảng giá theo tuần</span><span>72 dòng</span></li>
-          <li><span>Nhật ký làm sạch</span><span>10 bước</span></li>
+          <li><span>Nhật ký làm sạch</span><span>11 bước</span></li>
           <li><span>Bảng quy đổi đơn vị</span><span>7 dòng</span></li>
           <li><span>Từ điển dữ liệu</span><span>34 cột</span></li>
-          <li><span>Dữ liệu công khai theo tháng</span><span>333 dòng</span></li>
+          <li><span>Dữ liệu công khai theo tháng</span><span>354 dòng</span></li>
         </ul>
       </div>
     </div>
 
     <figure class="fig-wide">
-      <img src="figures/m2_data_status.png" alt="Lưới cột 3D số giá mỗi thành viên nhập mỗi tuần; cả 6 thành viên đều nhập đủ 12 giá ở tuần 1 và tuần 2. Bên phải là thanh tiến độ 141 trên 500 giá." loading="lazy">
-      <figcaption><b>Hình 1. Tình trạng dữ liệu sau 2 tuần.</b> Mỗi cột xanh là 12 giá mà một thành viên nhập trong một tuần. Sau khi bổ sung 12 giá thịt heo ba chỉ và thịt bò của tuần 2 (nhập ngày 26/10), cả 6 thành viên đều đủ 12 giá ở hai tuần đầu. Các ô phẳng màu xám là 6 tuần chưa tới. Nhóm em dùng cột 3D ở đây vì ô nào đủ thì cao bằng nhau, nếu có ô thiếu sẽ thấy ngay.</figcaption>
+      <img src="figures/m2_data_status.png" alt="Lưới cột 3D số giá mỗi thành viên nhập mỗi tuần; cả 6 thành viên đều nhập đủ 12 giá ở cả 8 tuần. Bên phải là thanh tiến độ 558 giá dùng được so với mức 500." loading="lazy">
+      <figcaption><b>Hình 1. Tình trạng dữ liệu sau 8 tuần.</b> Mỗi cột xanh là 12 giá mà một thành viên nhập trong một tuần. Cả 6 thành viên đều nhập đủ 12 giá ở cả 8 tuần, tổng cộng 576 giá, và 558 giá dùng được sau khi làm sạch. Nhóm em dùng cột 3D ở đây vì ô nào đủ thì cao bằng nhau, nếu có ô thiếu sẽ thấy ngay.</figcaption>
     </figure>
 
     <div class="two">
       <div>
-        <h3>Một số lỗi gặp trong 2 tuần đầu</h3>
+        <h3>Một số lỗi gặp trong 8 tuần</h3>
         <p><b>Số thập phân bị đổi thành ngày.</b> Google Sheets đang để định dạng tiếng Việt nên khi gõ "2.5" kg, ô đó tự đổi thành ngày 2 tháng 5. Nhóm em đã sửa bằng code và nhắc mọi người từ nay gõ "2,5".</p>
-        <p><b>Đậu hũ ghi theo nhiều đơn vị.</b> Có bạn ghi giá theo miếng, có bạn ghi theo hộp 280 g, có bạn ghi theo kg. Nhóm em đổi hết về kg và tạm tính một miếng nặng 0,2 kg. Tuần 3 sẽ có người cân thử để kiểm tra con số này.</p>
-        <p><b>CPI ra chậm một tháng.</b> CPI tháng 10 phải đến đầu tháng 11 NSO mới công bố, nên cột CPI của tuần 1 và tuần 2 hiện còn trống.</p>
+        <p><b>Đậu hũ ghi theo nhiều đơn vị.</b> Có bạn ghi giá theo miếng, có bạn ghi theo hộp 280 g, có bạn ghi theo kg. Nhóm em đổi hết về kg và tạm tính một miếng nặng 0,2 kg. Nhóm em vẫn cần một bạn cân thử một miếng để kiểm tra con số này.</p>
+        <p><b>Một số giá ghi sai đơn vị.</b> Có 16 giá lệch rất xa trung vị của món đó, ví dụ dưa hấu trên app 320.000 đồng một kg. Sáu giá đậu hũ của tuần 6 chỉ từ 7.000 đến 16.500 đồng một kg, giống giá một miếng hơn là giá một kg. Code chỉ đánh dấu các giá này, không xoá, và nhóm em sẽ đối chiếu từng giá với ảnh chụp.</p>
+        <p><b>Ngày ghi của tuần 6 đến 8.</b> Các dòng của tuần 6 đến 8 ghi ngày từ 18/11 đến 30/11, muộn hơn ngày tải dữ liệu (15/11). Bảng giá đã đủ 8 tuần nên nhóm em vẫn dùng các giá này, nhưng đánh dấu lại để đối chiếu ngày với ảnh chụp và sửa nếu cột ngày bị gõ nhầm.</p>
+        <p><b>CPI ra chậm một tháng.</b> NSO công bố CPI tháng 10 vào đầu tháng 11, nên nhóm em đã nối được CPI cho tuần 1 đến 3. CPI tháng 11, dùng cho tuần 4 đến 8, sẽ có vào đầu tháng 12.</p>
       </div>
       <div>
         <h3>So với yêu cầu của đề</h3>
@@ -418,7 +423,7 @@ footer b{color:var(--ink)}
           <tr><td>Bảng data abstraction</td><td class="ok">Đã có</td></tr>
           <tr><td>Hàm làm sạch có nhật ký, bảng tidy, từ điển dữ liệu</td><td class="ok">Đã có</td></tr>
           <tr><td>Item spec, bảng theo tuần, chỉ số giá, bảng quy đổi đơn vị</td><td class="ok">Đã có</td></tr>
-          <tr><td>Nối CPI theo tháng</td><td class="half">Chờ CPI tháng 10</td></tr>
+          <tr><td>Nối CPI theo tháng</td><td class="ok">Đã nối đến tháng 10</td></tr>
           <tr><td>Cột giá thành viên (loyalty) trong phiếu thu</td><td class="half">Chưa có, nhóm cần quyết định</td></tr>
           <tr><td>Ghi lại tuần thử với 14 món ứng viên</td><td class="half">Cần bổ sung</td></tr>
         </table>
@@ -443,8 +448,8 @@ footer b{color:var(--ink)}
 
     <h3 style="margin-top:0">1. Màu và kiểu biểu đồ</h3>
     <div class="two">
-      <p>Mỗi kênh có một màu cố định: chợ màu cam đất, siêu thị màu xanh đậm, app màu xanh nhạt. Ba kênh luôn xếp theo thứ tự chợ, siêu thị, app. Hai quận không dùng màu mà phân biệt bằng nét liền và nét đứt. Số tiền dùng dải xanh từ nhạt đến đậm; mức tăng giảm dùng dải màu hai đầu với điểm giữa là 100.</p>
-      <p>Các biểu đồ của nhóm dùng cột 3D, mặt trên sáng hơn và hai mặt bên tối hơn. Để cột 3D không làm người xem đọc sai, nhóm em đặt ba quy định: cột luôn bắt đầu từ 0, số quan trọng được in ngay trên cột, và góc nhìn để thấp.</p>
+      <p>Mỗi kênh có một màu cố định: chợ màu cam đất, siêu thị màu xanh đậm, app màu xanh nhạt. Ba kênh luôn xếp theo thứ tự chợ, siêu thị, app. Hai quận không dùng màu mà phân biệt bằng nét liền và nét đứt. Số tiền dùng dải xanh từ nhạt đến đậm; mức tăng giảm dùng dải màu hai đầu, với điểm giữa là 100 khi vẽ chỉ số và là 0 khi vẽ phần trăm thay đổi.</p>
+      <p>Biểu đồ nào so sánh độ lớn (giá, chi phí, mức chênh) thì nhóm em vẽ bằng cột 3D, mặt trên sáng hơn và hai mặt bên tối hơn. Để cột 3D không làm người xem đọc sai, nhóm em đặt ba quy định: cột luôn bắt đầu từ 0, số quan trọng được in ngay trên cột, và góc nhìn để thấp. Các kiểu biểu đồ khác như đường, dot plot, dumbbell, heatmap hay dendrogram vẫn giữ dạng phẳng.</p>
     </div>
     <figure>
       <img src="figures/m3_house_style.png" alt="Trang quy tắc trình bày: màu của ba kênh, kiểu nét cho hai quận, cách ghi số, dải màu, mẫu cột 3D và các màu xám." loading="lazy">
@@ -460,7 +465,7 @@ footer b{color:var(--ink)}
     </table>
     <figure class="fig-wide">
       <img src="figures/m3_cvd_check.png" alt="Năm biểu đồ cột 3D giống nhau, mỗi biểu đồ là cách một kiểu mắt nhìn ba màu kênh." loading="lazy">
-      <figcaption><b>Hình 3. Cùng một biểu đồ vẽ năm lần.</b> Mỗi lần là cách một kiểu mắt nhìn thấy ba màu kênh. Ở cả năm lần, ba cột vẫn phân biệt được với nhau. Lần kiểm tra đầu, bản in trắng đen chỉ đạt 17, nên nhóm em đã đổi màu siêu thị đậm hơn và màu app nhạt hơn.</figcaption>
+      <figcaption><b>Hình 3. Cùng một biểu đồ vẽ năm lần.</b> Mỗi lần là cách một kiểu mắt nhìn thấy ba màu kênh. Ở cả năm lần, ba cột vẫn phân biệt được với nhau. Lần kiểm tra đầu, khoảng cách màu của bản in trắng đen chỉ là 17, nên nhóm em đã đổi màu siêu thị đậm hơn và màu app nhạt hơn.</figcaption>
     </figure>
 
     <h3>3. Làm lại một biểu đồ lạm phát</h3>
@@ -487,14 +492,14 @@ footer b{color:var(--ink)}
       <tr><td>Biểu đồ chỉ cho thấy nhóm nào tăng nhanh, trong khi bài viết hỏi nhóm nào làm CPI tăng</td><td>Expressiveness</td><td>Thêm một biểu đồ cho mức đóng góp vào CPI</td></tr>
     </table>
     <div class="callout blue col">
-      <b>Vì sao bản vẽ lại không dùng 3D.</b> Các biểu đồ khác của nhóm em đều dùng cột 3D, riêng bài này thì không. Lỗi đầu tiên nhóm em chỉ ra ở bản gốc là cột trụ 3D, nên nếu vẽ lại bằng 3D thì sẽ mắc lại đúng lỗi đó.
+      <b>Vì sao bản vẽ lại không dùng 3D.</b> Biểu đồ so sánh độ lớn của nhóm em thường dùng cột 3D, riêng bài này thì không. Lỗi đầu tiên nhóm em chỉ ra ở bản gốc là cột trụ 3D, nên nếu vẽ lại bằng 3D thì sẽ mắc lại đúng lỗi đó.
     </div>
     <p class="col">Khi vẽ lại, nhóm em thấy giá thực phẩm tăng chậm hơn nhà ở và giao thông, nhưng thực phẩm lại đóng góp nhiều nhất vào mức tăng CPI (1,69 điểm phần trăm) vì chiếm tỷ trọng lớn nhất trong rổ hàng. Bản gốc không cho người đọc thấy điều này.</p>
 
     <h3>4. Biểu đồ trung thực và biểu đồ gây hiểu lầm</h3>
-    <p class="col">Hai biểu đồ dưới đây dùng cùng ba số liệu: tiền mua một giỏ 12 món ở mỗi kênh. Biểu đồ bên trái cắt trục ở khoảng 1.030.000 đồng, nhìn từ góc cao và không ghi số, nên cột app trông cao gần gấp 7 lần cột chợ. Biểu đồ bên phải cho cột bắt đầu từ 0, nhìn từ góc thấp và ghi số trên từng cột, nên người xem thấy app chỉ đắt hơn chợ 28%.</p>
+    <p class="col">Hai biểu đồ dưới đây dùng cùng ba số liệu: tiền mua một giỏ 12 món ở mỗi kênh. Biểu đồ bên trái cắt trục ở khoảng 980.000 đồng, nhìn từ góc cao và không ghi số, nên cột app trông cao gấp khoảng 6 lần cột chợ. Biểu đồ bên phải cho cột bắt đầu từ 0, nhìn từ góc thấp và ghi số trên từng cột, nên người xem thấy app chỉ đắt hơn chợ 27%.</p>
     <figure class="fig-wide">
-      <img src="figures/m3_honest_vs_misleading.png" alt="Bên trái là cột 3D bị cắt trục, tiêu đề ghi app đắt gấp 7 lần. Bên phải là cột 3D bắt đầu từ 0, tiêu đề ghi app đắt hơn 28%." loading="lazy">
+      <img src="figures/m3_honest_vs_misleading.png" alt="Bên trái là cột 3D bị cắt trục, tiêu đề ghi app đắt gấp 6 lần. Bên phải là cột 3D bắt đầu từ 0, tiêu đề ghi app đắt hơn 27%." loading="lazy">
       <figcaption><b>Hình 4.</b> Muốn biết một biểu đồ cột có bị cắt trục hay không, hãy nhìn con số nhỏ nhất trên trục giá trị. Nếu số đó khác 0 thì chiều cao của cột không còn đúng tỉ lệ với giá trị.</figcaption>
     </figure>
   </div>
@@ -508,46 +513,161 @@ footer b{color:var(--ink)}
     <div class="sec-head">
       <div class="sec-num">M4</div>
       <div>
-        <div class="label">Biểu đồ chính <span class="status st-part">bản nháp, dữ liệu 2/8 tuần</span></div>
-        <h2>Biểu đồ thử với dữ liệu 2 tuần</h2>
-        <p class="lede">Các biểu đồ dưới đây mới dùng dữ liệu của 2 tuần nên chỉ để tham khảo. Khi có đủ 8 tuần, số liệu và tiêu đề có thể thay đổi.</p>
+        <div class="label">Biểu đồ chính <span class="status st-part">biểu đồ 1 đến 6 xong, biểu đồ 7 chờ khảo sát</span></div>
+        <h2>Các biểu đồ trả lời bốn câu hỏi con</h2>
+        <p class="lede">Các biểu đồ trong mục này dùng giá của cả 8 tuần ở cả hai quận. Mỗi biểu đồ trả lời một câu hỏi con ở M1. Biểu đồ so sánh độ lớn được vẽ bằng cột 3D, còn đường theo thời gian, dot plot và dumbbell thì giữ dạng phẳng.</p>
       </div>
     </div>
+
+    <h3 style="margin-top:0">Q1. Giá ở ba kênh chênh nhau bao nhiêu</h3>
     <figure class="fig-wide">
-      <img src="figures/m4_chart1_channel_prices.png" alt="Lưới cột 3D: 12 món theo chiều ngang, 3 kênh theo chiều sâu. Cột app ở hàng sau cao nhất ở 11 món." loading="lazy">
-      <figcaption><b>Hình 5. Giá từng món ở ba kênh, lấy giá chợ bằng 100.</b> Hàng trước là chợ, hàng giữa là siêu thị, hàng sau là app; số in trên hàng sau là chỉ số giá của app. Có 11 trên 12 món mua qua app đắt nhất. Dưa hấu và hành tây trên app đắt gần gấp đôi ở chợ. Đề bài yêu cầu có thêm dot plot cho số liệu này nên notebook giữ cả hai bản.</figcaption>
+      <img src="figures/m4_chart1_channel_prices.png" alt="Lưới cột 3D: 12 món theo chiều ngang, 3 kênh theo chiều sâu. Cột app ở hàng sau cao nhất ở cả 12 món." loading="lazy">
+      <figcaption><b>Hình 5. Giá từng món ở ba kênh, lấy giá chợ bằng 100.</b> Hàng trước là chợ, hàng giữa là siêu thị, hàng sau là app; số in trên hàng sau là chỉ số giá của app. Cả 12 món đều đắt nhất khi mua qua app và rẻ nhất khi mua ở chợ. Rau muống, đậu hũ trắng và cá diêu hồng trên app đắt hơn ở chợ từ 64% đến 74%.</figcaption>
     </figure>
     <div class="two">
       <figure>
-        <img src="figures/m4_chart2_premium.png" alt="Hai cột 3D: siêu thị đắt hơn chợ 13%, app đắt hơn chợ 37%." loading="lazy">
-        <figcaption><b>Hình 6.</b> Tính theo trung vị của 12 món, siêu thị đắt hơn chợ 13%, app đắt hơn chợ 37%. Giá app chưa gồm phí giao, trung bình khoảng 29.000 đồng mỗi đơn.</figcaption>
+        <img src="figures/m4_chart2_premium.png" alt="Hai cột 3D: siêu thị đắt hơn chợ 23%, app đắt hơn chợ 36%." loading="lazy">
+        <figcaption><b>Hình 6.</b> Tính theo trung vị của 12 món, siêu thị đắt hơn chợ 23%, app đắt hơn chợ 36%. Giá app chưa gồm phí giao, trung bình khoảng 23.000 đồng mỗi đơn.</figcaption>
       </figure>
       <figure>
         <img src="figures/m4_chart1b_dotplot.png" alt="Dot plot: mỗi món một hàng, ba chấm tròn cho ba kênh." loading="lazy">
         <figcaption><b>Hình 7.</b> Dot plot theo yêu cầu của đề, cùng số liệu với Hình 5. Ở M8, nhóm em sẽ cho người xem dùng thử cả hai bản để biết bản nào đọc chính xác hơn.</figcaption>
       </figure>
     </div>
+
+    <h3>Mức chênh qua các tuần (Q1) và giữa hai quận (Q2)</h3>
+    <div class="two">
+      <figure style="margin-top:0">
+        <img src="figures/m4_chart3_basket_weeks.png" alt="Ba đường tiền giỏ hàng theo tuần; đường app luôn nằm trên cùng." loading="lazy">
+        <figcaption><b>Hình 8. Tiền giỏ hàng theo tuần.</b> Giỏ hàng gồm 1 kg mỗi món bán theo cân và 10 quả trứng. Ở mỗi tuần đủ dữ liệu, giỏ hàng mua qua app đắt hơn mua ở chợ từ 22% đến 29%. Các đường bị ngắt ở tuần 4 (thiếu giá hành tây dùng được ở chợ và app) và tuần 6 (thiếu giá đậu hũ dùng được ở cả ba kênh).</figcaption>
+      </figure>
+      <figure style="margin-top:0">
+        <img src="figures/m4_chart5_districts.png" alt="Dumbbell: mỗi món một hàng, chấm tròn là Quận 10, chấm vuông là Quận 3; rau muống được tô màu." loading="lazy">
+        <figcaption><b>Hình 9. So sánh hai quận.</b> Nhóm em chỉ so những cặp giá có ở cả hai quận, cùng kênh và cùng tuần. Có 7 trên 12 món chênh dưới 5%. Rau muống chênh nhiều nhất: ở Quận 10 đắt hơn Quận 3 khoảng 10%.</figcaption>
+      </figure>
+    </div>
+
+    <h3>Q3. Giá nhóm em ghi so với CPI</h3>
+    <figure class="fig-wide">
+      <img src="figures/m4_chart4_index_vs_cpi.png" alt="Hai phần dùng chung trục thời gian: phần trên là chỉ số giỏ hàng của ba kênh, phần dưới là CPI thực phẩm của TP.HCM theo tháng." loading="lazy">
+      <figcaption><b>Hình 10. Chỉ số giỏ hàng của nhóm và CPI thực phẩm của TP.HCM.</b> Chỉ số lấy tuần 1 bằng 100; riêng app được so với tuần đầu của cùng một app, vì hai app được thu xen kẽ theo tuần. Sau tám tuần, giỏ hàng ở chợ giảm 2%, ở siêu thị tăng 5%, ở app giảm 5%; đường bị ngắt ở những tuần thiếu giá. CPI nhóm thực phẩm của TP.HCM tháng 10 tăng 0,62% so với tháng 9. Hai phần nằm riêng trên dưới để không phải dùng hai trục tung. Tám tuần vẫn còn ngắn để phân biệt xu hướng với dao động ngẫu nhiên.</figcaption>
+    </figure>
+
+    <h3>Q4. Tiền giỏ hàng khi tính thêm phí giao</h3>
+    <div class="two">
+      <figure>
+        <img src="figures/m4_chart6_basket_with_fee.png" alt="Ba cột 3D tiền giỏ hàng; cột app có thêm một khối phí giao ở trên." loading="lazy">
+        <figcaption><b>Hình 11.</b> Giỏ hàng trung bình ở chợ khoảng 1.050.000 đồng, ở siêu thị 1.171.000 đồng, qua app 1.328.000 đồng. Khi cộng một lần phí giao (trung bình khoảng 23.300 đồng), giỏ hàng qua app đắt hơn chợ 29%, so với 26% khi chưa tính phí.</figcaption>
+      </figure>
+      <div>
+        <div class="callout">
+          <b>Phần M4 còn lại.</b> Biểu đồ 7 so sánh giỏ hàng của ba kiểu sinh viên, nên cần kết quả khảo sát ít nhất 60 sinh viên. Nhóm em chưa vẽ biểu đồ này và không tự đặt ra các kiểu sinh viên. Đề cũng yêu cầu một phần kiểm tra biểu đồ do AI vẽ và các bản phác tay; hai phần này do các bạn trong nhóm tự làm.
+        </div>
+        <p>Thời gian đi chợ và đi siêu thị chưa được cộng vào Hình 11. Con số này sẽ lấy từ câu hỏi về thời gian đi lại trong khảo sát.</p>
+      </div>
+    </div>
   </div>
 </section>
 
 <hr>
 
-<!-- ============================================================ M5 to M10 -->
+<!-- ============================================================ M5 -->
+<section id="m5">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="sec-num">M5</div>
+      <div>
+        <div class="label">Dashboard <span class="status st-done">đã có bản nháp</span></div>
+        <h2>Dashboard giỏ hàng tuần</h2>
+        <p class="lede">Dashboard gom các số chính của một tuần vào một trang A4. Người đọc xem tiền giỏ hàng ở ba kênh, giá từng món so với chợ, tiền giỏ hàng qua các tuần, mức chênh so với chợ và CPI thực phẩm. Bản hiện tại vẽ cho tuần 8.</p>
+      </div>
+    </div>
+    <div class="two">
+      <figure style="margin-top:0">
+        <img src="figures/m5_dashboard_v1.png" alt="Dashboard một trang gồm năm ô: tiền giỏ hàng tuần 8, giá từng món so với chợ, tiền giỏ hàng qua các tuần, mức chênh so với chợ và CPI thực phẩm." loading="lazy">
+        <figcaption><b>Hình 12. Dashboard tuần 8.</b> Trong tuần 8, giỏ hàng mua qua app đắt hơn mua ở chợ 27%. Notebook có một hàm vẽ dashboard cho tuần bất kỳ, nên sau mỗi tuần nhóm em chỉ cần chạy lại. Notebook lưu thêm một bản PDF để in.</figcaption>
+      </figure>
+      <div>
+        <h3 style="margin-top:0">Công cụ thứ hai là Excel</h3>
+        <p>Đề yêu cầu làm lại dashboard bằng một công cụ khác. Bản thứ hai được làm bằng Excel, một công cụ không cần viết code. File Excel có một sheet dữ liệu và một sheet dashboard. Người dùng chọn Quận 10, Quận 3 hoặc cả hai quận trong một ô, các công thức AVERAGEIFS tính lại và hai biểu đồ của Excel đổi theo.</p>
+        <table>
+          <tr><th></th><th>Python</th><th>Excel</th></tr>
+          <tr><td>Cập nhật tuần mới</td><td>Chạy lại notebook</td><td>Dán dữ liệu mới vào sheet dữ liệu</td></tr>
+          <tr><td>Lọc theo quận</td><td>Sửa một tham số rồi vẽ lại</td><td>Chọn trong ô, không cần code</td></tr>
+          <tr><td>Kiểu trình bày</td><td>Theo đủ quy tắc ở M3</td><td>Dùng màu của nhóm; một số quy tắc ở M3 như ghi nhãn sát dữ liệu thì khó làm</td></tr>
+        </table>
+        <p class="muted" style="font-size:16px">Đề cũng yêu cầu một đoạn khoảng 300 chữ so sánh hai công cụ. Notebook có bản nháp, bạn phụ trách M5 sẽ viết lại đoạn này.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr>
+
+<!-- ============================================================ M6 -->
+<section id="m6">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="sec-num">M6</div>
+      <div>
+        <div class="label">Cấu trúc ẩn <span class="status st-done">đã có bản nháp</span></div>
+        <h2>PCA và phân cụm 12 món</h2>
+        <p class="lede">Nhóm em muốn biết những món nào có cách tính giá giống nhau ở ba kênh. Mỗi món được mô tả bằng sáu đặc trưng: mức giá ở từng kênh so với giá trung bình của chính món đó, và mức thay đổi giá mỗi tuần ở từng kênh. Nhóm em dùng giá tương đối thay cho giá gốc, vì một kg thịt bò đắt gấp khoảng một trăm lần một quả trứng và PCA khi đó chỉ tách món đắt khỏi món rẻ.</p>
+      </div>
+    </div>
+
+    <figure class="fig-wide" style="margin-top:0">
+      <img src="figures/m6_pca.png" alt="Bên trái là scree plot sáu thành phần chính. Bên phải là biplot 12 món, mỗi mũi tên là một đặc trưng có ghi tên kênh." loading="lazy">
+      <figcaption><b>Hình 13. PCA.</b> Hai thành phần đầu giữ 62% phương sai (38% và 24%). PC1 đặt mức giá ở chợ ngược chiều với mức giá ở app, nên PC1 đo khoảng cách giá giữa các kênh: món nằm xa về phía âm của PC1 là món mà chợ rẻ hơn app rất nhiều. PC2 nói về mức thay đổi theo tuần: một đầu là những món tăng giá ở siêu thị, đầu kia là những món tăng giá trên app. Thành phần thứ sáu gần bằng 0% vì ba mức giá của một món cộng lại gần bằng 0.</figcaption>
+    </figure>
+    <figure class="fig-wide">
+      <img src="figures/m6_kmeans_choice.png" alt="Ba biểu đồ nhỏ: elbow, silhouette và mức giống nhau của các nhóm khi bỏ từng tuần, cho k từ 2 đến 5; k bằng 2 được tô màu." loading="lazy">
+      <figcaption><b>Hình 14. Chọn số nhóm cho k means.</b> Silhouette đo mỗi món gần nhóm của mình hơn nhóm bên cạnh đến đâu (từ −1 đến 1, càng cao càng tách rõ). Nhóm em so hai cách chia nhóm bằng ARI (1 là giống hệt, 0 là giống nhau do ngẫu nhiên). Silhouette cao nhất ở k = 4 (0,279), nhưng với k = 3 và k = 4, hai seed ngẫu nhiên chia các món theo hai cách khác nhau (ARI khoảng 0,70), nên các nhóm này không ổn định. Trong các k mà hai seed cho cùng kết quả, k = 2 có silhouette cao nhất (0,261), nên nhóm em chọn k = 2. Khi bỏ từng tuần rồi chạy lại, ba trên tám lần cho đúng hai nhóm cũ, các lần còn lại chỉ đổi một đến ba món.</figcaption>
+    </figure>
+    <figure class="fig-wide">
+      <img src="figures/m6_dendrograms.png" alt="Hai dendrogram của 12 món, một dùng Ward linkage, một dùng average linkage; tên sáu món của nhóm chênh lệch lớn tô màu cam đất." loading="lazy">
+      <figcaption><b>Hình 15. Phân cụm phân cấp.</b> Ward linkage cho hai nhóm gần giống k means (ARI 0,66); hai cách chỉ khác nhau ở trứng gà. Average linkage có cophenetic correlation cao hơn (0,82 so với 0,64; chỉ số này đo cây giữ đúng khoảng cách ban đầu giữa các món đến đâu) nhưng ở mức hai nhóm chỉ tách riêng hành tây, còn 11 món chung một nhóm, nên không giúp phân loại. Vì vậy nhóm em chọn Ward. Thứ tự lá của cây Ward được lưu lại để xếp hàng cho heatmap ở M7.</figcaption>
+    </figure>
+
+    <h3>Hai nhóm món</h3>
+    <figure class="fig-wide" style="margin-top:0">
+      <img src="figures/m6_segment_profiles.png" alt="Trang hồ sơ hai nhóm món: dot plot mức chênh so với chợ của từng món, heatmap đặc trưng trung bình, bản đồ PCA và thẻ mô tả mỗi nhóm." loading="lazy">
+      <figcaption><b>Hình 16. Hồ sơ hai nhóm.</b> Nhóm em đặt tên nhóm theo mức chênh trung vị giữa giá app và giá chợ. Hai món nằm sát ranh giới: cà chua vào nhóm chênh lệch lớn dù app chỉ đắt hơn chợ 34%, vì giá cà chua ở chợ tăng nhanh nhất (khoảng 10% mỗi tuần); trứng gà ở nhóm chênh lệch nhỏ dù app đắt hơn chợ 41%.</figcaption>
+    </figure>
+    <table>
+      <tr><th>Nhóm</th><th>Các món</th><th class="num">App so với chợ</th><th class="num">Siêu thị so với chợ</th></tr>
+      <tr><td>Chênh lệch kênh lớn</td><td>Rau muống, cà chua, dưa hấu, hành tây, đậu hũ trắng, cá diêu hồng</td><td class="num">đắt hơn, trung vị 67% (từ 34% đến 74%)</td><td class="num">đắt hơn 27% đến 44%</td></tr>
+      <tr><td>Chênh lệch kênh nhỏ</td><td>Thịt heo ba chỉ, cá thu, thịt bò, gà ta, khoai tây Đà Lạt, trứng gà</td><td class="num">đắt hơn, trung vị 21% (từ 12% đến 41%)</td><td class="num">đắt hơn 1% đến 19%</td></tr>
+    </table>
+    <div class="two">
+      <div>
+        <h3>Gợi ý cho sinh viên</h3>
+        <p>Với rau muống, dưa hấu, hành tây, đậu hũ, cá diêu hồng và cà chua, nơi mua ảnh hưởng nhiều nhất tới tiền giỏ hàng, nên đây là những món nên ưu tiên mua ở chợ. Với sáu món còn lại, app vẫn đắt hơn chợ nhưng khoảng chênh nhỏ hơn, nên sinh viên có thể mua ở nơi tiện đường mà không tốn thêm nhiều.</p>
+      </div>
+      <div>
+        <h3>Những điều phân cụm không cho biết</h3>
+        <p>Các nhóm chỉ mô tả giá ở hai quận trong tám tuần. Phân cụm không giải thích vì sao giá khác nhau, cũng không cho biết món nào ngon hơn hay tươi hơn. Cà chua là món đổi nhóm nhiều nhất khi nhóm em bỏ bớt một tuần, một quận hay một món. Giá gà ta ở tuần 4 thấp bất thường ở cả ba kênh, và sáu giá đậu hũ của tuần 6 bị đánh dấu lệch xa; nhóm em đang kiểm tra lại ảnh chụp.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr>
+
+<!-- ============================================================ M7 to M10 -->
 <section id="sap-toi">
   <div class="wrap">
     <div class="sec-head">
-      <div class="sec-num">M5+</div>
+      <div class="sec-num">M7+</div>
       <div>
         <div class="label">Các module tiếp theo <span class="status st-todo">chưa làm</span></div>
-        <h2>Kế hoạch cho M5 đến M10</h2>
-        <p class="lede">Các module này cần đủ dữ liệu 8 tuần và ít nhất 60 câu trả lời khảo sát. Nhóm em sẽ cập nhật trang này sau mỗi checkpoint.</p>
+        <h2>Kế hoạch cho M7 đến M10</h2>
+        <p class="lede">Dữ liệu giá đã đủ 8 tuần; các module này còn cần ít nhất 60 câu trả lời khảo sát sinh viên. Nhóm em sẽ cập nhật trang này sau mỗi checkpoint.</p>
       </div>
     </div>
     <div class="future">
-      <div class="fut"><div class="id">M5</div><h4>Dashboard giỏ hàng tuần</h4><p>Một trang gồm tiền giỏ hàng tuần này so với tuần trước, giá theo kênh và CPI. Nhóm em làm lại bằng Looker Studio rồi viết 300 chữ so sánh hai công cụ.</p></div>
-      <div class="fut"><div class="id">M6</div><h4>PCA và phân cụm</h4><p>Phân nhóm 12 món theo mức giá, mức thay đổi và độ dao động ở từng kênh, và ghi rõ các nhóm này không nói lên điều gì.</p></div>
-      <div class="fut"><div class="id">M7 · CP2</div><h4>Dữ liệu nhiều chiều</h4><p>Heatmap theo món và tuần, treemap tiền giỏ hàng, parallel coordinates theo kênh và quận. Nhận đề bổ sung (sealed twist) ở CP2.</p></div>
-      <div class="fut"><div class="id">M8</div><h4>Thử nghiệm 2D và 3D</h4><p>Đặt khối 3D (món, tuần, kênh) cạnh ba heatmap phẳng. Ít nhất 5 người ngoài nhóm trả lời cùng 3 câu hỏi trên cả hai bản.</p></div>
+      <div class="fut"><div class="id">M7 · CP2</div><h4>Dữ liệu nhiều chiều</h4><p>Heatmap theo món và tuần, xếp hàng theo cây Ward ở M6. Treemap tiền giỏ hàng và parallel coordinates tô màu theo hai nhóm món. Nhận đề bổ sung (sealed twist) ở CP2.</p></div>
+      <div class="fut"><div class="id">M8</div><h4>Thử nghiệm 2D và 3D</h4><p>Đặt khối 3D (món, tuần, kênh) cạnh ba heatmap phẳng. Ít nhất 5 người ngoài nhóm trả lời cùng 3 câu hỏi trên cả hai bản. Nếu người xem đọc cột 3D kém hơn, nhóm em sẽ đổi lại quy tắc ở M3.</p></div>
       <div class="fut"><div class="id">M9 · CP3</div><h4>Tương tác và storyboard</h4><p>Công cụ để người dùng tự chọn món cho giỏ hàng, có ít nhất 3 nút điều khiển. Thêm một animation giá giỏ hàng theo tuần và storyboard vẽ tay.</p></div>
       <div class="fut"><div class="id">M10 · CP4</div><h4>Kiểm thử và chỉnh sửa</h4><p>Cho ít nhất 5 sinh viên tự nấu ăn dùng thử, đổi bản nháp với một nhóm khác để góp ý, và ghi lại ít nhất 8 chỗ sửa kèm lý do.</p></div>
     </div>
