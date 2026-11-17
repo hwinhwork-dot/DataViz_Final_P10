@@ -14,6 +14,12 @@ Every member and every AI agent adds an entry **at the top** of this file in the
 
 ---
 
+## 2026-11-18 · M7 heatmap and hierarchical treemap
+**Who:** Nhã Đoan (with ChatGPT assistance)
+**Changed:** Added M7.1, an item by week heatmap covering 12 foods and 8 weeks, using the Ward ordering and a diverging colour scale centred on the index baseline. Added M7.2, an improved hierarchical treemap showing weekly basket costs by food group and item across the three channels. The treemap uses the basket definitions established in M4.3. Missing values remain distinguishable from observed values.
+**Files:** `notebooks/P10_Final_Team10.ipynb`, `report/figures/m7_heatmap.png`, `report/figures/m7_treemap.png`, `CHANGELOG.md`, `report/ai_log.md`.
+**Next:** Check the dates and source photos for weeks 6 to 8, which are still flagged `future_date`. Explain the week-specific index baseline when interpreting the heatmap. Review the M7 figures and outputs before final submission.
+
 ## 2026-11-15 · Dataset check, full sheet export added, push to `hwinh` and `dev`
 **Who:** Nguyễn Hoàng Minh (Claude Code, Claude Sonnet 5.5)
 **Changed:** All files under `data/` were checked before they went to GitHub. The raw sheets hold no email, phone number or interview answer; they hold only the names of the six members, two public market names and two public Co.op Online product links. The clean tables pass these checks: 576 rows with a unique key, 72 rows in each of the eight weeks, 558 usable prices, 216 rows flagged `future_date`, 16 flagged `outlier`, a data dictionary that covers every column of the master table, and a cleaning log of 11 steps that drops no row. The export of the full sheet (`price_sheet_20261115.xlsx`, all eight weeks) and the NSO table for October are now in the repository, so every member can run the notebook without a download. `README.md` has a new section that says which file the notebook reads and how to rerun it. The work of 14 and 15 November was committed, pushed to `hwinh` and merged into `dev` by pull request.
