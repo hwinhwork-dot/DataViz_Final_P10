@@ -32,6 +32,10 @@ evidence/*
 !evidence/.gitkeep
 !evidence/README.md
 
+# ---------- Dữ liệu mô phỏng (SYNTHETIC) ----------
+# Bộ khảo sát giả để xem trước bảng hỏi và biểu đồ. Không bao giờ đưa lên git hay vào bài nộp.
+mock/
+
 # ---------- Streamlit / Dash ----------
 .streamlit/secrets.toml
 

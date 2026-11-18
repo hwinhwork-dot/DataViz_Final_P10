@@ -10,8 +10,12 @@ carries the finding gets the highlight colour, the title states the finding, and
 subtitle gives the units. Labels sit next to the data instead of in a legend.
 """
 
+from pathlib import Path
+
 import numpy as np
 import matplotlib as mpl
+from matplotlib import font_manager
+from matplotlib.ft2font import FT2Font
 import matplotlib.pyplot as plt
 from matplotlib.colors import LinearSegmentedColormap, TwoSlopeNorm, to_rgb
 
@@ -48,6 +52,39 @@ def div_norm(center=100.0, spread=20.0):
     return TwoSlopeNorm(vcenter=center, vmin=center - spread, vmax=center + spread)
 
 
+# ---------------------------------------------------------------- fonts
+
+# Georgia is the house font. Georgia on Windows lacks some Vietnamese letters (ậ, ả, ệ), and
+# matplotlib then draws empty boxes. The repository therefore ships Gelasio (notebooks/fonts,
+# SIL Open Font License), a free serif with the letter widths of Georgia and every Vietnamese
+# letter. apply_style() keeps Georgia when it has all the letters and uses Gelasio otherwise,
+# so every computer draws the same words in the same space.
+_FONT_DIR = Path(__file__).resolve().parent / "fonts"
+_VIETNAMESE = "Đđàáảãạăằắẳẵặâầấẩẫậèéẻẽẹêềếểễệìíỉĩịòóỏõọôồốổỗộơờớởỡợùúủũụưừứửữựỳýỷỹỵ"
+
+
+def _has_vietnamese(family):
+    """True when `family` is installed in regular, bold and italic and has every Vietnamese letter."""
+    for style, weight in [("normal", "normal"), ("normal", "bold"), ("italic", "normal")]:
+        try:
+            path = font_manager.findfont(font_manager.FontProperties(family=family, style=style, weight=weight),
+                                         fallback_to_default=False)
+        except ValueError:
+            return False
+        charmap = FT2Font(path).get_charmap()
+        if any(ord(ch) not in charmap for ch in _VIETNAMESE):
+            return False
+    return True
+
+
+def house_fonts():
+    """Register the Gelasio files of notebooks/fonts and return the font list for matplotlib."""
+    for path in sorted(_FONT_DIR.glob("*.ttf")):
+        font_manager.fontManager.addfont(str(path))
+    first = "Georgia" if _has_vietnamese("Georgia") else "Gelasio"
+    return [first, "Gelasio", "DejaVu Serif"]
+
+
 # ---------------------------------------------------------------- numbers
 
 def fmt_vnd(x, short=True):
@@ -69,7 +106,7 @@ def fmt_pct(x, digits=0, sign=False):
 def apply_style():
     """Set the house defaults for every figure in the notebook."""
     mpl.rcParams.update({
-        "font.family": "serif",
+        "font.family": house_fonts(),
         "font.serif": ["Georgia", "DejaVu Serif", "Times New Roman", "serif"],
         "font.size": 10,
         "text.color": INK,

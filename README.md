@@ -66,7 +66,7 @@ The folders follow the list of deliverables in the project brief.
 
 ```
 .
-├── notebooks/        P10_Final_Team10.ipynb (the whole project, M0 to M10) and house_style.py
+├── notebooks/        P10_Final_Team10.ipynb (the whole project, M0 to M10), house_style.py and fonts/ (Gelasio, for Vietnamese letters)
 ├── data/
 │   ├── raw/          the public files, or the scripts that download them; we never edit them
 │   └── clean/        the tidy master table and the anonymised primary data

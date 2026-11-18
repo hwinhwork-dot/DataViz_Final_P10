@@ -196,7 +196,8 @@ footer b{color:var(--ink)}
       <a href="#m4">M4</a>
       <a href="#m5">M5</a>
       <a href="#m6">M6</a>
-      <a href="#sap-toi">M7 đến M10</a>
+      <a href="#m7">M7</a>
+      <a href="#sap-toi">M8 đến M10</a>
       <a href="#nhom">Nhóm</a>
     </nav>
   </div>
@@ -233,7 +234,7 @@ footer b{color:var(--ink)}
       <div>
         <div class="label">Tổng quan</div>
         <h2>Tiến độ đồ án</h2>
-        <p class="lede">Đề bài có 10 module, nhóm em thêm M0 cho phần chuẩn bị. Hiện tại M0 đến M6 đã có bản nháp với đủ dữ liệu 8 tuần. Ở M4 còn biểu đồ 7, vì biểu đồ này cần kết quả khảo sát sinh viên, và phần kiểm tra một biểu đồ do AI vẽ. M7 đến M10 là các phần làm tiếp theo.</p>
+        <p class="lede">Đề bài có 10 module, nhóm em thêm M0 cho phần chuẩn bị. Hiện tại M0 đến M7 đã có bản nháp với đủ dữ liệu 8 tuần. Ở M4 còn biểu đồ 7, vì biểu đồ này cần kết quả khảo sát sinh viên, và phần kiểm tra một biểu đồ do AI vẽ. M8 đến M10 là các phần làm tiếp theo.</p>
       </div>
     </div>
     <div class="track"><div class="track-inner">
@@ -245,7 +246,7 @@ footer b{color:var(--ink)}
         <div class="mod part"><div class="id">M4</div><div class="nm">Biểu đồ chính</div></div>
         <div class="mod done"><div class="id">M5</div><div class="nm">Dashboard</div></div>
         <div class="mod done"><div class="id">M6</div><div class="nm">PCA và phân cụm</div></div>
-        <div class="mod todo"><div class="id">M7</div><div class="nm">Dữ liệu nhiều chiều</div></div>
+        <div class="mod done"><div class="id">M7</div><div class="nm">Dữ liệu nhiều chiều</div></div>
         <div class="mod todo"><div class="id">M8</div><div class="nm">Thử nghiệm 2D và 3D</div></div>
         <div class="mod todo"><div class="id">M9</div><div class="nm">Tương tác và storyboard</div></div>
         <div class="mod todo"><div class="id">M10</div><div class="nm">Kiểm thử người dùng</div></div>
@@ -654,19 +655,65 @@ footer b{color:var(--ink)}
 
 <hr>
 
-<!-- ============================================================ M7 to M10 -->
+<!-- ============================================================ M7 -->
+<section id="m7">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="sec-num">M7</div>
+      <div>
+        <div class="label">Dữ liệu nhiều chiều <span class="status st-done">đã có bản nháp</span></div>
+        <h2>Heatmap, treemap và parallel coordinates</h2>
+        <p class="lede">Đề bài yêu cầu ba dạng biểu đồ cho dữ liệu nhiều chiều: heatmap chỉ số giá theo món và tuần, treemap tiền giỏ hàng theo nhóm món rồi đến từng món, và parallel coordinates của các món qua ba kênh và hai quận. Nhóm em vẽ thêm một biểu đồ cột chồng để đọc tiền giỏ hàng bằng đồng. Cả bốn biểu đồ dùng dữ liệu của 8 tuần.</p>
+      </div>
+    </div>
+
+    <figure class="fig-wide" style="margin-top:0">
+      <img src="figures/m7_heatmap.png" alt="Heatmap 12 món theo 8 tuần. Mỗi ô là chỉ số giá so với tuần 1; ô xanh là rẻ hơn tuần 1, ô cam đất là đắt hơn tuần 1." loading="lazy">
+      <figcaption><b>Hình 17. Chỉ số giá theo món và tuần.</b> Mỗi ô là trung vị chỉ số giá của một món trong một tuần, tính trên ba kênh và hai quận, với giá tuần 1 bằng 100. Hành tây rẻ hơn tuần 1 ở cả 7 tuần sau, còn thịt bò và trứng gà đắt hơn tuần 1 ở 6 trên 7 tuần. Các hàng xếp theo thứ tự lá của cây Ward ở M6, nên những món đổi giá giống nhau nằm gần nhau. Ô gạch chéo là ô không có giá dùng được, vì sáu giá đậu hũ của tuần 6 bị đánh dấu lệch xa. Ô có dấu * chỉ dựa trên hai giá; ở hành tây tuần 4, bốn giá còn lại bị đánh dấu không dùng được khi làm sạch.</figcaption>
+    </figure>
+
+    <figure class="fig-wide">
+      <img src="figures/m7_treemap.png" alt="Treemap tiền giỏ hàng ở chợ, siêu thị và app. Mỗi bảng có một cột nhóm đạm và một cột nhóm rau củ quả; ô thịt bò được tô màu cam đất." loading="lazy">
+      <figcaption><b>Hình 18. Tiền giỏ hàng chia theo nhóm món và từng món.</b> Giỏ hàng gồm 1 kg mỗi món bán theo cân và 10 quả trứng. Giá là trung bình của 6 tuần mà cả ba kênh đều đủ giỏ hàng (tuần 1, 2, 3, 5, 7 và 8), tính trên hai quận. Chiều rộng mỗi cột là phần của một nhóm món, chiều cao mỗi ô là phần của một món trong nhóm. Thịt bò chiếm nhiều tiền nhất ở cả ba kênh, từ 24% đến 25% tiền giỏ hàng. Nhóm đạm chiếm 88% giỏ hàng ở chợ và 86% ở siêu thị và app.</figcaption>
+    </figure>
+
+    <figure class="fig-wide">
+      <img src="figures/m7_stacked_basket.png" alt="Hai biểu đồ cột chồng nằm ngang của tiền giỏ hàng ở ba kênh. Bên trái chia thành đạm và rau củ quả, bên phải tách thịt bò ra khỏi nhóm đạm." loading="lazy">
+      <figcaption><b>Hình 19. Tiền giỏ hàng tính bằng đồng.</b> Cùng giỏ hàng và cùng 6 tuần với Hình 18. Giỏ hàng ở chợ khoảng 1.050.000 đồng, ở siêu thị 1.186.000 đồng (đắt hơn chợ 13%) và qua app 1.328.000 đồng (đắt hơn chợ 26%). Bên phải, thịt bò được tách khỏi nhóm đạm. Các tỉ lệ này phụ thuộc vào giỏ hàng mà nhóm em chọn, chưa phải giỏ hàng mà sinh viên thường mua.</figcaption>
+    </figure>
+
+    <figure class="fig-wide">
+      <img src="figures/m7_parallel_coords.png" alt="Parallel coordinates của 12 món trong bốn bảng: hàng trên là nhóm chênh lệch kênh lớn, hàng dưới là nhóm chênh lệch nhỏ; cột trái là Quận 10, cột phải là Quận 3; mỗi bảng có ba trục chợ, siêu thị và app." loading="lazy">
+      <figcaption><b>Hình 20. Parallel coordinates của 12 món.</b> Mỗi đường là một món, đi qua ba trục chợ, siêu thị và app. Giá trên mỗi trục được đổi thành chỉ số, bằng giá trung vị của món ở kênh và quận đó chia cho trung bình sáu giá trung vị của chính món đó, nhân 100. Nhờ vậy trứng tính theo quả và các món tính theo kg nằm trên cùng một thang. Hàng trên là sáu món của nhóm chênh lệch kênh lớn ở M6, hàng dưới là sáu món còn lại. Ở cả hai quận, nhóm chênh lệch lớn tăng 51 đến 52 điểm từ chợ lên app (trung vị), còn nhóm chênh lệch nhỏ tăng 18 đến 21 điểm. Ở Quận 3, dưa hấu tăng từ 71 ở chợ lên 143 trên app; ở Quận 10, gà ta gần như giữ nguyên (97 ở chợ, 99 trên app).</figcaption>
+    </figure>
+
+    <div class="two">
+      <div>
+        <h3>Cách đọc các chỉ số</h3>
+        <p>Hình 17 so mỗi món với chính nó ở tuần 1, nên con số 51 của hành tây nghĩa là giá giảm còn khoảng một nửa so với tuần 1. Hình 20 so mỗi món với giá trung bình của chính nó ở sáu cặp kênh và quận, nên con số 143 của dưa hấu nghĩa là giá trên app cao hơn mức trung bình đó 43%. Hai chỉ số không so được với nhau.</p>
+      </div>
+      <div>
+        <h3>Những điều các biểu đồ này không cho biết</h3>
+        <p>Hình 17 lấy tuần 1 làm mốc, nên nếu giá tuần 1 của một món bất thường thì cả hàng của món đó lệch theo. Hình 18 và Hình 19 phụ thuộc vào giỏ hàng 1 kg mỗi món. Hình 20 chỉ có hai quận và tám tuần, nên nhóm em chưa biết các quận khác có giống vậy không. Đề bổ sung (sealed twist) sẽ được giao ở CP2.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr>
+
+<!-- ============================================================ M8 to M10 -->
 <section id="sap-toi">
   <div class="wrap">
     <div class="sec-head">
-      <div class="sec-num">M7+</div>
+      <div class="sec-num">M8+</div>
       <div>
         <div class="label">Các module tiếp theo <span class="status st-todo">chưa làm</span></div>
-        <h2>Kế hoạch cho M7 đến M10</h2>
+        <h2>Kế hoạch cho M8 đến M10</h2>
         <p class="lede">Dữ liệu giá đã đủ 8 tuần; các module này còn cần ít nhất 60 câu trả lời khảo sát sinh viên. Nhóm em sẽ cập nhật trang này sau mỗi checkpoint.</p>
       </div>
     </div>
     <div class="future">
-      <div class="fut"><div class="id">M7 · CP2</div><h4>Dữ liệu nhiều chiều</h4><p>Heatmap theo món và tuần, xếp hàng theo cây Ward ở M6. Treemap tiền giỏ hàng và parallel coordinates tô màu theo hai nhóm món. Nhận đề bổ sung (sealed twist) ở CP2.</p></div>
       <div class="fut"><div class="id">M8</div><h4>Thử nghiệm 2D và 3D</h4><p>Đặt khối 3D (món, tuần, kênh) cạnh ba heatmap phẳng. Ít nhất 5 người ngoài nhóm trả lời cùng 3 câu hỏi trên cả hai bản. Nếu người xem đọc cột 3D kém hơn, nhóm em sẽ đổi lại quy tắc ở M3.</p></div>
       <div class="fut"><div class="id">M9 · CP3</div><h4>Tương tác và storyboard</h4><p>Công cụ để người dùng tự chọn món cho giỏ hàng, có ít nhất 3 nút điều khiển. Thêm một animation giá giỏ hàng theo tuần và storyboard vẽ tay.</p></div>
       <div class="fut"><div class="id">M10 · CP4</div><h4>Kiểm thử và chỉnh sửa</h4><p>Cho ít nhất 5 sinh viên tự nấu ăn dùng thử, đổi bản nháp với một nhóm khác để góp ý, và ghi lại ít nhất 8 chỗ sửa kèm lý do.</p></div>
@@ -696,7 +743,7 @@ footer b{color:var(--ink)}
       </div>
       <div>
         <b>Sử dụng AI</b><br>
-        Nhóm em dùng Claude Code để hỗ trợ viết code, vẽ biểu đồ và làm trang web này. Các lần dùng AI đều được ghi trong AI log của đồ án. Giá và câu trả lời khảo sát đều do nhóm em tự thu, không có số liệu nào do AI tạo ra.
+        Nhóm em dùng Claude Code để hỗ trợ viết code, vẽ biểu đồ và làm trang web này; khi vẽ các biểu đồ M7, nhóm em dùng thêm ChatGPT và Antigravity. Các lần dùng AI đều được ghi trong AI log của đồ án. Giá và câu trả lời khảo sát đều do nhóm em tự thu, không có số liệu nào do AI tạo ra.
       </div>
     </div>
   </div>
