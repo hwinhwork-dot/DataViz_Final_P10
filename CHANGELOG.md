@@ -14,6 +14,18 @@ Every member and every AI agent adds an entry **at the top** of this file in the
 
 ---
 
+## 2026-11-18 · M7.2 stacked bar with beef spotlight and M7.3 2x2 parallel coordinates
+**Who:** Trần Nguyễn Thanh Thảo (Antigravity)
+**Changed:** Enhanced M7.2 into a two-panel horizontal stacked bar chart: panel 1 displays food group totals (Protein vs Vegetables and fruit) and panel 2 spotlights Beef (SP05) in terracotta highlight, revealing that a single meat item accounts for ~24% to 25% of the total basket across all channels. Relocated all legends to the top of each panel to eliminate label collisions. Restructured M7.3 parallel coordinates into a 2x2 small multiples grid (rows: M6 food clusters, columns: District 10 and District 3, with 3 channel axes per subplot), completely eliminating line crowding. Added callout annotations highlighting Red tilapia climbing relative rank on delivery apps and top proteins anchoring the dearest positions. Direct labels with collision avoidance identify all foods in the right column, and faint background lines provide complete 12-food context. Saved figures `m7_stacked_basket.png`, `m7_treemap.png`, and `m7_parallel_coords.png`.
+**Files:** `notebooks/P10_Final_Team10.ipynb`, `report/figures/m7_stacked_basket.png`, `report/figures/m7_treemap.png`, `report/figures/m7_parallel_coords.png`, `CHANGELOG.md`, `report/ai_log.md`.
+**Next:** Review M7 figures and outputs against the rubric before final submission; proceed to Module M8 (3D vs 2D experiment).
+
+## 2026-11-18 · M7 heatmap and hierarchical treemap
+**Who:** Nhã Đoan (with ChatGPT assistance)
+**Changed:** Added M7.1, an item by week heatmap covering 12 foods and 8 weeks, using the Ward ordering and a diverging colour scale centred on the index baseline. Added M7.2, an improved hierarchical treemap showing weekly basket costs by food group and item across the three channels. The treemap uses the basket definitions established in M4.3. Missing values remain distinguishable from observed values.
+**Files:** `notebooks/P10_Final_Team10.ipynb`, `report/figures/m7_heatmap.png`, `report/figures/m7_treemap.png`, `CHANGELOG.md`, `report/ai_log.md`.
+**Next:** Check the dates and source photos for weeks 6 to 8, which are still flagged `future_date`. Explain the week-specific index baseline when interpreting the heatmap. Review the M7 figures and outputs before final submission.
+
 ## 2026-11-15 · Dataset check, full sheet export added, push to `hwinh` and `dev`
 **Who:** Nguyễn Hoàng Minh (Claude Code, Claude Sonnet 5.5)
 **Changed:** All files under `data/` were checked before they went to GitHub. The raw sheets hold no email, phone number or interview answer; they hold only the names of the six members, two public market names and two public Co.op Online product links. The clean tables pass these checks: 576 rows with a unique key, 72 rows in each of the eight weeks, 558 usable prices, 216 rows flagged `future_date`, 16 flagged `outlier`, a data dictionary that covers every column of the master table, and a cleaning log of 11 steps that drops no row. The export of the full sheet (`price_sheet_20261115.xlsx`, all eight weeks) and the NSO table for October are now in the repository, so every member can run the notebook without a download. `README.md` has a new section that says which file the notebook reads and how to rerun it. The work of 14 and 15 November was committed, pushed to `hwinh` and merged into `dev` by pull request.
