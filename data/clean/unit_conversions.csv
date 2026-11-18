@@ -1,0 +1,8 @@
+unit_written,standard_unit,factor,used_in_valid_weeks
+kg,kg,1.0,467
+g,kg,0.001,54
+lít,litre,1.0,0
+ml,litre,0.001,0
+cái,piece,1.0,52
+miếng,piece,1.0,2
+"cái or miếng (tofu, SP10 only)",kg,0.2,6

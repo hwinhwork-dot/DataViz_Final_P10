@@ -1,0 +1,355 @@
+year_month,source,area,series,measure,value
+2024-01,FAOSTAT,Viet Nam,all_items,index_2015_100,129.417
+2024-02,FAOSTAT,Viet Nam,all_items,index_2015_100,130.759
+2024-03,FAOSTAT,Viet Nam,all_items,index_2015_100,130.455
+2024-04,FAOSTAT,Viet Nam,all_items,index_2015_100,130.55
+2024-05,FAOSTAT,Viet Nam,all_items,index_2015_100,130.612
+2024-06,FAOSTAT,Viet Nam,all_items,index_2015_100,130.827
+2024-07,FAOSTAT,Viet Nam,all_items,index_2015_100,131.449
+2024-08,FAOSTAT,Viet Nam,all_items,index_2015_100,131.448
+2024-09,FAOSTAT,Viet Nam,all_items,index_2015_100,131.823
+2024-10,FAOSTAT,Viet Nam,all_items,index_2015_100,132.262
+2024-11,FAOSTAT,Viet Nam,all_items,index_2015_100,132.431
+2024-12,FAOSTAT,Viet Nam,all_items,index_2015_100,132.811
+2025-01,FAOSTAT,Viet Nam,all_items,index_2015_100,134.108
+2025-02,FAOSTAT,Viet Nam,all_items,index_2015_100,134.563
+2025-03,FAOSTAT,Viet Nam,all_items,index_2015_100,134.532
+2025-04,FAOSTAT,Viet Nam,all_items,index_2015_100,134.623
+2025-05,FAOSTAT,Viet Nam,all_items,index_2015_100,134.838
+2025-06,FAOSTAT,Viet Nam,all_items,index_2015_100,135.485
+2025-07,FAOSTAT,Viet Nam,all_items,index_2015_100,135.632
+2025-08,FAOSTAT,Viet Nam,all_items,index_2015_100,135.7
+2025-09,FAOSTAT,Viet Nam,all_items,index_2015_100,136.278
+2025-10,FAOSTAT,Viet Nam,all_items,index_2015_100,136.55
+2025-11,FAOSTAT,Viet Nam,all_items,index_2015_100,137.165
+2025-12,FAOSTAT,Viet Nam,all_items,index_2015_100,137.428
+2026-01,FAOSTAT,Viet Nam,all_items,index_2015_100,137.494
+2026-02,FAOSTAT,Viet Nam,all_items,index_2015_100,139.062
+2026-03,FAOSTAT,Viet Nam,all_items,index_2015_100,140.789
+2026-04,FAOSTAT,Viet Nam,all_items,index_2015_100,141.975
+2026-05,FAOSTAT,Viet Nam,all_items,index_2015_100,142.384
+2026-06,FAOSTAT,Viet Nam,all_items,index_2015_100,141.843
+2024-01,FAOSTAT,Viet Nam,food,index_2015_100,130.138
+2024-02,FAOSTAT,Viet Nam,food,index_2015_100,132.369
+2024-03,FAOSTAT,Viet Nam,food,index_2015_100,131.369
+2024-04,FAOSTAT,Viet Nam,food,index_2015_100,131.203
+2024-05,FAOSTAT,Viet Nam,food,index_2015_100,131.708
+2024-06,FAOSTAT,Viet Nam,food,index_2015_100,132.697
+2024-07,FAOSTAT,Viet Nam,food,index_2015_100,133.039
+2024-08,FAOSTAT,Viet Nam,food,index_2015_100,133.395
+2024-09,FAOSTAT,Viet Nam,food,index_2015_100,134.627
+2024-10,FAOSTAT,Viet Nam,food,index_2015_100,135.369
+2024-11,FAOSTAT,Viet Nam,food,index_2015_100,135.075
+2024-12,FAOSTAT,Viet Nam,food,index_2015_100,134.9
+2025-01,FAOSTAT,Viet Nam,food,index_2015_100,135.878
+2025-02,FAOSTAT,Viet Nam,food,index_2015_100,136.457
+2025-03,FAOSTAT,Viet Nam,food,index_2015_100,136.386
+2025-04,FAOSTAT,Viet Nam,food,index_2015_100,136.551
+2025-05,FAOSTAT,Viet Nam,food,index_2015_100,136.595
+2025-06,FAOSTAT,Viet Nam,food,index_2015_100,136.672
+2025-07,FAOSTAT,Viet Nam,food,index_2015_100,136.914
+2025-08,FAOSTAT,Viet Nam,food,index_2015_100,136.826
+2025-09,FAOSTAT,Viet Nam,food,index_2015_100,137.376
+2025-10,FAOSTAT,Viet Nam,food,index_2015_100,137.09
+2025-11,FAOSTAT,Viet Nam,food,index_2015_100,137.09
+2025-12,FAOSTAT,Viet Nam,food,index_2015_100,138.115
+2026-01,FAOSTAT,Viet Nam,food,index_2015_100,138.391
+2026-02,FAOSTAT,Viet Nam,food,index_2015_100,141.176
+2026-03,FAOSTAT,Viet Nam,food,index_2015_100,140.349
+2026-04,FAOSTAT,Viet Nam,food,index_2015_100,141.176
+2026-05,FAOSTAT,Viet Nam,food,index_2015_100,140.979
+2026-06,FAOSTAT,Viet Nam,food,index_2015_100,140.874
+2026-05,NSO,Ho Chi Minh City,all_items,index_prev_month_100,100.2735
+2026-06,NSO,Ho Chi Minh City,all_items,index_prev_month_100,99.6535
+2026-07,NSO,Ho Chi Minh City,all_items,index_prev_month_100,99.6664
+2026-08,NSO,Ho Chi Minh City,all_items,index_prev_month_100,100.4167
+2026-09,NSO,Ho Chi Minh City,all_items,index_prev_month_100,100.4339
+2026-10,NSO,Ho Chi Minh City,all_items,index_prev_month_100,100.3032
+2026-05,NSO,Ho Chi Minh City,eating_out,index_prev_month_100,100.0994
+2026-06,NSO,Ho Chi Minh City,eating_out,index_prev_month_100,100.3451
+2026-07,NSO,Ho Chi Minh City,eating_out,index_prev_month_100,99.9693
+2026-08,NSO,Ho Chi Minh City,eating_out,index_prev_month_100,99.9233
+2026-09,NSO,Ho Chi Minh City,eating_out,index_prev_month_100,99.5104
+2026-10,NSO,Ho Chi Minh City,eating_out,index_prev_month_100,99.9925
+2026-05,NSO,Ho Chi Minh City,food_and_foodstuff,index_prev_month_100,99.8373
+2026-06,NSO,Ho Chi Minh City,food_and_foodstuff,index_prev_month_100,100.2579
+2026-07,NSO,Ho Chi Minh City,food_and_foodstuff,index_prev_month_100,99.8455
+2026-08,NSO,Ho Chi Minh City,food_and_foodstuff,index_prev_month_100,99.8441
+2026-09,NSO,Ho Chi Minh City,food_and_foodstuff,index_prev_month_100,99.9281
+2026-10,NSO,Ho Chi Minh City,food_and_foodstuff,index_prev_month_100,100.3691
+2026-05,NSO,Ho Chi Minh City,food_grain,index_prev_month_100,99.8273
+2026-06,NSO,Ho Chi Minh City,food_grain,index_prev_month_100,100.0697
+2026-07,NSO,Ho Chi Minh City,food_grain,index_prev_month_100,99.8753
+2026-08,NSO,Ho Chi Minh City,food_grain,index_prev_month_100,99.834
+2026-09,NSO,Ho Chi Minh City,food_grain,index_prev_month_100,100.1125
+2026-10,NSO,Ho Chi Minh City,food_grain,index_prev_month_100,100.3913
+2026-05,NSO,Ho Chi Minh City,foodstuff,index_prev_month_100,99.6609
+2026-06,NSO,Ho Chi Minh City,foodstuff,index_prev_month_100,100.2268
+2026-07,NSO,Ho Chi Minh City,foodstuff,index_prev_month_100,99.7567
+2026-08,NSO,Ho Chi Minh City,foodstuff,index_prev_month_100,99.7918
+2026-09,NSO,Ho Chi Minh City,foodstuff,index_prev_month_100,100.1858
+2026-10,NSO,Ho Chi Minh City,foodstuff,index_prev_month_100,100.6231
+2026-05,NSO,Viet Nam,all_items,index_base_2024_100,108.04437502096535
+2026-06,NSO,Viet Nam,all_items,index_base_2024_100,107.62753982213445
+2026-07,NSO,Viet Nam,all_items,index_base_2024_100,107.49591134093198
+2026-08,NSO,Viet Nam,all_items,index_base_2024_100,108.00017466103229
+2026-09,NSO,Viet Nam,all_items,index_base_2024_100,108.65593799262628
+2026-10,NSO,Viet Nam,all_items,index_base_2024_100,108.8783549231132
+2026-05,NSO,Viet Nam,all_items,index_prev_month_100,100.2947
+2026-06,NSO,Viet Nam,all_items,index_prev_month_100,99.6142
+2026-07,NSO,Viet Nam,all_items,index_prev_month_100,99.8777
+2026-08,NSO,Viet Nam,all_items,index_prev_month_100,100.4691
+2026-09,NSO,Viet Nam,all_items,index_prev_month_100,100.6159
+2026-10,NSO,Viet Nam,all_items,index_prev_month_100,100.204
+2026-05,NSO,Viet Nam,eating_out,index_base_2024_100,110.17452096408124
+2026-06,NSO,Viet Nam,eating_out,index_base_2024_100,110.39564122765614
+2026-07,NSO,Viet Nam,eating_out,index_base_2024_100,110.52866797533548
+2026-08,NSO,Viet Nam,eating_out,index_base_2024_100,110.54491568952785
+2026-09,NSO,Viet Nam,eating_out,index_base_2024_100,110.57487330508906
+2026-10,NSO,Viet Nam,eating_out,index_base_2024_100,110.69683739034457
+2026-05,NSO,Viet Nam,eating_out,index_prev_month_100,100.3628
+2026-06,NSO,Viet Nam,eating_out,index_prev_month_100,100.2007
+2026-07,NSO,Viet Nam,eating_out,index_prev_month_100,100.1205
+2026-08,NSO,Viet Nam,eating_out,index_prev_month_100,100.0147
+2026-09,NSO,Viet Nam,eating_out,index_prev_month_100,100.0275
+2026-10,NSO,Viet Nam,eating_out,index_prev_month_100,100.1103
+2026-05,NSO,Viet Nam,food_and_foodstuff,index_base_2024_100,107.29822231667669
+2026-06,NSO,Viet Nam,food_and_foodstuff,index_base_2024_100,107.22064570194172
+2026-07,NSO,Viet Nam,food_and_foodstuff,index_base_2024_100,107.14419738155624
+2026-08,NSO,Viet Nam,food_and_foodstuff,index_base_2024_100,107.11183983394702
+2026-09,NSO,Viet Nam,food_and_foodstuff,index_base_2024_100,107.31031761093925
+2026-10,NSO,Viet Nam,food_and_foodstuff,index_base_2024_100,107.05384640643086
+2026-05,NSO,Viet Nam,food_and_foodstuff,index_prev_month_100,99.8612
+2026-06,NSO,Viet Nam,food_and_foodstuff,index_prev_month_100,99.9277
+2026-07,NSO,Viet Nam,food_and_foodstuff,index_prev_month_100,99.9287
+2026-08,NSO,Viet Nam,food_and_foodstuff,index_prev_month_100,99.9698
+2026-09,NSO,Viet Nam,food_and_foodstuff,index_prev_month_100,100.1855
+2026-10,NSO,Viet Nam,food_and_foodstuff,index_prev_month_100,99.7611
+2026-05,NSO,Viet Nam,food_grain,index_base_2024_100,102.37330204842654
+2026-06,NSO,Viet Nam,food_grain,index_base_2024_100,101.57458554584473
+2026-07,NSO,Viet Nam,food_grain,index_base_2024_100,101.06620474518778
+2026-08,NSO,Viet Nam,food_grain,index_base_2024_100,101.02790065358936
+2026-09,NSO,Viet Nam,food_grain,index_base_2024_100,101.14256732083119
+2026-10,NSO,Viet Nam,food_grain,index_base_2024_100,100.56787715376532
+2026-05,NSO,Viet Nam,food_grain,index_prev_month_100,99.3243
+2026-06,NSO,Viet Nam,food_grain,index_prev_month_100,99.2198
+2026-07,NSO,Viet Nam,food_grain,index_prev_month_100,99.4995
+2026-08,NSO,Viet Nam,food_grain,index_prev_month_100,99.9621
+2026-09,NSO,Viet Nam,food_grain,index_prev_month_100,100.1135
+2026-10,NSO,Viet Nam,food_grain,index_prev_month_100,99.4321
+2026-05,NSO,Viet Nam,foodstuff,index_base_2024_100,107.04559292619518
+2026-06,NSO,Viet Nam,foodstuff,index_base_2024_100,106.98714603245749
+2026-07,NSO,Viet Nam,foodstuff,index_base_2024_100,106.9104362487522
+2026-08,NSO,Viet Nam,foodstuff,index_base_2024_100,106.85943997066155
+2026-09,NSO,Viet Nam,foodstuff,index_base_2024_100,107.14261715216797
+2026-10,NSO,Viet Nam,foodstuff,index_base_2024_100,106.79568935782925
+2026-05,NSO,Viet Nam,foodstuff,index_prev_month_100,99.7516
+2026-06,NSO,Viet Nam,foodstuff,index_prev_month_100,99.9454
+2026-07,NSO,Viet Nam,foodstuff,index_prev_month_100,99.9283
+2026-08,NSO,Viet Nam,foodstuff,index_prev_month_100,99.9523
+2026-09,NSO,Viet Nam,foodstuff,index_prev_month_100,100.2651
+2026-10,NSO,Viet Nam,foodstuff,index_prev_month_100,99.6762
+2024-01,World Bank,World,beef,price_usd ($/kg),5.0
+2024-02,World Bank,World,beef,price_usd ($/kg),5.38
+2024-03,World Bank,World,beef,price_usd ($/kg),5.73
+2024-04,World Bank,World,beef,price_usd ($/kg),6.05
+2024-05,World Bank,World,beef,price_usd ($/kg),5.88
+2024-06,World Bank,World,beef,price_usd ($/kg),5.85
+2024-07,World Bank,World,beef,price_usd ($/kg),6.19
+2024-08,World Bank,World,beef,price_usd ($/kg),6.34
+2024-09,World Bank,World,beef,price_usd ($/kg),6.3
+2024-10,World Bank,World,beef,price_usd ($/kg),6.06
+2024-11,World Bank,World,beef,price_usd ($/kg),6.18
+2024-12,World Bank,World,beef,price_usd ($/kg),6.23
+2025-01,World Bank,World,beef,price_usd ($/kg),6.46
+2025-02,World Bank,World,beef,price_usd ($/kg),6.62
+2025-03,World Bank,World,beef,price_usd ($/kg),6.77
+2025-04,World Bank,World,beef,price_usd ($/kg),6.71
+2025-05,World Bank,World,beef,price_usd ($/kg),6.62
+2025-06,World Bank,World,beef,price_usd ($/kg),6.67
+2025-07,World Bank,World,beef,price_usd ($/kg),6.72
+2025-08,World Bank,World,beef,price_usd ($/kg),6.86
+2025-09,World Bank,World,beef,price_usd ($/kg),6.9
+2025-10,World Bank,World,beef,price_usd ($/kg),7.09
+2025-11,World Bank,World,beef,price_usd ($/kg),7.51
+2025-12,World Bank,World,beef,price_usd ($/kg),7.38
+2026-01,World Bank,World,beef,price_usd ($/kg),7.97
+2026-02,World Bank,World,beef,price_usd ($/kg),8.12
+2026-03,World Bank,World,beef,price_usd ($/kg),8.21
+2026-04,World Bank,World,beef,price_usd ($/kg),8.21
+2026-05,World Bank,World,beef,price_usd ($/kg),7.95
+2026-06,World Bank,World,beef,price_usd ($/kg),7.46
+2026-07,World Bank,World,beef,price_usd ($/kg),7.31
+2026-08,World Bank,World,beef,price_usd ($/kg),7.28
+2026-09,World Bank,World,beef,price_usd ($/kg),6.86
+2026-10,World Bank,World,beef,price_usd ($/kg),6.83
+2024-01,World Bank,World,chicken,price_usd ($/kg),1.57
+2024-02,World Bank,World,chicken,price_usd ($/kg),1.52
+2024-03,World Bank,World,chicken,price_usd ($/kg),1.53
+2024-04,World Bank,World,chicken,price_usd ($/kg),1.44
+2024-05,World Bank,World,chicken,price_usd ($/kg),1.51
+2024-06,World Bank,World,chicken,price_usd ($/kg),1.4
+2024-07,World Bank,World,chicken,price_usd ($/kg),1.33
+2024-08,World Bank,World,chicken,price_usd ($/kg),1.38
+2024-09,World Bank,World,chicken,price_usd ($/kg),1.45
+2024-10,World Bank,World,chicken,price_usd ($/kg),1.48
+2024-11,World Bank,World,chicken,price_usd ($/kg),1.52
+2024-12,World Bank,World,chicken,price_usd ($/kg),1.42
+2025-01,World Bank,World,chicken,price_usd ($/kg),1.54
+2025-02,World Bank,World,chicken,price_usd ($/kg),1.63
+2025-03,World Bank,World,chicken,price_usd ($/kg),1.63
+2025-04,World Bank,World,chicken,price_usd ($/kg),1.74
+2025-05,World Bank,World,chicken,price_usd ($/kg),1.78
+2025-06,World Bank,World,chicken,price_usd ($/kg),1.78
+2025-07,World Bank,World,chicken,price_usd ($/kg),1.78
+2025-08,World Bank,World,chicken,price_usd ($/kg),1.67
+2025-09,World Bank,World,chicken,price_usd ($/kg),1.74
+2025-10,World Bank,World,chicken,price_usd ($/kg),1.72
+2025-11,World Bank,World,chicken,price_usd ($/kg),1.77
+2025-12,World Bank,World,chicken,price_usd ($/kg),1.78
+2026-01,World Bank,World,chicken,price_usd ($/kg),1.75
+2026-02,World Bank,World,chicken,price_usd ($/kg),1.79
+2026-03,World Bank,World,chicken,price_usd ($/kg),1.66
+2026-04,World Bank,World,chicken,price_usd ($/kg),1.75
+2026-05,World Bank,World,chicken,price_usd ($/kg),1.86
+2026-06,World Bank,World,chicken,price_usd ($/kg),1.77
+2026-07,World Bank,World,chicken,price_usd ($/kg),1.73
+2026-08,World Bank,World,chicken,price_usd ($/kg),1.69
+2026-09,World Bank,World,chicken,price_usd ($/kg),1.81
+2026-10,World Bank,World,chicken,price_usd ($/kg),1.84
+2024-01,World Bank,World,palm_oil,price_usd ($/mt),845.0
+2024-02,World Bank,World,palm_oil,price_usd ($/mt),857.0
+2024-03,World Bank,World,palm_oil,price_usd ($/mt),943.0
+2024-04,World Bank,World,palm_oil,price_usd ($/mt),936.0
+2024-05,World Bank,World,palm_oil,price_usd ($/mt),859.0
+2024-06,World Bank,World,palm_oil,price_usd ($/mt),874.0
+2024-07,World Bank,World,palm_oil,price_usd ($/mt),896.0
+2024-08,World Bank,World,palm_oil,price_usd ($/mt),933.0
+2024-09,World Bank,World,palm_oil,price_usd ($/mt),983.0
+2024-10,World Bank,World,palm_oil,price_usd ($/mt),1077.0
+2024-11,World Bank,World,palm_oil,price_usd ($/mt),1169.0
+2024-12,World Bank,World,palm_oil,price_usd ($/mt),1190.0
+2025-01,World Bank,World,palm_oil,price_usd ($/mt),1070.0
+2025-02,World Bank,World,palm_oil,price_usd ($/mt),1067.0
+2025-03,World Bank,World,palm_oil,price_usd ($/mt),1068.0
+2025-04,World Bank,World,palm_oil,price_usd ($/mt),994.0
+2025-05,World Bank,World,palm_oil,price_usd ($/mt),908.0
+2025-06,World Bank,World,palm_oil,price_usd ($/mt),935.0
+2025-07,World Bank,World,palm_oil,price_usd ($/mt),976.0
+2025-08,World Bank,World,palm_oil,price_usd ($/mt),1026.0
+2025-09,World Bank,World,palm_oil,price_usd ($/mt),1037.0
+2025-10,World Bank,World,palm_oil,price_usd ($/mt),1038.0
+2025-11,World Bank,World,palm_oil,price_usd ($/mt),983.0
+2025-12,World Bank,World,palm_oil,price_usd ($/mt),980.0
+2026-01,World Bank,World,palm_oil,price_usd ($/mt),1013.0
+2026-02,World Bank,World,palm_oil,price_usd ($/mt),1064.0
+2026-03,World Bank,World,palm_oil,price_usd ($/mt),1167.0
+2026-04,World Bank,World,palm_oil,price_usd ($/mt),1181.0
+2026-05,World Bank,World,palm_oil,price_usd ($/mt),1168.0
+2026-06,World Bank,World,palm_oil,price_usd ($/mt),1142.0
+2026-07,World Bank,World,palm_oil,price_usd ($/mt),1133.0
+2026-08,World Bank,World,palm_oil,price_usd ($/mt),1132.0
+2026-09,World Bank,World,palm_oil,price_usd ($/mt),1180.0
+2026-10,World Bank,World,palm_oil,price_usd ($/mt),1120.0
+2024-01,World Bank,World,rice_vn_5pct,price_usd ($/mt),625.5
+2024-02,World Bank,World,rice_vn_5pct,price_usd ($/mt),614.3
+2024-03,World Bank,World,rice_vn_5pct,price_usd ($/mt),585.4
+2024-04,World Bank,World,rice_vn_5pct,price_usd ($/mt),571.5
+2024-05,World Bank,World,rice_vn_5pct,price_usd ($/mt),568.0
+2024-06,World Bank,World,rice_vn_5pct,price_usd ($/mt),561.6
+2024-07,World Bank,World,rice_vn_5pct,price_usd ($/mt),552.4
+2024-08,World Bank,World,rice_vn_5pct,price_usd ($/mt),535.3
+2024-09,World Bank,World,rice_vn_5pct,price_usd ($/mt),540.5
+2024-10,World Bank,World,rice_vn_5pct,price_usd ($/mt),529.8
+2024-11,World Bank,World,rice_vn_5pct,price_usd ($/mt),509.7
+2024-12,World Bank,World,rice_vn_5pct,price_usd ($/mt),495.7
+2025-01,World Bank,World,rice_vn_5pct,price_usd ($/mt),447.3
+2025-02,World Bank,World,rice_vn_5pct,price_usd ($/mt),401.7
+2025-03,World Bank,World,rice_vn_5pct,price_usd ($/mt),378.4
+2025-04,World Bank,World,rice_vn_5pct,price_usd ($/mt),377.8
+2025-05,World Bank,World,rice_vn_5pct,price_usd ($/mt),379.3
+2025-06,World Bank,World,rice_vn_5pct,price_usd ($/mt),377.2
+2025-07,World Bank,World,rice_vn_5pct,price_usd ($/mt),370.6
+2025-08,World Bank,World,rice_vn_5pct,price_usd ($/mt),378.8
+2025-09,World Bank,World,rice_vn_5pct,price_usd ($/mt),371.5
+2025-10,World Bank,World,rice_vn_5pct,price_usd ($/mt),365.6
+2025-11,World Bank,World,rice_vn_5pct,price_usd ($/mt),359.8
+2025-12,World Bank,World,rice_vn_5pct,price_usd ($/mt),351.9
+2026-01,World Bank,World,rice_vn_5pct,price_usd ($/mt),351.2
+2026-02,World Bank,World,rice_vn_5pct,price_usd ($/mt),349.1
+2026-03,World Bank,World,rice_vn_5pct,price_usd ($/mt),345.8
+2026-04,World Bank,World,rice_vn_5pct,price_usd ($/mt),352.9
+2026-05,World Bank,World,rice_vn_5pct,price_usd ($/mt),376.3
+2026-06,World Bank,World,rice_vn_5pct,price_usd ($/mt),391.3
+2026-07,World Bank,World,rice_vn_5pct,price_usd ($/mt),396.1
+2026-08,World Bank,World,rice_vn_5pct,price_usd ($/mt),410.9
+2026-09,World Bank,World,rice_vn_5pct,price_usd ($/mt),418.5
+2026-10,World Bank,World,rice_vn_5pct,price_usd ($/mt),413.9
+2024-01,World Bank,World,soybean_oil,price_usd ($/mt),971.0
+2024-02,World Bank,World,soybean_oil,price_usd ($/mt),912.0
+2024-03,World Bank,World,soybean_oil,price_usd ($/mt),965.0
+2024-04,World Bank,World,soybean_oil,price_usd ($/mt),959.0
+2024-05,World Bank,World,soybean_oil,price_usd ($/mt),988.0
+2024-06,World Bank,World,soybean_oil,price_usd ($/mt),1011.0
+2024-07,World Bank,World,soybean_oil,price_usd ($/mt),1079.0
+2024-08,World Bank,World,soybean_oil,price_usd ($/mt),1031.0
+2024-09,World Bank,World,soybean_oil,price_usd ($/mt),1044.0
+2024-10,World Bank,World,soybean_oil,price_usd ($/mt),1095.0
+2024-11,World Bank,World,soybean_oil,price_usd ($/mt),1145.0
+2024-12,World Bank,World,soybean_oil,price_usd ($/mt),1064.0
+2025-01,World Bank,World,soybean_oil,price_usd ($/mt),1048.0
+2025-02,World Bank,World,soybean_oil,price_usd ($/mt),1069.0
+2025-03,World Bank,World,soybean_oil,price_usd ($/mt),1011.0
+2025-04,World Bank,World,soybean_oil,price_usd ($/mt),1120.0
+2025-05,World Bank,World,soybean_oil,price_usd ($/mt),1163.0
+2025-06,World Bank,World,soybean_oil,price_usd ($/mt),1178.0
+2025-07,World Bank,World,soybean_oil,price_usd ($/mt),1307.0
+2025-08,World Bank,World,soybean_oil,price_usd ($/mt),1245.0
+2025-09,World Bank,World,soybean_oil,price_usd ($/mt),1159.0
+2025-10,World Bank,World,soybean_oil,price_usd ($/mt),1132.0
+2025-11,World Bank,World,soybean_oil,price_usd ($/mt),1128.0
+2025-12,World Bank,World,soybean_oil,price_usd ($/mt),1116.0
+2026-01,World Bank,World,soybean_oil,price_usd ($/mt),1154.0
+2026-02,World Bank,World,soybean_oil,price_usd ($/mt),1282.0
+2026-03,World Bank,World,soybean_oil,price_usd ($/mt),1493.0
+2026-04,World Bank,World,soybean_oil,price_usd ($/mt),1643.0
+2026-05,World Bank,World,soybean_oil,price_usd ($/mt),1781.0
+2026-06,World Bank,World,soybean_oil,price_usd ($/mt),1740.0
+2026-07,World Bank,World,soybean_oil,price_usd ($/mt),1658.0
+2026-08,World Bank,World,soybean_oil,price_usd ($/mt),1639.0
+2026-09,World Bank,World,soybean_oil,price_usd ($/mt),1615.0
+2026-10,World Bank,World,soybean_oil,price_usd ($/mt),1546.0
+2024-01,World Bank,World,sugar_world,price_usd ($/kg),0.48
+2024-02,World Bank,World,sugar_world,price_usd ($/kg),0.5
+2024-03,World Bank,World,sugar_world,price_usd ($/kg),0.48
+2024-04,World Bank,World,sugar_world,price_usd ($/kg),0.45
+2024-05,World Bank,World,sugar_world,price_usd ($/kg),0.42
+2024-06,World Bank,World,sugar_world,price_usd ($/kg),0.43
+2024-07,World Bank,World,sugar_world,price_usd ($/kg),0.43
+2024-08,World Bank,World,sugar_world,price_usd ($/kg),0.41
+2024-09,World Bank,World,sugar_world,price_usd ($/kg),0.45
+2024-10,World Bank,World,sugar_world,price_usd ($/kg),0.46
+2024-11,World Bank,World,sugar_world,price_usd ($/kg),0.45
+2024-12,World Bank,World,sugar_world,price_usd ($/kg),0.44
+2025-01,World Bank,World,sugar_world,price_usd ($/kg),0.4
+2025-02,World Bank,World,sugar_world,price_usd ($/kg),0.42
+2025-03,World Bank,World,sugar_world,price_usd ($/kg),0.42
+2025-04,World Bank,World,sugar_world,price_usd ($/kg),0.4
+2025-05,World Bank,World,sugar_world,price_usd ($/kg),0.39
+2025-06,World Bank,World,sugar_world,price_usd ($/kg),0.37
+2025-07,World Bank,World,sugar_world,price_usd ($/kg),0.37
+2025-08,World Bank,World,sugar_world,price_usd ($/kg),0.37
+2025-09,World Bank,World,sugar_world,price_usd ($/kg),0.35
+2025-10,World Bank,World,sugar_world,price_usd ($/kg),0.34
+2025-11,World Bank,World,sugar_world,price_usd ($/kg),0.32
+2025-12,World Bank,World,sugar_world,price_usd ($/kg),0.32
+2026-01,World Bank,World,sugar_world,price_usd ($/kg),0.32
+2026-02,World Bank,World,sugar_world,price_usd ($/kg),0.31
+2026-03,World Bank,World,sugar_world,price_usd ($/kg),0.33
+2026-04,World Bank,World,sugar_world,price_usd ($/kg),0.32
+2026-05,World Bank,World,sugar_world,price_usd ($/kg),0.34
+2026-06,World Bank,World,sugar_world,price_usd ($/kg),0.32
+2026-07,World Bank,World,sugar_world,price_usd ($/kg),0.34
+2026-08,World Bank,World,sugar_world,price_usd ($/kg),0.38
+2026-09,World Bank,World,sugar_world,price_usd ($/kg),0.41
+2026-10,World Bank,World,sugar_world,price_usd ($/kg),0.43

@@ -1,0 +1,13 @@
+,item_name,cluster,ward_cluster,super_over_market,app_over_market,PC1,PC2
+SP01,Pork belly,Small channel gap,1,0.07,0.131,1.608,-1.168
+SP02,Water spinach,Large channel gap,2,0.38,0.74,-1.29,0.856
+SP03,Mackerel,Small channel gap,1,0.138,0.272,0.962,0.06
+SP04,Tomato,Large channel gap,2,0.268,0.344,-0.075,0.598
+SP05,Beef,Small channel gap,1,0.065,0.156,1.597,-0.42
+SP06,Free range chicken,Small channel gap,1,0.014,0.117,2.14,-0.039
+SP07,Watermelon,Large channel gap,2,0.288,0.615,-1.09,0.271
+SP08,Onion,Large channel gap,2,0.405,0.655,-2.559,-1.076
+SP09,Đà Lạt potato,Small channel gap,1,0.139,0.254,0.916,-1.374
+SP10,White tofu,Large channel gap,2,0.443,0.726,-2.317,-1.543
+SP11,Chicken eggs,Small channel gap,2,0.187,0.411,0.711,0.957
+SP12,Red tilapia,Large channel gap,2,0.315,0.695,-0.602,2.879

@@ -54,13 +54,19 @@ git push origin thao
 
 Last, open GitHub, go to Pull requests, and choose New pull request. Set the base branch to `dev` and the compare branch to your own branch.
 
+## Website, rules and changelog
+
+The project website (in Vietnamese) is https://p10-price-of-dinner.vercel.app. It shows the brief and the charts of every module.
+
+Before you write text or draw a chart, read `AGENTS.md` and the latest entries of `CHANGELOG.md`. After every change, add an entry at the top of `CHANGELOG.md`. If you use an AI agent, tell it to read `AGENTS.md` first. The file keeps the writing style and the charts of all six members the same.
+
 ## Folders
 
 The folders follow the list of deliverables in the project brief.
 
 ```
 .
-├── notebooks/        01_data to 06_story, and house_style.py (one notebook for each module)
+├── notebooks/        P10_Final_Team10.ipynb (the whole project, M0 to M10), house_style.py and fonts/ (Gelasio, for Vietnamese letters)
 ├── data/
 │   ├── raw/          the public files, or the scripts that download them; we never edit them
 │   └── clean/        the tidy master table and the anonymised primary data
@@ -80,3 +86,17 @@ source .venv/bin/activate
 pip install -r requirements.txt
 jupyter lab
 ```
+
+## Data and how to run the notebook
+
+The notebook reads only files that are in the repository, so every member can run it without a download.
+
+| Folder | What it holds |
+|---|---|
+| `data/raw/primary/` | Dated exports of our price sheet, named `price_sheet_YYYYMMDD.xlsx`. The notebook reads the newest one. `price_sheet_20261115.xlsx` holds all eight weeks (576 prices); the older files stay for comparison |
+| `data/raw/public/` | NSO monthly CPI (May to October 2026), FAOSTAT (to June 2026) and the World Bank Pink Sheet (to October 2026) |
+| `data/clean/` | The tables that Module M2 writes (master table, weekly table, cleaning log, data dictionary) and the three small tables of Module M6 |
+
+Open `notebooks/P10_Final_Team10.ipynb` and choose *Restart and run all*. The notebook rewrites everything in `data/clean/` and `report/figures/`, so a rerun on the same export must give the same numbers. To load a newer export of the Google Sheet, run `python data/raw/download_raw.py` once from the repository root, and then run the notebook again.
+
+Never edit a file in `data/raw/`; every change to the data is a logged function in Module M2. Prices dated after the day of the export carry the flag `future_date`, so the team can check their dates against the photos. The sources, the cleaning rules and the known limits are in `data/data_cards.md`.
