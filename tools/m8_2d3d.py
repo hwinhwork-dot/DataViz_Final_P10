@@ -16,6 +16,9 @@ FIG.mkdir(parents=True, exist_ok=True)
 
 # M8.1 Build one transparent source table for both charts.
 ITEMS = ['SP01', 'SP02', 'SP05', 'SP09']
+# Names for readers unfamiliar with the team's item codes.
+FOOD_LABELS = ['Pork belly', 'Water spinach', 'Beef', 'Da Lat potato']
+FOOD_3D_LABELS = ['Pork belly', 'Water spinach', 'Beef', 'Potato']
 weeks = [f'week_{i}' for i in range(1, 9)]
 raw = pd.read_csv(ROOT / 'data' / 'clean' / 'weekly_table.csv')
 raw = raw.loc[raw['item_code'].isin(ITEMS)].copy()
@@ -42,7 +45,7 @@ summary.to_csv(ROOT / 'report' / 'm8_price_index_table.csv', index=False)
 values = table.to_numpy(dtype=float) / 1000.0
 lowest = np.unravel_index(np.argmin(values), values.shape)
 highest = np.unravel_index(np.argmax(values), values.shape)
-heading = f"{ITEMS[highest[0]]} on {CHANNEL_EN[CHANNEL_ORDER[highest[1]]].lower()} has the highest of these 12 averages"
+heading = f"{FOOD_LABELS[highest[0]]} on {CHANNEL_EN[CHANNEL_ORDER[highest[1]]].lower()} has the highest of these 12 averages"
 subtitle = 'Mean price in thousand VND per standard unit; weeks 1 to 8; both districts'
 source = 'Source: P10 collected price sheet, weeks 1 to 8, Quận 3 and Quận 10. Averages may hide weekly swings.'
 
@@ -50,7 +53,7 @@ source = 'Source: P10 collected price sheet, weeks 1 to 8, Quận 3 and Quận 1
 fig, ax = plt.subplots(figsize=(9, 4.9))
 norm = Normalize(vmin=0, vmax=float(np.nanmax(values)))
 im = ax.imshow(values, cmap=SEQ, norm=norm, aspect='auto')
-ax.set_xticks(range(3), [CHANNEL_EN[c] for c in CHANNEL_ORDER]); ax.set_yticks(range(4), ITEMS)
+ax.set_xticks(range(3), [CHANNEL_EN[c] for c in CHANNEL_ORDER]); ax.set_yticks(range(4), FOOD_LABELS)
 for i in range(4):
     for j in range(3):
         ax.text(j, i, f'{values[i,j]:,.0f}k', ha='center', va='center',
@@ -59,7 +62,7 @@ ax.tick_params(length=0)
 fig.colorbar(im, ax=ax, shrink=.72, label='Thousand VND')
 figure_title(fig, heading, subtitle, y=.98)
 note(fig, source, y=.005)
-fig.subplots_adjust(top=.76, bottom=.16, left=.13, right=.91)
+fig.subplots_adjust(top=.76, bottom=.16, left=.20, right=.91)
 save(fig, FIG / 'm8_2d_prices.png')
 plt.close(fig)
 
@@ -72,7 +75,7 @@ for i in range(4):
         xs.append(i); ys.append(j); hs.append(values[i, j]); cs.append(CHANNEL[CHANNEL_ORDER[j]])
 bars3d(ax, xs, ys, hs, cs, base=0)
 style3d(ax, elev=19, azim=-55)
-ax.set_xticks(range(4), ITEMS)
+ax.set_xticks(range(4), FOOD_3D_LABELS)
 ax.set_yticks(range(3), [CHANNEL_EN[c] for c in CHANNEL_ORDER])
 ax.set_zlim(0, float(np.max(values)) * 1.23)
 ax.set_zlabel('Thousand VND')
