@@ -14,6 +14,14 @@ Every member and every AI agent adds an entry **at the top** of this file in the
 
 ---
 
+
+## 2026-11-19 · M8 2D and 3D comparison added to the team notebook
+**Who:** Nguyễn Minh Nguyệt (ChatGPT GPT-6 assistance)
+**Changed:** Added the M8 chart code to the existing team notebook after M7. Both charts read the same observed price table and write figures and a summary CSV. Added a plan for testing both views with at least five real people. No participant results were invented.
+**Files:** `notebooks/P10_Final_Team10.ipynb`, `tools/m8_2d3d.py`, `report/figures/m8_2d_prices.png`, `report/figures/m8_3d_prices.png`, `report/m8_price_index_table.csv`, `CHANGELOG.md`, `report/ai_log.md`.
+**Next:** Run the M8 code cell and check the charts and numbers. Collect and analyze real participant responses. Do not push before review.
+
+
 ## 2026-11-18 · M7 merged, checked against the brief and fixed; Gelasio font for Windows
 **Who:** Nguyễn Hoàng Minh (Claude Code, Claude Opus 5.5)
 **Changed:** The M7 work of Trần Nhã Đoan (branch `nha-doan`) and Trần Nguyễn Thanh Thảo (branch `thao`) was merged into `hwinh` and checked against Section 4.7 of the brief. The brief asks for a treemap, but the treemap had been replaced by stacked bars, and `m7_treemap.png` held a copy of the stacked bars. Đoan's treemap is back as M7.2, and Thảo's stacked bars stay as M7.2b. The chart types and layouts are kept; the fixes are these:
