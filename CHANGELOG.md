@@ -14,6 +14,12 @@ Every member and every AI agent adds an entry **at the top** of this file in the
 
 ---
 
+## 2026-11-19 · Dual district direct labels and spine bounds for M7.3 parallel coordinates
+**Who:** Trần Nguyễn Thanh Thảo (Antigravity)
+**Changed:** Synced branch with upstream dev containing PR #1. Added food name labels with collision avoidance to both District 10 and District 3 subplots in M7.3 parallel coordinates, so each district is readable on its own. Bounded bottom axis spines to the shopping channel limits (0 to 2) to eliminate empty baselines trailing under labels. Added file-lock retry handling in house_style save and _trim for Windows environments. Reran the full notebook successfully from top to bottom.
+**Files:** `notebooks/P10_Final_Team10.ipynb`, `notebooks/house_style.py`, `report/figures/m7_parallel_coords.png`, `CHANGELOG.md`, `report/ai_log.md`.
+**Next:** Verify dual district annotations and open pull request into dev when approved.
+
 ## 2026-11-18 · M7 merged, checked against the brief and fixed; Gelasio font for Windows
 **Who:** Nguyễn Hoàng Minh (Claude Code, Claude Opus 5.5)
 **Changed:** The M7 work of Trần Nhã Đoan (branch `nha-doan`) and Trần Nguyễn Thanh Thảo (branch `thao`) was merged into `hwinh` and checked against Section 4.7 of the brief. The brief asks for a treemap, but the treemap had been replaced by stacked bars, and `m7_treemap.png` held a copy of the stacked bars. Đoan's treemap is back as M7.2, and Thảo's stacked bars stay as M7.2b. The chart types and layouts are kept; the fixes are these:
