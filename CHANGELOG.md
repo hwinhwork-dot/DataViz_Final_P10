@@ -14,6 +14,12 @@ Every member and every AI agent adds an entry **at the top** of this file in the
 
 ---
 
+## 2026-11-19 · Clearer tags for the M7.3 parallel coordinates
+**Who:** Nguyễn Hoàng Minh (Claude Code, Claude Opus 5.5)
+**Changed:** Trần Nguyễn Thanh Thảo found the tags of M7.3 hard to read. This change builds on her commit of 19 November (food names in both districts, bottom spines bounded) and keeps the chart type, the grid and the colours. The four boxes with long arrows are gone. Instead, each food name carries its climb in index points from the wet market to the app (for example "Watermelon +72" in Quận 3), so a reader can check the title on the chart. A row header in plain words ("Large channel gap group · 6 foods", then "In M6, the app costs 34% to 74% more than the wet market for these foods") replaces the rotated axis label of three lines, and the axis now reads "Price index (100 = the food's average)". The subtitle says what 100 and the numbers after the names mean, the title says "index points", and the dotted line at 100 stops before the labels. The caption of Figure 20 on the website was updated, and the site was redeployed.
+**Files:** `notebooks/P10_Final_Team10.ipynb`, `report/figures/m7_parallel_coords.png`, `site/index.html`, `report/ai_log.md`, `CHANGELOG.md`.
+**Next:** (1) Thảo checks that the new tags answer her feedback. (2) This change contains the commit of PR #2, so PR #2 closes when this change reaches `dev`. (3) PR #3 (M8) also changes the notebook, `CHANGELOG.md` and the AI log; merge one of the two first, then update the other branch from `dev` before its merge.
+
 ## 2026-11-19 · Dual district direct labels and spine bounds for M7.3 parallel coordinates
 **Who:** Trần Nguyễn Thanh Thảo (Antigravity)
 **Changed:** Synced branch with upstream dev containing PR #1. Added food name labels with collision avoidance to both District 10 and District 3 subplots in M7.3 parallel coordinates, so each district is readable on its own. Bounded bottom axis spines to the shopping channel limits (0 to 2) to eliminate empty baselines trailing under labels. Added file-lock retry handling in house_style save and _trim for Windows environments. Reran the full notebook successfully from top to bottom.
