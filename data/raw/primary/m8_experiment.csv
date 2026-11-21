@@ -1,0 +1,55 @@
+participant,batch,order,version,question,answer,seconds
+P01,B1,unknown,3D,Q1,đắt hơn,40
+P01,B1,unknown,3D,Q2,siêu thị,46
+P01,B1,unknown,3D,Q3,tuần 7,34
+P01,B1,unknown,2D,Q1,đắt hơn,12
+P01,B1,unknown,2D,Q2,siêu thị,10
+P01,B1,unknown,2D,Q3,tuần 7,8
+P02,B2,3D first,3D,Q1,đắt hơn,26
+P02,B2,3D first,3D,Q2,chợ,24
+P02,B2,3D first,3D,Q3,tuần 3,19
+P02,B2,3D first,2D,Q1,đắt hơn,16
+P02,B2,3D first,2D,Q2,chợ,14
+P02,B2,3D first,2D,Q3,tuần 3,19
+P03,B2,3D first,3D,Q1,đắt hơn,30
+P03,B2,3D first,3D,Q2,chợ,22
+P03,B2,3D first,3D,Q3,tuần 3,29
+P03,B2,3D first,2D,Q1,đắt hơn,17
+P03,B2,3D first,2D,Q2,chợ,15
+P03,B2,3D first,2D,Q3,tuần 3,17
+P04,B2,3D first,3D,Q1,đắt hơn,25
+P04,B2,3D first,3D,Q2,chợ,23
+P04,B2,3D first,3D,Q3,tuần 3,20
+P04,B2,3D first,2D,Q1,đắt hơn,8
+P04,B2,3D first,2D,Q2,chợ,14
+P04,B2,3D first,2D,Q3,tuần 3,21
+P05,B2,2D first,3D,Q1,đắt hơn,18
+P05,B2,2D first,3D,Q2,chợ,24
+P05,B2,2D first,3D,Q3,tuần 3,25
+P05,B2,2D first,2D,Q1,đắt hơn,12
+P05,B2,2D first,2D,Q2,chợ,14
+P05,B2,2D first,2D,Q3,tuần 3,17
+P06,B2,2D first,3D,Q1,đắt hơn,15
+P06,B2,2D first,3D,Q2,chợ,17
+P06,B2,2D first,3D,Q3,tuần 3,17
+P06,B2,2D first,2D,Q1,đắt hơn,11
+P06,B2,2D first,2D,Q2,chợ,14
+P06,B2,2D first,2D,Q3,tuần 3,11
+P07,B3,unknown,3D,Q1,đắt hơn,33
+P07,B3,unknown,3D,Q2,siêu thị,
+P07,B3,unknown,3D,Q3,tuần 7,13
+P07,B3,unknown,2D,Q1,đắt hơn,30
+P07,B3,unknown,2D,Q2,siêu thị,8
+P07,B3,unknown,2D,Q3,,9
+P08,B3,unknown,3D,Q1,đắt hơn,9
+P08,B3,unknown,3D,Q2,chợ,22
+P08,B3,unknown,3D,Q3,tuần 7,28
+P08,B3,unknown,2D,Q1,đắt hơn,13
+P08,B3,unknown,2D,Q2,chợ,9
+P08,B3,unknown,2D,Q3,tuần 7,23
+P09,B4,2D first,2D,Q1,đắt hơn,7
+P09,B4,2D first,2D,Q2,siêu thị,12
+P09,B4,2D first,2D,Q3,tuần 7,8
+P09,B4,2D first,3D,Q1,đắt hơn,15
+P09,B4,2D first,3D,Q2,siêu thị,25
+P09,B4,2D first,3D,Q3,tuần 7,19
