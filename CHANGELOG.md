@@ -14,6 +14,12 @@ Every member and every AI agent adds an entry **at the top** of this file in the
 
 ---
 
+## 2026-11-21 · M8 notebook outputs verified
+**Who:** Nguyễn Minh Nguyệt (Copilot SDK in VS Code)
+**Changed:** My group executed the current notebook sequentially in an isolated worktree with the project `.venv`. M6.4 created `leaf_orders` before M8.1 used it, and all 55 code cells completed without errors. My group added the verified M8.1 to M8.4 outputs to their existing notebook cells without changing their code or M8 narrative. The experiment file stayed unchanged; My group checked its structure but did not compare participant responses with private screenshots.
+**Files:** `notebooks/P10_Final_Team10.ipynb`, `report/ai_log.md`, `CHANGELOG.md`.
+**Next:** The team should compare the coded responses with the private screenshots and decide whether the current M8.5 text is final. GitHub reports PR #3 as blocked, with no review or check run recorded.
+
 
 
 ## 2026-11-20 · M8 results: five independent people, 2D faster, same accuracy
