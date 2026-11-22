@@ -157,17 +157,38 @@ def note(fig, text, y=-0.02):
 
 def _trim(path, pad=40):
     """Cut the empty white border of a saved PNG (3D axes leave a lot of it)."""
+    import time
     from PIL import Image, ImageChops
-    im = Image.open(path).convert("RGB")
-    box = ImageChops.difference(im, Image.new("RGB", im.size, (255, 255, 255))).getbbox()
-    if box:
-        im.crop((max(box[0] - pad, 0), max(box[1] - pad, 0),
-                 min(box[2] + pad, im.width), min(box[3] + pad, im.height))).save(path)
+    for attempt in range(5):
+        try:
+            with Image.open(path) as raw:
+                im = raw.convert("RGB")
+                box = ImageChops.difference(im, Image.new("RGB", im.size, (255, 255, 255))).getbbox()
+                if box:
+                    cropped = im.crop((max(box[0] - pad, 0), max(box[1] - pad, 0),
+                                       min(box[2] + pad, im.width), min(box[3] + pad, im.height)))
+                else:
+                    cropped = None
+            if cropped is not None:
+                cropped.save(path)
+            break
+        except OSError:
+            if attempt == 4:
+                raise
+            time.sleep(0.15)
 
 
 def save(fig, path, pdf=False):
     """Save a figure as PNG with the house settings; pdf=True also writes a PDF (needed for the M5 dashboard)."""
-    fig.savefig(path)
+    import time
+    for attempt in range(5):
+        try:
+            fig.savefig(path)
+            break
+        except OSError:
+            if attempt == 4:
+                raise
+            time.sleep(0.15)
     if str(path).endswith(".png"):
         _trim(path)
         if pdf:
@@ -296,3 +317,4 @@ def cvd_report(colors=None):
         labs = [_lab(np.array(simulate(c, kind))) for c in colors]
         out[kind] = min(np.linalg.norm(a - b) for i, a in enumerate(labs) for b in labs[i + 1:])
     return out
+
