@@ -14,6 +14,21 @@ Every member and every AI agent adds an entry **at the top** of this file in the
 
 ---
 
+## 2026-11-22 · M9: basket explorer, animation and Big Idea v1 in the notebook and on the website; AI log file restored
+**Who:** Nguyễn Hoàng Minh (Claude Code, Claude Opus 5.5)
+**Changed:** M9 is done apart from the hand drawn storyboard and the persona. The notebook has ten new M9 cells (five of them code) and a new introduction:
+- M9.1 `basket_cost()` prices any basket in each channel, for one district or both, in each week, with the rules of M4.3. It stops if the standard basket differs from the weekly basket of M4.3 in any of the 24 week and channel pairs.
+- M9.2 draws the explorer view (bars of one week, lines of the eight weeks, a title that states the answer) and saves `report/figures/m9_explorer.png`. A second cell builds the ipywidgets explorer with five controls: the foods (with ready baskets for the 12 foods and the two M6 groups), the district, the channel the student uses, the delivery fee, and the week with a play button. All twelve control changes were tested in a kernel.
+- M9.3 is the animation of the basket week by week, saved in the notebook as HTML so that it plays without a kernel. It uses the 10 foods with a price in every week and channel (onion and white tofu are left out). The app basket costs 20% to 31% more than the wet market in each of the 8 weeks, and the order wet market, supermarket, app never changes.
+- M9.4 gives Big Idea v1: a student who buys on a delivery app can save 18% to 23% of a weekly basket at the wet market, 19% to 24% with the delivery fee. The six foods of the large gap group hold 43% of that money, meat, fish and eggs 57%. The persona waits for the survey.
+- M9.5 is the plan of an 8 frame storyboard that the team draws by hand for CP3.
+- The website has a new M9 section with a copy of the explorer that runs without Python (`site/m9.js`). `tools/build_site.py` writes its prices to `site/data/m9_basket.json` and checks them against M4.3 and Figure 12. The section also shows Big Idea v1, the storyboard plan and the status of M9. The site was deployed to the public address.
+- The charts of M9 are flat, following the M8 result, and do not use the 3D columns of rule 3.9.
+- The merge of M8 (commit `00771a4`) had cut `report/ai_log.md` to one row. The 19 missing rows are back, in the order of the notebook appendix, with their own wording.
+- The status line, the summary (Big Idea v1) and the module map at the top of the notebook are updated. The whole notebook ran from top to bottom without an error, and no figure of M2 to M8 changed.
+**Files:** `notebooks/P10_Final_Team10.ipynb`, `report/figures/m9_explorer.png` (new), `site/index.html`, `site/m9.js` (new), `site/data/m9_basket.json` (new), `tools/build_site.py`, `report/ai_log.md`, `CHANGELOG.md`.
+**Next:** (1) The team draws the storyboard (Section M9.5), photographs it with the date for CP3, and fills in who drew each frame. (2) The survey gives the persona of Big Idea v1 and the travel time. (3) The ipywidgets explorer needs `ipywidgets` from `requirements.txt` and a running kernel; the animation and the web copy do not. (4) M10 tests the animation against the static line of M4.3. (5) Two rows of the AI log still differ between the notebook and `report/ai_log.md` (the first row of 26 October, and the tool of Trần Nhã Đoan on 18 November). (6) The M9 lead is still *(fill in)* in the module map.
+
 ## 2026-11-22 · M8 checked against the brief and merged, one style for M7 and M8, M8 on the website
 **Who:** Nguyễn Hoàng Minh (Claude Code, Claude Opus 5.5)
 **Changed:** M8 was checked against Section 4.8 of the brief and meets it. It has a 3D block of 12 foods × 8 weeks × 3 channels and small multiples as the 2D alternative. Nine people outside the team answered three questions on both versions, five of them independent. Accuracy and time are recorded, and the result is reported honestly: a median of 12 s per answer with the small multiples against 24.5 s with the 3D block, and 11 and 12 of 15 answers right. The branch `minh-nguyet` (PR #3) was merged into `hwinh` together with the M7.3 tags of PR #4, and the notebook was merged cell by cell. Other changes:

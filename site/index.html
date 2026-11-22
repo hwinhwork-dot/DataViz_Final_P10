@@ -150,6 +150,61 @@ td.num{font-variant-numeric:tabular-nums;text-align:right}
 .fut h4{font-family:var(--serif);font-size:20px;font-weight:500;margin:2px 0 6px;letter-spacing:0}
 .fut p{font-size:16px;line-height:1.5;color:var(--ink-2);margin:0}
 
+/* ---------- M9 basket tool */
+.tool{display:grid;grid-template-columns:330px minmax(0,1fr);gap:40px;border-top:2px solid var(--ink);border-bottom:1px solid var(--ink);padding:22px 0 28px;margin-top:4px}
+.tool h4{margin:0 0 10px}
+.ctl{padding-bottom:18px;margin-bottom:18px;border-bottom:1px solid var(--rule)}
+.ctl:last-child{border-bottom:0;margin-bottom:0;padding-bottom:0}
+.btn{font-family:var(--sans);font-size:13px;font-weight:500;color:var(--ink);background:#fff;border:1px solid var(--rule);padding:7px 11px;cursor:pointer;line-height:1.2;border-radius:0}
+.btn:hover{border-color:var(--ink)}
+.btn[aria-pressed="true"]{background:var(--ink);color:var(--paper);border-color:var(--ink)}
+.tool button:focus-visible,.tool input:focus-visible,.tool summary:focus-visible{outline:2px solid var(--cho);outline-offset:2px}
+.presets{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:8px}
+.grp{font-family:var(--sans);font-size:11.5px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-2);margin:14px 0 2px}
+.it{display:flex;align-items:center;justify-content:space-between;gap:8px;padding:3px 0;border-top:1px solid var(--rule);font-family:var(--sans);font-size:14px}
+.it.off .nm{color:var(--grey)}
+.step{display:flex;align-items:center;gap:2px}
+.step button{width:30px;height:30px;border:1px solid var(--rule);background:#fff;font-size:17px;line-height:1;cursor:pointer;color:var(--ink);padding:0}
+.step button:hover:not(:disabled){border-color:var(--ink)}
+.step button:disabled{opacity:.35;cursor:default}
+.step output{min-width:60px;text-align:center;font-variant-numeric:tabular-nums}
+.seg{display:flex;flex-wrap:wrap}
+.seg .btn+.btn{border-left:0}
+.seg .btn[aria-pressed="true"]+.btn{border-left:0}
+.chk{font-family:var(--sans);font-size:14px;line-height:1.45;display:flex;gap:9px;align-items:flex-start;cursor:pointer}
+.chk input{margin:2px 0 0;accent-color:var(--sieuthi);width:16px;height:16px;flex:none}
+.hint{font-family:var(--sans);font-size:12.5px;color:var(--ink-2);margin:8px 0 0;line-height:1.5}
+.headline{font-size:clamp(22px,2.4vw,27px);line-height:1.35;margin:0 0 8px;min-height:2.7em}
+.subline{font-family:var(--sans);font-size:15px;line-height:1.55;color:var(--ink-2);margin:0 0 10px}
+.you{font-family:var(--sans);font-size:15px;line-height:1.55;margin:0;padding-left:12px;border-left:3px solid var(--cho)}
+.weekbar{display:flex;align-items:center;gap:14px;flex-wrap:wrap;margin:22px 0 4px;padding-top:16px;border-top:1px solid var(--rule);font-family:var(--sans);font-size:14px}
+.weekbar input[type=range]{flex:1;min-width:150px;accent-color:var(--cho)}
+.weekbar .wl{min-width:190px;font-variant-numeric:tabular-nums}
+.weekbar .wl b{font-weight:600}
+.play{min-width:116px}
+.bars{margin:8px 0 6px}
+.brow{display:grid;grid-template-columns:92px minmax(0,1fr);gap:12px;align-items:center;margin:9px 0}
+.brow .ch{font-family:var(--sans);font-size:14px;font-weight:600;line-height:1.2}
+.brow .ch small{display:block;font-weight:500;color:var(--cho);font-size:11px;letter-spacing:.04em;margin-top:2px}
+.btrack{display:flex;align-items:center;min-height:30px;min-width:0;--res:220px}
+.bfill,.bfee{height:28px;flex:none;transition:width .6s ease}
+.bfee{background:repeating-linear-gradient(135deg,var(--app) 0 3px,#fff 3px 6px);box-shadow:inset 0 0 0 1px var(--app)}
+.bval{font-family:var(--sans);font-size:13.5px;margin-left:10px;white-space:nowrap;font-variant-numeric:tabular-nums}
+.bval .d{color:var(--ink-2)}
+.bmiss{font-family:var(--sans);font-size:13px;color:var(--ink-2);font-style:italic;white-space:normal}
+.lchart{position:relative;margin-top:6px}
+.lchart svg{width:100%;height:auto;display:block;overflow:visible;touch-action:pan-y}
+.lchart text{font-family:var(--sans)}
+.tip{position:absolute;top:0;left:0;pointer-events:none;background:#fff;border:1px solid var(--ink);padding:8px 10px;font-family:var(--sans);font-size:12.5px;line-height:1.55;opacity:0;transition:opacity .15s;white-space:nowrap;z-index:2}
+.tip.on{opacity:1}
+.tip i{display:inline-block;width:9px;height:9px;margin-right:6px;vertical-align:0}
+.tool details{margin-top:16px;border-top:1px solid var(--rule);padding-top:10px}
+.tool summary{font-family:var(--sans);font-size:14px;font-weight:600;cursor:pointer}
+.tool table{font-size:13.5px}
+.tool th.num{text-align:right}
+.tool td.cheap{font-weight:600;background:var(--cho-soft)}
+.tool td.na{color:var(--grey);font-style:italic}
+
 /* ---------- footer */
 footer{margin-top:72px;border-top:3px double var(--ink);padding:36px 0 60px;font-family:var(--sans);font-size:14px;color:var(--ink-2)}
 footer .three div{line-height:1.7}
@@ -175,11 +230,19 @@ footer b{color:var(--ink)}
   .pipe .join::before{top:4px;bottom:4px;left:50%;right:auto;width:2px;height:auto}
   .pipe .join::after{top:auto;bottom:0;right:auto;left:calc(50% - 5px);border:6px solid transparent;border-top:8px solid var(--ink);border-bottom:0}
   .fig-wide{margin-left:0;margin-right:0}
+  .tool{grid-template-columns:1fr;gap:8px}
+  .tool .panel .ctl:last-child{border-bottom:1px solid var(--rule);padding-bottom:18px}
+}
+@media (prefers-reduced-motion:reduce){
+  .bfill,.bfee{transition:none}
 }
 @media (max-width:520px){
   .wrap{padding:0 16px}
   .tree .kids{grid-template-columns:1fr}
   .key .n{font-size:36px}
+  .btrack{flex-wrap:wrap;--res:0px}
+  .bval{flex-basis:100%;margin:4px 0 0}
+  .brow{grid-template-columns:72px minmax(0,1fr);gap:10px}
 }
 </style>
 </head>
@@ -198,7 +261,8 @@ footer b{color:var(--ink)}
       <a href="#m6">M6</a>
       <a href="#m7">M7</a>
       <a href="#m8">M8</a>
-      <a href="#sap-toi">M9 và M10</a>
+      <a href="#m9">M9</a>
+      <a href="#sap-toi">M10</a>
       <a href="#nhom">Nhóm</a>
     </nav>
   </div>
@@ -235,7 +299,7 @@ footer b{color:var(--ink)}
       <div>
         <div class="label">Tổng quan</div>
         <h2>Tiến độ đồ án</h2>
-        <p class="lede">Đề bài có 10 module, nhóm em thêm M0 cho phần chuẩn bị. Hiện tại M0 đến M8 đã có bản nháp với đủ dữ liệu 8 tuần. Ở M4 còn biểu đồ 7, vì biểu đồ này cần kết quả khảo sát sinh viên, và phần kiểm tra một biểu đồ do AI vẽ. M9 và M10 là các phần làm tiếp theo.</p>
+        <p class="lede">Đề bài có 10 module, nhóm em thêm M0 cho phần chuẩn bị. Hiện tại M0 đến M8 đã có bản nháp với đủ dữ liệu 8 tuần, và M9 đã có công cụ tự chọn giỏ hàng, hình động và Big Idea v1, chỉ còn storyboard vẽ tay. Ở M4 còn biểu đồ 7, vì biểu đồ này cần kết quả khảo sát sinh viên, và phần kiểm tra một biểu đồ do AI vẽ. M10 là phần làm tiếp theo.</p>
       </div>
     </div>
     <div class="track"><div class="track-inner">
@@ -249,7 +313,7 @@ footer b{color:var(--ink)}
         <div class="mod done"><div class="id">M6</div><div class="nm">PCA và phân cụm</div></div>
         <div class="mod done"><div class="id">M7</div><div class="nm">Dữ liệu nhiều chiều</div></div>
         <div class="mod done"><div class="id">M8</div><div class="nm">Thử nghiệm 2D và 3D</div></div>
-        <div class="mod todo"><div class="id">M9</div><div class="nm">Tương tác và storyboard</div></div>
+        <div class="mod part"><div class="id">M9</div><div class="nm">Tương tác và storyboard</div></div>
         <div class="mod todo"><div class="id">M10</div><div class="nm">Kiểm thử người dùng</div></div>
       </div>
       <div class="cps">
@@ -749,19 +813,138 @@ footer b{color:var(--ink)}
 
 <hr>
 
-<!-- ============================================================ M9 and M10 -->
+<!-- ============================================================ M9 -->
+<section id="m9">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="sec-num">M9</div>
+      <div>
+        <div class="label">Tương tác và hình động <span class="status st-part">còn storyboard vẽ tay</span></div>
+        <h2>Công cụ tự chọn giỏ hàng</h2>
+        <p class="lede">Đề bài yêu cầu một công cụ có ít nhất ba nút điều khiển để trả lời một câu hỏi thật của khách hàng, và một hình động cho thấy tiền giỏ hàng thay đổi qua từng tuần. Với công cụ dưới đây, người đọc chọn món và số lượng, quận, tuần và phí giao, rồi xem cùng một giỏ hàng tốn bao nhiêu ở chợ, siêu thị và app. Mọi con số được tính từ giá nhóm em đã ghi trong 8 tuần.</p>
+      </div>
+    </div>
+
+    <figure style="margin-top:0">
+    <div class="tool" id="tool">
+      <div class="panel">
+        <div class="ctl">
+          <h4>1. Món và số lượng</h4>
+          <div class="presets">
+            <button type="button" class="btn" data-preset="all">Giỏ 12 món của nhóm em</button>
+            <button type="button" class="btn" data-preset="lớn">6 món chênh lệch lớn</button>
+            <button type="button" class="btn" data-preset="nhỏ">6 món chênh lệch nhỏ</button>
+            <button type="button" class="btn" data-preset="none">Bỏ hết</button>
+          </div>
+          <div id="items"></div>
+          <p class="hint">Hai nhóm món lấy từ phân cụm ở M6. Mỗi lần bấm thêm hoặc bớt 0,5 kg, riêng trứng là 5 quả.</p>
+        </div>
+        <div class="ctl">
+          <h4>2. Quận</h4>
+          <div class="seg" role="group" aria-label="Quận" id="seg-d">
+            <button type="button" class="btn" data-d="Quận 3" aria-pressed="false">Quận 3</button>
+            <button type="button" class="btn" data-d="Quận 10" aria-pressed="false">Quận 10</button>
+            <button type="button" class="btn" data-d="both" aria-pressed="true">Cả hai quận</button>
+          </div>
+        </div>
+        <div class="ctl">
+          <h4>3. Bạn thường mua ở đâu</h4>
+          <div class="seg" role="group" aria-label="Nơi bạn thường mua" id="seg-c">
+            <button type="button" class="btn" data-c="Chợ" aria-pressed="false">Chợ</button>
+            <button type="button" class="btn" data-c="Siêu thị" aria-pressed="false">Siêu thị</button>
+            <button type="button" class="btn" data-c="App" aria-pressed="false">App</button>
+          </div>
+        </div>
+        <div class="ctl">
+          <h4>4. Phí giao hàng</h4>
+          <label class="chk"><input type="checkbox" id="fee"> Cộng phí giao của một đơn vào giỏ hàng mua qua app</label>
+          <p class="hint">Phí giao là trung vị các phí mà nhóm em ghi khi đặt thử trên app trong tuần đó.</p>
+        </div>
+      </div>
+
+      <div class="out">
+        <p class="headline" id="headline" aria-live="polite"></p>
+        <p class="subline" id="subline"></p>
+        <p class="you" id="you"></p>
+        <div class="weekbar">
+          <button type="button" class="btn play" id="play">Chạy 8 tuần</button>
+          <input type="range" id="week" min="1" max="8" step="1" value="8" aria-label="Tuần">
+          <span class="wl" id="weeklabel"></span>
+        </div>
+        <div class="bars" id="bars"></div>
+        <p class="hint" id="barnote"></p>
+        <h4 style="margin-top:22px">Tiền giỏ hàng qua 8 tuần</h4>
+        <div class="lchart" id="lchart"><svg id="lines" viewBox="0 0 680 250" role="img" aria-label="Tiền giỏ hàng ở ba kênh qua 8 tuần"></svg><div class="tip" id="tip"></div></div>
+        <p class="hint">Chỗ đứt trên đường là tuần mà ít nhất một món trong giỏ không có giá ở kênh đó. Phần màu xám là các tuần sau tuần đang chọn.</p>
+        <details>
+          <summary>Giá từng món trong tuần đang chọn</summary>
+          <table id="tbl"></table>
+        </details>
+      </div>
+      <noscript><p>Công cụ này cần JavaScript để chạy.</p></noscript>
+    </div>
+    <figcaption><b>Hình 24. Công cụ tự chọn giỏ hàng.</b> Giá của một món ở một kênh, một quận và một tuần là giá dùng được mà nhóm em đã ghi, tính theo kg, riêng trứng tính theo quả. Khi chọn cả hai quận, công cụ lấy trung bình giá của hai quận, giống cách tính giỏ hàng ở M4. Với giỏ 12 món ở cả hai quận trong tuần 8, công cụ cho cùng kết quả với dashboard ở Hình 12: app đắt hơn chợ 27%. Rê chuột hoặc chạm vào biểu đồ đường để xem số của từng tuần, bấm vào một tuần để chọn tuần đó.</figcaption>
+    </figure>
+
+    <div class="two">
+      <div>
+        <h3>Cách nhóm em chọn cách vẽ</h3>
+        <p><b>Việc cần làm:</b> so tiền của cùng một giỏ hàng ở ba kênh trong một tuần, rồi theo dõi khoảng chênh qua 8 tuần.</p>
+        <p><b>Vì sao chọn cách vẽ này:</b> thanh ngang bắt đầu từ 0 giúp so ba số tiền trên cùng một thang. Biểu đồ đường giữ cả 8 tuần trong một khung. Công cụ dùng biểu đồ phẳng, theo kết quả thử nghiệm ở M8.</p>
+        <p><b>Lựa chọn:</b> màu theo kênh như các hình khác. Thang của thanh giữ nguyên trong 8 tuần, nên khi chạy, thanh chỉ dài ra hay ngắn lại khi giá thay đổi. Tuần chưa tới có màu xám nhạt. Tuần thiếu giá để trống, công cụ không tự điền số.</p>
+      </div>
+      <div>
+        <h3>Hình động tiền giỏ hàng theo tuần</h3>
+        <p>Nút "Chạy 8 tuần" cho các tuần hiện lần lượt từ tuần 1 đến tuần 8. Thanh ngang và câu kết luận đổi theo từng tuần, còn đường theo tuần được tô màu dần. Nhóm em dùng hình động để người đọc theo dõi khoảng chênh giữa ba kênh qua từng tuần mà không phải đọc tám biểu đồ riêng. Notebook có thêm một hình động của 10 món có giá ở cả 8 tuần (bỏ hành tây và đậu hũ), để không tuần nào bị trống. Với 10 món này, app đắt hơn chợ từ 20% đến 31%, và thứ tự chợ, siêu thị, app giữ nguyên ở cả 8 tuần. Nhóm em chưa kiểm tra hình động có giúp người đọc hơn biểu đồ đường tĩnh ở M4 hay không. Ở M10, sinh viên sẽ trả lời một câu hỏi với hình động và một câu với biểu đồ tĩnh, và nhóm em ghi lại thời gian và số câu đúng.</p>
+        <h3>Những điều công cụ không cho biết</h3>
+        <p>Giá chỉ có ở hai quận, hai chợ và trong 8 tuần. Giá app lấy xen kẽ Grab Mart và Shopee Mart theo tuần, nên một phần khoảng chênh của app là chênh lệch giữa hai app. Công cụ không tính tiền đi lại, thời gian đi chợ hay độ tươi của thực phẩm. Số tiền "trong 4 tuần" chỉ là số tiền của một tuần nhân với 4.</p>
+      </div>
+    </div>
+
+    <h3>Big Idea v1</h3>
+    <p>Big Idea v0 ở M1 còn để trống mức tiết kiệm, nhóm món và kênh mua. Giá của 8 tuần giờ đã điền được mức tiết kiệm và kênh mua. Phần nhân vật vẫn chờ khảo sát sinh viên, và nhóm em chưa đo thời gian đi chợ.</p>
+    <p class="bigidea">Một sinh viên <span class="blank">[nhân vật từ khảo sát]</span> đang mua đồ ăn qua app có thể tiết kiệm <b>18% đến 23%</b> tiền giỏ hàng mỗi tuần nếu mua cùng các món ở <b>chợ</b>, và <b>19% đến 24%</b> khi tính cả phí giao, nhưng đi chợ tốn thời gian mà nhóm em chưa đo.</p>
+    <p>Sáu món của nhóm chênh lệch lớn ở M6 có mức chênh theo phần trăm cao nhất, nhưng chỉ chiếm 43% số tiền sinh viên tiết kiệm được. Thịt, cá và trứng chiếm 57% còn lại. Vì vậy, nếu chỉ mua sáu món đó ở chợ, sinh viên giữ được chưa tới một nửa số tiền tiết kiệm. Notebook in ra mọi con số trong câu trên (mục M9.4).</p>
+
+    <h3>Kịch bản storyboard</h3>
+    <p>Đề yêu cầu storyboard vẽ tay trên giấy, từ 5 đến 8 khung, chụp ảnh có ngày và nộp ở CP3. AI không làm thay được phần này, nên nhóm em chỉ chuẩn bị sẵn kịch bản 8 khung. Mỗi thành viên vẽ ít nhất một khung.</p>
+    <table>
+      <tr><th>Khung</th><th>Người xem thấy gì</th><th>Biểu đồ hoặc hình vẽ</th><th>Câu của khung</th></tr>
+      <tr><td class="num">1</td><td>Một bạn sinh viên cầm giỏ đứng trước chợ, siêu thị và điện thoại</td><td>Hình vẽ</td><td>Sinh viên ít tiền nên mua đồ ăn ở đâu?</td></tr>
+      <tr><td class="num">2</td><td>Dữ liệu gồm 12 món, 3 kênh, 2 quận, 8 tuần</td><td>Biểu tượng và số 558</td><td>Nhóm em ghi 576 giá và giữ lại 558 giá dùng được.</td></tr>
+      <tr><td class="num">3</td><td>Cùng một giỏ hàng ở ba kênh</td><td>Hình 19</td><td>Giỏ hàng ở siêu thị đắt hơn chợ 13%, qua app đắt hơn 26%.</td></tr>
+      <tr><td class="num">4</td><td>Khoảng chênh qua các tuần</td><td>Đường theo tuần ở M4 hoặc hình động ở M9</td><td>App đắt hơn chợ 22% đến 29% ở mọi tuần đủ dữ liệu.</td></tr>
+      <tr><td class="num">5</td><td>Phí giao hàng</td><td>Biểu đồ phí giao ở M4</td><td>Thêm một lần phí giao, app đắt hơn chợ 29%.</td></tr>
+      <tr><td class="num">6</td><td>Tiền chênh nằm ở đâu</td><td>Hình 16 và phần chia tiền ở M9</td><td>Rau củ chênh nhiều nhất theo phần trăm, nhưng thịt và cá chiếm phần lớn số tiền.</td></tr>
+      <tr><td class="num">7</td><td>Sinh viên tự chọn giỏ hàng</td><td>Ảnh chụp công cụ ở trên</td><td>Chọn món của bạn để xem bạn tiết kiệm được bao nhiêu.</td></tr>
+      <tr><td class="num">8</td><td>Câu trả lời và giới hạn</td><td>Big Idea v1</td><td>Mua cả giỏ ở chợ; nhóm em còn phải đo thời gian đi chợ.</td></tr>
+    </table>
+
+    <h3>Tình trạng M9</h3>
+    <table>
+      <tr><th>Phần đề bài yêu cầu</th><th>Tình trạng</th></tr>
+      <tr><td>Công cụ có ít nhất ba nút điều khiển, trả lời một câu hỏi của khách hàng</td><td><span class="ok">Đã có</span> trên trang này và trong notebook (M9.2, làm bằng ipywidgets, có năm nút điều khiển)</td></tr>
+      <tr><td>Một hình động tiền giỏ hàng theo tuần</td><td><span class="ok">Đã có</span> trên trang này và trong notebook (M9.3); bản trong notebook chạy được mà không cần kernel</td></tr>
+      <tr><td>Big Idea v1</td><td><span class="half">Đã có bản nháp</span>, còn chờ khảo sát cho phần nhân vật</td></tr>
+      <tr><td>Storyboard vẽ tay từ 5 đến 8 khung, chụp ảnh có ngày (CP3)</td><td><span class="half">Đã có kịch bản</span>, nhóm vẽ tay và chụp ảnh</td></tr>
+    </table>
+  </div>
+</section>
+
+<hr>
+
+<!-- ============================================================ M10 -->
 <section id="sap-toi">
   <div class="wrap">
     <div class="sec-head">
-      <div class="sec-num">M9+</div>
+      <div class="sec-num">M10</div>
       <div>
-        <div class="label">Các module tiếp theo <span class="status st-todo">chưa làm</span></div>
-        <h2>Kế hoạch cho M9 và M10</h2>
-        <p class="lede">Dữ liệu giá đã đủ 8 tuần; các module này còn cần ít nhất 60 câu trả lời khảo sát sinh viên. Nhóm em sẽ cập nhật trang này sau mỗi checkpoint.</p>
+        <div class="label">Module tiếp theo <span class="status st-todo">chưa làm</span></div>
+        <h2>Kế hoạch cho M10</h2>
+        <p class="lede">M10 cho người thật dùng thử bản v1 của nhóm em, gồm các biểu đồ, dashboard và công cụ ở M9, rồi sửa thành bản v2. Nhóm em sẽ cập nhật trang này sau mỗi checkpoint.</p>
       </div>
     </div>
     <div class="future">
-      <div class="fut"><div class="id">M9 · CP3</div><h4>Tương tác và storyboard</h4><p>Công cụ để người dùng tự chọn món cho giỏ hàng, có ít nhất 3 nút điều khiển. Thêm một animation giá giỏ hàng theo tuần và storyboard vẽ tay.</p></div>
       <div class="fut"><div class="id">M10 · CP4</div><h4>Kiểm thử và chỉnh sửa</h4><p>Cho ít nhất 5 sinh viên tự nấu ăn dùng thử, đổi bản nháp với một nhóm khác để góp ý, và ghi lại ít nhất 8 chỗ sửa kèm lý do.</p></div>
     </div>
   </div>
@@ -806,5 +989,6 @@ footer b{color:var(--ink)}
     document.addEventListener("keydown", function (e) { if (e.key === "Escape") lb.classList.remove("on"); });
   })();
 </script>
+<script src="m9.js" defer></script>
 </body>
 </html>
