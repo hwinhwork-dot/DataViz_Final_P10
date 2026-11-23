@@ -101,6 +101,16 @@
       clearTimeout(wait);
       wait = setTimeout(() => { if (window.innerWidth !== lastW) { lastW = window.innerWidth; clipX = null; update(); } }, 150);
     });
+    // on a phone the controls and the result do not fit on one screen: a bar at the bottom repeats the result
+    const bar = document.createElement("div");
+    bar.className = "m9-sum";
+    bar.setAttribute("aria-hidden", "true");
+    document.body.appendChild(bar);
+    const seen = { panel: false, head: false };
+    const show = () => bar.classList.toggle("on", seen.panel && !seen.head);
+    new IntersectionObserver(es => es.forEach(e => { seen[e.target === $("headline") ? "head" : "panel"] = e.isIntersecting; show(); }))
+      .observe(tool.querySelector(".panel"));
+    new IntersectionObserver(es => es.forEach(e => { seen.head = e.isIntersecting; show(); })).observe($("headline"));
     update();
   }
 
@@ -138,6 +148,8 @@
     const all = D.weeks.map((w, wi) => basket(wi));
     const b = all[S.week - 1];
     writeText(b);
+    const sum = document.querySelector(".m9-sum");
+    if (sum) sum.textContent = $("headline").textContent;
     drawBars(b, all);
     drawLines(all);
     drawTable();

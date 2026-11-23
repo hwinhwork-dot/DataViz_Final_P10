@@ -14,6 +14,17 @@ Every member and every AI agent adds an entry **at the top** of this file in the
 
 ---
 
+## 2026-11-23 · Interface review of both sites on phones and computers
+**Who:** Nguyễn Hoàng Minh (Claude Code, Claude Opus 5.5)
+**Changed:** Every scene of the presentation site, the game, the review and the M9 tool of the website were checked in a headless browser at 360 × 740, 390 × 844, 844 × 390 (a phone held sideways) and 1440 × 900 or 1280 × 800, with a list of text under 11.5 px, tap targets under 36 px and anything wider than the screen. Fixes:
+- Presentation site on a phone: the route bar is thinner (46 px) and shows only the track and An's marker, which now follows the track on every screen width; the cover says "Vuốt lên để bắt đầu" on touch screens instead of naming the arrow keys; the kites no longer cover the title or the hint; the test pill moves the hint up; the words inside the drawings (labels of the baskets, coins, map pins, stopwatches) are larger; the three stats of the basket scene are one per row, and the third reads "8 tuần" with its meaning; the "Xem lại" buttons and the end card links are larger tap targets; titles wrap in balanced lines.
+- A phone held sideways: the cover fits in one screen, and each scene shows the drawing and its card side by side; in the game the stage and the panel sit side by side, and the app phone becomes wider so that its rows stay readable.
+- Game and review: the buttons under a long receipt or a long card stay at the bottom of the panel (sticky), so a reader never has to scroll to find "Thử nơi khác" or "Tiếp"; the summary of the review uses two rows on a phone.
+- Website: on a phone the top bar is one row that scrolls sideways (54 px instead of 120 px) with larger links; the steppers and buttons of the M9 tool are larger; a bar at the bottom repeats the result of the tool while the reader changes the foods further down.
+The game was then played from start to end at 390 × 844 in test mode and at 1280 × 800, with no script error and no sideways scroll.
+**Files:** `story/style.css`, `story/forms.css`, `story/index.html`, `story/app.js`, `story/test.js`, `story/chon.js`, `site/index.html`, `site/m9.js`, `notebooks/P10_Final_Team10.ipynb` (AI log row only), `report/ai_log.md`, `CHANGELOG.md`.
+**Next:** (1) Real phones differ from a headless browser; a member opens both sites on an iPhone and an Android phone before the test with students. (2) The animations are heavy on old phones; if a tester reports lag, the team can skip a shopping animation with "Bỏ qua hình động".
+
 ## 2026-11-23 · M9 on the presentation site becomes the game "Đi chợ cùng An"; the review opens by itself after the game
 **Who:** Nguyễn Hoàng Minh (Claude Code, Claude Opus 5.5)
 **Changed:** Nguyễn Hoàng Minh found that the explorer of scene 12 had too many buttons. It is now a game in four steps, each with one to three choices that the reader taps on the drawing:

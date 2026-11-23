@@ -28,6 +28,7 @@
   }
   function startPill() {
     document.body.appendChild(pill);
+    document.body.classList.add("has-pill");
     step();
     const chon = document.getElementById("s-chon");
     if (chon) new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { pill.dataset.chon = "1"; step(); } }), { threshold: .15 }).observe(chon);

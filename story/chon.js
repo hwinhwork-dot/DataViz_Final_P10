@@ -602,10 +602,12 @@ window.P10Chon = (() => {
       .to($(".g-bike", svg), { x: 900, duration: .1 }, at + 6.8).set($(".g-parcel", svg), { opacity: 0 }, at + 6.8);
   }
   function placePhone() {                                                // over the stage on a computer, larger than the stage on a phone
-    const ph = $(".g-phone", G), r = stage.getBoundingClientRect(), small = window.innerWidth < 900;
-    const h = small ? Math.min(window.innerHeight * .8, 660) : r.height * .93;
+    const ph = $(".g-phone", G), r = stage.getBoundingClientRect(), short = window.innerHeight < 560;
+    const small = window.innerWidth < 900 && !short;
+    ph.classList.toggle("wide", short);                                    // sideways phone: a wider screen so that the rows stay readable
+    const h = small ? Math.min(window.innerHeight * .8, 660) : short ? window.innerHeight * .9 : r.height * .93;
     ph.style.height = h + "px";
-    ph.style.top = (small ? Math.max(58, (window.innerHeight - h) / 2) : r.top + r.height * .035) + "px";
+    ph.style.top = (small ? Math.max(58, (window.innerHeight - h) / 2) : short ? window.innerHeight * .05 : r.top + r.height * .035) + "px";
     ph.style.left = (small ? window.innerWidth / 2 : r.left + r.width / 2) + "px";
   }
   function tap(target, screen) {

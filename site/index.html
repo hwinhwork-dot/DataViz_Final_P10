@@ -236,6 +236,26 @@ footer b{color:var(--ink)}
 @media (prefers-reduced-motion:reduce){
   .bfill,.bfee{transition:none}
 }
+/* ---------- the top bar on a phone: one row that scrolls sideways, with larger tap targets */
+@media (max-width:860px){
+  .topbar .wrap{flex-wrap:nowrap;gap:12px;padding-top:4px;padding-bottom:4px}
+  .topbar .label{flex:none;font-size:11px}
+  .topbar nav{flex-wrap:nowrap;overflow-x:auto;gap:0;scrollbar-width:none;-webkit-mask-image:linear-gradient(90deg,#000 85%,transparent);mask-image:linear-gradient(90deg,#000 85%,transparent)}
+  .topbar nav::-webkit-scrollbar{display:none}
+  .topbar nav a{padding:12px 9px;white-space:nowrap}
+}
+.m9-sum{display:none}
+@media (max-width:860px){
+  .m9-sum{display:block;position:fixed;left:10px;right:10px;bottom:10px;z-index:6;padding:10px 14px;background:var(--ink);color:var(--paper);
+    font-family:var(--sans);font-size:13.5px;line-height:1.4;border-left:4px solid var(--cho);box-shadow:0 8px 22px rgba(0,0,0,.25);
+    transform:translateY(140%);transition:transform .3s}
+  .m9-sum.on{transform:none}
+}
+@media (max-width:520px){
+  .topbar .label{display:none}
+  .step button{width:36px;height:36px}
+  .btn{padding:9px 12px}
+}
 @media (max-width:520px){
   .wrap{padding:0 16px}
   .tree .kids{grid-template-columns:1fr}

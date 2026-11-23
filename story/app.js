@@ -503,7 +503,7 @@
     onCover();
     ScrollTrigger.create({ start: 0, end: "max", onUpdate: self => {
       const track = $(".route-track"), w = track.getBoundingClientRect().width;
-      marker.style.left = (40 + self.progress * w) + "px";
+      marker.style.left = (track.offsetLeft + self.progress * w) + "px";
       fill.style.width = (self.progress * 100) + "%";
     } });
     const current = () => {
