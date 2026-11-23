@@ -1,0 +1,458 @@
+{
+ "design": {
+  "prices": 576,
+  "usable": 558,
+  "items": 12,
+  "channels": 3,
+  "districts": 2,
+  "weeks": 8,
+  "members": 6,
+  "markets": [
+   "Chợ Bàn Cờ (Quận 3)",
+   "Chợ Nguyễn Tri Phương (Quận 10)"
+  ],
+  "apps": [
+   "Grab Mart",
+   "Shopee Mart"
+  ]
+ },
+ "basket": {
+  "weeks": [
+   1,
+   2,
+   3,
+   5,
+   7,
+   8
+  ],
+  "vnd": {
+   "Chợ": 1050381,
+   "Siêu thị": 1185730,
+   "App": 1328135
+  },
+  "pct_over_market": {
+   "Chợ": 0.0,
+   "Siêu thị": 12.9,
+   "App": 26.4
+  },
+  "items": {
+   "Chợ": [
+    {
+     "name": "Thịt heo ba chỉ",
+     "vnd": 167000
+    },
+    {
+     "name": "Rau muống",
+     "vnd": 22056
+    },
+    {
+     "name": "Cá thu",
+     "vnd": 255833
+    },
+    {
+     "name": "Cà chua",
+     "vnd": 28583
+    },
+    {
+     "name": "Thịt bò",
+     "vnd": 265667
+    },
+    {
+     "name": "Gà ta",
+     "vnd": 123500
+    },
+    {
+     "name": "Dưa hấu",
+     "vnd": 14708
+    },
+    {
+     "name": "Hành tây",
+     "vnd": 24083
+    },
+    {
+     "name": "Khoai tây Đà Lạt",
+     "vnd": 32117
+    },
+    {
+     "name": "Đậu hũ trắng",
+     "vnd": 30833
+    },
+    {
+     "name": "Trứng gà",
+     "vnd": 22750
+    },
+    {
+     "name": "Cá diêu hồng",
+     "vnd": 63250
+    }
+   ],
+   "Siêu thị": [
+    {
+     "name": "Thịt heo ba chỉ",
+     "vnd": 179525
+    },
+    {
+     "name": "Rau muống",
+     "vnd": 32217
+    },
+    {
+     "name": "Cá thu",
+     "vnd": 276714
+    },
+    {
+     "name": "Cà chua",
+     "vnd": 37400
+    },
+    {
+     "name": "Thịt bò",
+     "vnd": 284941
+    },
+    {
+     "name": "Gà ta",
+     "vnd": 125167
+    },
+    {
+     "name": "Dưa hấu",
+     "vnd": 19542
+    },
+    {
+     "name": "Hành tây",
+     "vnd": 36325
+    },
+    {
+     "name": "Khoai tây Đà Lạt",
+     "vnd": 37158
+    },
+    {
+     "name": "Đậu hũ trắng",
+     "vnd": 44209
+    },
+    {
+     "name": "Trứng gà",
+     "vnd": 27533
+    },
+    {
+     "name": "Cá diêu hồng",
+     "vnd": 85000
+    }
+   ],
+   "App": [
+    {
+     "name": "Thịt heo ba chỉ",
+     "vnd": 187017
+    },
+    {
+     "name": "Rau muống",
+     "vnd": 39436
+    },
+    {
+     "name": "Cá thu",
+     "vnd": 307450
+    },
+    {
+     "name": "Cà chua",
+     "vnd": 39417
+    },
+    {
+     "name": "Thịt bò",
+     "vnd": 314550
+    },
+    {
+     "name": "Gà ta",
+     "vnd": 142225
+    },
+    {
+     "name": "Dưa hấu",
+     "vnd": 23524
+    },
+    {
+     "name": "Hành tây",
+     "vnd": 40775
+    },
+    {
+     "name": "Khoai tây Đà Lạt",
+     "vnd": 40832
+    },
+    {
+     "name": "Đậu hũ trắng",
+     "vnd": 50095
+    },
+    {
+     "name": "Trứng gà",
+     "vnd": 32558
+    },
+    {
+     "name": "Cá diêu hồng",
+     "vnd": 110255
+    }
+   ]
+  },
+  "top_item": "Thịt bò",
+  "top_item_share_pct": {
+   "Chợ": 25.3,
+   "Siêu thị": 24.0,
+   "App": 23.7
+  }
+ },
+ "fee": {
+  "one_order_vnd": 23297,
+  "app_with_fee_vnd": 1351431,
+  "app_with_fee_pct_over_market": 28.7
+ },
+ "weekly": {
+  "basket_vnd": {
+   "Chợ": [
+    1072000,
+    1090000,
+    1002333,
+    null,
+    1050350,
+    null,
+    1032850,
+    1054750
+   ],
+   "Siêu thị": [
+    1135508,
+    1201700,
+    1155033,
+    1079400,
+    1231583,
+    null,
+    1194600,
+    1195955
+   ],
+   "App": [
+    1373740,
+    1408850,
+    1242812,
+    null,
+    1343745,
+    null,
+    1261875,
+    1337786
+   ]
+  },
+  "app_gap_min_pct": 22.2,
+  "app_gap_max_pct": 29.3,
+  "super_gap_min_pct": 5.9,
+  "super_gap_max_pct": 17.3
+ },
+ "pairs": {
+  "Siêu thị": {
+   "median_ratio": 1.18,
+   "n": 187,
+   "dearer_pct": 89
+  },
+  "App": {
+   "median_ratio": 1.34,
+   "n": 180,
+   "dearer_pct": 94
+  }
+ },
+ "groups": {
+  "Large channel gap": {
+   "items": [
+    "Rau muống",
+    "Đậu hũ trắng",
+    "Cá diêu hồng",
+    "Hành tây",
+    "Dưa hấu",
+    "Cà chua"
+   ],
+   "codes": [
+    "SP02",
+    "SP10",
+    "SP12",
+    "SP08",
+    "SP07",
+    "SP04"
+   ],
+   "app_median_pct": 67,
+   "app_min_pct": 34,
+   "app_max_pct": 74
+  },
+  "Small channel gap": {
+   "items": [
+    "Trứng gà",
+    "Cá thu",
+    "Khoai tây Đà Lạt",
+    "Thịt bò",
+    "Thịt heo ba chỉ",
+    "Gà ta"
+   ],
+   "codes": [
+    "SP11",
+    "SP03",
+    "SP09",
+    "SP05",
+    "SP01",
+    "SP06"
+   ],
+   "app_median_pct": 21,
+   "app_min_pct": 12,
+   "app_max_pct": 41
+  }
+ },
+ "app_by_item": [
+  {
+   "code": "SP02",
+   "name": "Rau muống",
+   "group": "Large channel gap",
+   "app_pct": 74
+  },
+  {
+   "code": "SP10",
+   "name": "Đậu hũ trắng",
+   "group": "Large channel gap",
+   "app_pct": 73
+  },
+  {
+   "code": "SP12",
+   "name": "Cá diêu hồng",
+   "group": "Large channel gap",
+   "app_pct": 70
+  },
+  {
+   "code": "SP08",
+   "name": "Hành tây",
+   "group": "Large channel gap",
+   "app_pct": 65
+  },
+  {
+   "code": "SP07",
+   "name": "Dưa hấu",
+   "group": "Large channel gap",
+   "app_pct": 62
+  },
+  {
+   "code": "SP11",
+   "name": "Trứng gà",
+   "group": "Small channel gap",
+   "app_pct": 41
+  },
+  {
+   "code": "SP04",
+   "name": "Cà chua",
+   "group": "Large channel gap",
+   "app_pct": 34
+  },
+  {
+   "code": "SP03",
+   "name": "Cá thu",
+   "group": "Small channel gap",
+   "app_pct": 27
+  },
+  {
+   "code": "SP09",
+   "name": "Khoai tây Đà Lạt",
+   "group": "Small channel gap",
+   "app_pct": 25
+  },
+  {
+   "code": "SP05",
+   "name": "Thịt bò",
+   "group": "Small channel gap",
+   "app_pct": 16
+  },
+  {
+   "code": "SP01",
+   "name": "Thịt heo ba chỉ",
+   "group": "Small channel gap",
+   "app_pct": 13
+  },
+  {
+   "code": "SP06",
+   "name": "Gà ta",
+   "group": "Small channel gap",
+   "app_pct": 12
+  }
+ ],
+ "saving": {
+  "app_minus_market_vnd": 277754,
+  "large_group_vnd": 119989,
+  "large_group_share_pct": 43
+ },
+ "districts": {
+  "within_5pct": 7,
+  "top_item": "Rau muống",
+  "top_gap_pct": 10.4,
+  "items": [
+   {
+    "name": "Rau muống",
+    "gap_pct": 10.4
+   },
+   {
+    "name": "Thịt heo ba chỉ",
+    "gap_pct": 1.4
+   },
+   {
+    "name": "Cá thu",
+    "gap_pct": 0.4
+   },
+   {
+    "name": "Hành tây",
+    "gap_pct": -0.3
+   },
+   {
+    "name": "Đậu hũ trắng",
+    "gap_pct": -0.4
+   },
+   {
+    "name": "Cá diêu hồng",
+    "gap_pct": -3.3
+   },
+   {
+    "name": "Thịt bò",
+    "gap_pct": -3.4
+   },
+   {
+    "name": "Trứng gà",
+    "gap_pct": -4.1
+   },
+   {
+    "name": "Dưa hấu",
+    "gap_pct": -5.2
+   },
+   {
+    "name": "Gà ta",
+    "gap_pct": -6.0
+   },
+   {
+    "name": "Cà chua",
+    "gap_pct": -6.3
+   },
+   {
+    "name": "Khoai tây Đà Lạt",
+    "gap_pct": -7.3
+   }
+  ]
+ },
+ "cpi": {
+  "basket_change_pct": {
+   "Chợ": -1.6,
+   "Siêu thị": 5.3,
+   "App": -5.0
+  },
+  "cpi_october_pct": 0.62
+ },
+ "heatmap": {
+  "later_weeks": 7,
+  "always_below": [
+   "Hành tây"
+  ],
+  "below_weeks": 7,
+  "mostly_above": [
+   "Thịt bò",
+   "Trứng gà"
+  ],
+  "above_weeks": 6
+ },
+ "test": {
+  "people": 9,
+  "independent": 5,
+  "median_s": {
+   "2D": 12.0,
+   "3D": 24.5
+  }
+ }
+}

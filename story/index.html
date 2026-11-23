@@ -1,0 +1,596 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Giá của bữa tối</title>
+<meta name="description" content="Phần trình bày của Nhóm 10, môn Trực quan hoá dữ liệu, UEH: một sinh viên, 12 món ăn và ba nơi mua.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%232B2A6B'/%3E%3Cpath d='M10 40 C10 22 54 22 54 40 Z' fill='%23F36FA9'/%3E%3Crect x='8' y='40' width='48' height='6' rx='3' fill='%23FFF1C9'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700&family=Patrick+Hand&family=Playfair+Display:ital,wght@0,700;0,800;1,700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="forms.css">
+</head>
+<body class="on-cover">
+
+<!-- Shared drawings: gradients, clouds, items, coins -->
+<svg class="sprite" aria-hidden="true" focusable="false">
+  <defs>
+    <linearGradient id="gCloud" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0" stop-color="#F59AC4"/><stop offset=".5" stop-color="#B9A8F2"/><stop offset="1" stop-color="#9FE6DA"/>
+    </linearGradient>
+    <linearGradient id="gCloud2" x1="0" x2="1" y1="1" y2="0">
+      <stop offset="0" stop-color="#FFC38B"/><stop offset=".55" stop-color="#F36FA9"/><stop offset="1" stop-color="#8E7BE6"/>
+    </linearGradient>
+    <linearGradient id="gRoof" x1="0" x2="0" y1="0" y2="1">
+      <stop offset="0" stop-color="#C9B8FF"/><stop offset="1" stop-color="#6F5FD6"/>
+    </linearGradient>
+    <linearGradient id="gWall" x1="0" x2="0" y1="0" y2="1">
+      <stop offset="0" stop-color="#F36FA9"/><stop offset="1" stop-color="#5B4FC8"/>
+    </linearGradient>
+    <linearGradient id="gGold" x1="0" x2="1">
+      <stop offset="0" stop-color="#FFE3A3"/><stop offset="1" stop-color="#FFC38B"/>
+    </linearGradient>
+    <filter id="glow" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="3" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+
+    <symbol id="cloud" viewBox="0 0 300 130">
+      <path d="M22 112 C2 112 2 82 24 78 C20 52 52 42 68 58 C72 30 112 22 128 46 C140 16 192 16 200 48 C216 32 252 38 250 64 C278 60 294 86 280 106 C292 112 288 122 272 122 L32 122 C16 122 12 114 22 112 Z" fill="url(#gCloud)" stroke="#FFF1C9" stroke-width="5" stroke-linejoin="round"/>
+      <path d="M74 98 c0-17 27-17 27 0 c0 11-17 11-17 2" fill="none" stroke="#FFF1C9" stroke-width="4.5" stroke-linecap="round"/>
+      <path d="M150 86 c0-22 36-22 36 0 c0 14-22 14-22 3" fill="none" stroke="#FFF1C9" stroke-width="4.5" stroke-linecap="round"/>
+      <path d="M222 100 c0-15 23-15 23 0 c0 9-14 9-14 2" fill="none" stroke="#FFF1C9" stroke-width="4.5" stroke-linecap="round"/>
+    </symbol>
+    <symbol id="cloud2" viewBox="0 0 300 130">
+      <path d="M22 112 C2 112 2 82 24 78 C20 52 52 42 68 58 C72 30 112 22 128 46 C140 16 192 16 200 48 C216 32 252 38 250 64 C278 60 294 86 280 106 C292 112 288 122 272 122 L32 122 C16 122 12 114 22 112 Z" fill="url(#gCloud2)" stroke="#FFF1C9" stroke-width="5" stroke-linejoin="round"/>
+      <path d="M90 96 c0-18 29-18 29 0 c0 12-18 12-18 2" fill="none" stroke="#FFF1C9" stroke-width="4.5" stroke-linecap="round"/>
+      <path d="M176 90 c0-20 33-20 33 0 c0 13-20 13-20 3" fill="none" stroke="#FFF1C9" stroke-width="4.5" stroke-linecap="round"/>
+    </symbol>
+
+    <symbol id="kite" viewBox="-80 -80 160 250">
+      <path d="M0 70 C24 100 -24 122 0 150 C24 178 -18 196 4 222" fill="none" stroke="#F36FA9" stroke-width="5" stroke-linecap="round"/>
+      <path d="M-14 150 l14 -6 l14 6 M-12 196 l12 -6 l12 6" fill="none" stroke="#FFC38B" stroke-width="5" stroke-linecap="round"/>
+      <g transform="rotate(45)">
+        <rect x="-50" y="-50" width="100" height="100" fill="#F7897B" stroke="#FFF1C9" stroke-width="4"/>
+        <rect x="-39" y="-39" width="78" height="78" fill="#4B47A8"/>
+        <rect x="-29" y="-29" width="58" height="58" fill="#8FE3D6"/>
+        <rect x="-19" y="-19" width="38" height="38" fill="#FFC38B"/>
+        <rect x="-9" y="-9" width="18" height="18" fill="#F36FA9"/>
+      </g>
+    </symbol>
+
+    <symbol id="lantern" viewBox="0 0 60 110">
+      <line x1="30" y1="0" x2="30" y2="18" stroke="#FFE3A3" stroke-width="3"/>
+      <rect x="18" y="16" width="24" height="7" rx="2" fill="#FFE3A3"/>
+      <ellipse cx="30" cy="52" rx="24" ry="30" fill="#F36FA9" stroke="#FFF1C9" stroke-width="3"/>
+      <path d="M14 52 h32 M17 38 h26 M17 66 h26" stroke="#FFC38B" stroke-width="2.5"/>
+      <rect x="18" y="80" width="24" height="7" rx="2" fill="#FFE3A3"/>
+      <path d="M24 88 v18 M30 88 v20 M36 88 v18" stroke="#FFC38B" stroke-width="2.5" stroke-linecap="round"/>
+    </symbol>
+
+    <symbol id="coin" viewBox="0 0 60 60">
+      <circle cx="30" cy="30" r="27" fill="url(#gGold)" stroke="#B8862E" stroke-width="3"/>
+      <circle cx="30" cy="30" r="20" fill="none" stroke="#D9A54A" stroke-width="2"/>
+      <rect x="23" y="23" width="14" height="14" fill="#2B2A6B" stroke="#B8862E" stroke-width="2"/>
+    </symbol>
+
+    <symbol id="basket" viewBox="0 0 220 150">
+      <path d="M30 40 Q110 -40 190 40" fill="none" stroke="#B8862E" stroke-width="9" stroke-linecap="round"/>
+      <path d="M14 48 H206 L184 140 Q182 146 176 146 H44 Q38 146 36 140 Z" fill="#E8B46A" stroke="#7A4E1E" stroke-width="4" stroke-linejoin="round"/>
+      <path d="M26 70 H194 M32 94 H188 M38 118 H182" stroke="#B8862E" stroke-width="4"/>
+      <path d="M60 50 L66 144 M95 50 L98 144 M125 50 L122 144 M160 50 L154 144" stroke="#B8862E" stroke-width="4"/>
+      <rect x="8" y="40" width="204" height="14" rx="7" fill="#F2C98A" stroke="#7A4E1E" stroke-width="4"/>
+    </symbol>
+
+    <!-- The 12 foods -->
+    <symbol id="i-SP01" viewBox="0 0 64 64"><rect x="6" y="16" width="52" height="32" rx="8" fill="#F7A9B8" stroke="#7A3B4E" stroke-width="2.5"/><path d="M8 26 H56 M8 34 H56" stroke="#FFF1E6" stroke-width="4"/><path d="M8 41 H56" stroke="#E07A8F" stroke-width="3"/></symbol>
+    <symbol id="i-SP02" viewBox="0 0 64 64"><path d="M32 58 C28 40 20 30 10 22 M32 58 C32 38 32 24 30 8 M32 58 C36 40 44 30 54 20 M32 58 C30 44 24 36 18 32" fill="none" stroke="#3E9B5B" stroke-width="4" stroke-linecap="round"/><path d="M10 22 q-6 -8 2 -12 q6 4 -2 12 M30 8 q-4 -6 4 -8 q4 6 -4 8 M54 20 q6 -8 -2 -12 q-6 4 2 12" fill="#6CC788"/><rect x="24" y="44" width="16" height="7" rx="3" fill="#F36FA9"/></symbol>
+    <symbol id="i-SP03" viewBox="0 0 64 64"><path d="M6 32 C16 16 40 14 52 30 L62 20 L60 44 L52 34 C40 50 16 48 6 32 Z" fill="#7D9CC6" stroke="#2B3A66" stroke-width="2.5"/><path d="M18 26 l4 6 l-4 6 M28 24 l4 8 l-4 8 M38 25 l4 7 l-4 7" fill="none" stroke="#2B3A66" stroke-width="2"/><circle cx="13" cy="30" r="2.5" fill="#2B3A66"/></symbol>
+    <symbol id="i-SP04" viewBox="0 0 64 64"><circle cx="32" cy="36" r="22" fill="#F0503C" stroke="#8C2A1E" stroke-width="2.5"/><path d="M22 16 l10 6 l10 -6 l-4 10 h-12 Z" fill="#3E9B5B"/><ellipse cx="24" cy="30" rx="5" ry="3" fill="#FF9E8C"/></symbol>
+    <symbol id="i-SP05" viewBox="0 0 64 64"><path d="M8 30 C8 14 34 10 48 18 C60 24 58 44 46 50 C34 56 8 50 8 30 Z" fill="#B53A3A" stroke="#5E1A1A" stroke-width="2.5"/><path d="M18 26 C26 22 34 30 42 26 M16 38 C26 34 32 42 44 38" fill="none" stroke="#F4C7C7" stroke-width="3" stroke-linecap="round"/><circle cx="44" cy="32" r="5" fill="#FBE6D4"/></symbol>
+    <symbol id="i-SP06" viewBox="0 0 64 64"><path d="M14 40 C6 26 18 10 34 14 C50 18 50 36 40 44 L30 52 Z" fill="#F2B84B" stroke="#8A5A12" stroke-width="2.5"/><path d="M30 52 L22 60 M22 60 l-4 -2 M22 60 l-1 4" stroke="#FFF4DC" stroke-width="5" stroke-linecap="round"/></symbol>
+    <symbol id="i-SP07" viewBox="0 0 64 64"><path d="M4 26 A28 28 0 0 0 60 26 Z" fill="#2F8F4E"/><path d="M9 26 A23 23 0 0 0 55 26 Z" fill="#F45B69"/><g fill="#2B2A2A"><ellipse cx="22" cy="34" rx="1.8" ry="2.8"/><ellipse cx="32" cy="40" rx="1.8" ry="2.8"/><ellipse cx="42" cy="34" rx="1.8" ry="2.8"/><ellipse cx="27" cy="30" rx="1.6" ry="2.4"/><ellipse cx="37" cy="30" rx="1.6" ry="2.4"/></g></symbol>
+    <symbol id="i-SP08" viewBox="0 0 64 64"><path d="M32 8 C34 18 52 26 50 42 C48 56 16 56 14 42 C12 26 30 18 32 8 Z" fill="#C98BD6" stroke="#6B2F7A" stroke-width="2.5"/><path d="M32 12 C28 26 26 40 30 54 M32 12 C38 26 40 40 36 54" fill="none" stroke="#F1D7F5" stroke-width="2"/><path d="M28 56 l4 4 l4 -4" stroke="#6B2F7A" stroke-width="2.5" fill="none"/></symbol>
+    <symbol id="i-SP09" viewBox="0 0 64 64"><ellipse cx="32" cy="34" rx="24" ry="18" fill="#C9935A" stroke="#6E4A22" stroke-width="2.5"/><g fill="#8A5E30"><circle cx="22" cy="28" r="2"/><circle cx="38" cy="26" r="2"/><circle cx="30" cy="38" r="2"/><circle cx="44" cy="38" r="2"/></g></symbol>
+    <symbol id="i-SP10" viewBox="0 0 64 64"><path d="M10 26 L30 18 L54 24 L54 44 L34 52 L10 46 Z" fill="#FBF7EC" stroke="#8D8573" stroke-width="2.5"/><path d="M10 26 L34 32 L54 24 M34 32 V52" fill="none" stroke="#8D8573" stroke-width="2.5"/></symbol>
+    <symbol id="i-SP11" viewBox="0 0 64 64"><ellipse cx="22" cy="36" rx="12" ry="15" fill="#FBEBD0" stroke="#A8865A" stroke-width="2.5"/><ellipse cx="42" cy="34" rx="12" ry="15" fill="#F6DDB4" stroke="#A8865A" stroke-width="2.5"/><path d="M6 46 H58 L54 56 H10 Z" fill="#B9A8F2" stroke="#4B47A8" stroke-width="2.5"/></symbol>
+    <symbol id="i-SP12" viewBox="0 0 64 64"><path d="M6 32 C16 14 40 14 52 30 L62 18 L60 46 L52 34 C40 52 16 50 6 32 Z" fill="#F08A8A" stroke="#8C2F3E" stroke-width="2.5"/><path d="M26 22 C30 28 30 36 26 42" fill="none" stroke="#8C2F3E" stroke-width="2"/><circle cx="13" cy="30" r="2.5" fill="#8C2F3E"/></symbol>
+  </defs>
+</svg>
+
+<!-- Fixed layers: background pattern of food and market drawings, route progress, dots -->
+<div class="bg" aria-hidden="true">
+  <svg class="pattern" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+      <pattern id="pTile" width="260" height="260" patternUnits="userSpaceOnUse">
+        <g fill="none" stroke="#FFF1C9" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+          <!-- bowl of rice and chopsticks -->
+          <g transform="translate(26 40)">
+            <path d="M0 22 H64 A32 26 0 0 1 0 22 Z"/><path d="M6 22 C8 6 56 6 58 22"/>
+            <path d="M18 14 l3 -3 M30 10 l3 -3 M42 13 l3 -3"/><path d="M44 0 L76 -18 M50 4 L82 -12"/><path d="M24 48 H40"/>
+          </g>
+          <!-- fish -->
+          <g transform="translate(150 34) rotate(-12)">
+            <path d="M0 14 C14 -4 40 -4 52 12 L66 2 L64 26 L52 16 C40 32 14 32 0 14 Z"/><circle cx="12" cy="12" r="2"/><path d="M26 6 C30 12 30 18 26 24"/>
+          </g>
+          <!-- herb sprig -->
+          <g transform="translate(118 112) rotate(18)">
+            <path d="M0 50 C6 30 10 14 22 0"/><path d="M6 34 C-8 30 -10 20 -4 16 C4 20 6 26 6 34 Z"/><path d="M12 20 C24 22 30 14 28 8 C20 8 14 12 12 20 Z"/><path d="M3 44 C16 44 22 38 20 32 C12 32 6 36 3 44 Z"/>
+          </g>
+          <!-- price tag -->
+          <g transform="translate(36 158) rotate(-14)">
+            <path d="M0 10 L14 0 H62 Q68 0 68 6 V34 Q68 40 62 40 H14 L0 30 Z"/><circle cx="12" cy="20" r="4"/><path d="M28 14 H54 M28 24 H48"/>
+          </g>
+          <!-- old coin with a square hole -->
+          <g transform="translate(196 150)">
+            <circle r="22"/><circle r="15"/><rect x="-6" y="-6" width="12" height="12"/>
+          </g>
+          <!-- market basket -->
+          <g transform="translate(150 210)">
+            <path d="M6 10 Q30 -16 54 10"/><path d="M0 12 H60 L54 38 H6 Z"/><path d="M4 22 H56 M20 12 L22 38 M40 12 L38 38"/>
+          </g>
+          <!-- small sparkles -->
+          <path d="M112 18 v12 M106 24 h12"/><path d="M228 96 v10 M223 101 h10"/><path d="M18 118 v10 M13 123 h10"/><path d="M96 232 v10 M91 237 h10"/>
+        </g>
+      </pattern>
+    </defs>
+    <rect width="100%" height="100%" fill="url(#pTile)"/>
+  </svg>
+</div>
+
+<header class="route" aria-label="Tiến trình">
+  <div class="route-track"><div class="route-fill"></div></div>
+  <ol class="route-stops">
+    <li data-target="s-an">UEH</li><li data-target="s-gio">Giỏ hàng</li><li data-target="s-mua">Ba nơi mua</li>
+    <li data-target="s-mon">Từng món</li><li data-target="s-tuan">8 tuần</li><li data-target="s-cpi">CPI</li><li data-target="s-goiy">Gợi ý</li><li data-target="s-chon">Tự chọn</li>
+  </ol>
+  <div class="route-an" aria-hidden="true"></div>
+</header>
+<nav class="dots" aria-label="Chuyển cảnh"></nav>
+<div class="keyhint" aria-hidden="true">Phím mũi tên trái, phải để chuyển cảnh</div>
+
+<main>
+
+<!-- 0 · Cover -->
+<section class="scene cover" id="s-cong" data-title="Mở đầu">
+  <svg class="frame-top" viewBox="0 0 1200 170" preserveAspectRatio="xMidYMin slice" aria-hidden="true">
+    <use href="#cloud" class="cl cl-a" x="-60" y="-30" width="360" height="160"/>
+    <use href="#cloud2" class="cl cl-b" x="330" y="-50" width="300" height="140"/>
+    <use href="#cloud" class="cl cl-c" x="560" y="-46" width="320" height="150"/>
+    <use href="#cloud2" class="cl cl-d" x="900" y="-30" width="360" height="160"/>
+  </svg>
+  <div class="cover-stage">
+    <div class="cover-title">
+      <p class="eyebrow">Nhóm 10 · Trực quan hoá dữ liệu · UEH</p>
+      <h1><span>Giá</span> <span>của</span> <span>bữa</span> <span>tối</span></h1>
+      <p class="cover-sub">Một sinh viên, mười hai món ăn và ba nơi mua: chợ, siêu thị và ứng dụng giao hàng.</p>
+    </div>
+    <svg class="gate" viewBox="0 0 600 430" role="img" aria-label="Cổng đình">
+      <g class="gate-glow" filter="url(#glow)">
+        <!-- upper roof -->
+        <path d="M168 128 Q300 108 432 128 L452 104 Q462 96 470 104 L440 140 Q300 122 160 140 L130 104 Q138 96 148 104 Z" fill="url(#gRoof)" stroke="#FFF1C9" stroke-width="3"/>
+        <path d="M196 126 V96 Q300 78 404 96 V126" fill="url(#gRoof)" stroke="#FFF1C9" stroke-width="3"/>
+        <path d="M206 98 V124 M226 94 V124 M246 92 V124 M266 90 V124 M286 89 V124 M306 89 V124 M326 90 V124 M346 92 V124 M366 94 V124 M386 96 V124" stroke="#FFF1C9" stroke-width="1.6" opacity=".7"/>
+        <path d="M188 92 Q300 70 412 92" fill="none" stroke="#FFE3A3" stroke-width="5" stroke-linecap="round"/>
+        <path d="M188 92 c-14 -6 -14 -26 2 -28 c10 0 10 12 2 12" fill="none" stroke="#FFE3A3" stroke-width="4" stroke-linecap="round"/>
+        <path d="M412 92 c14 -6 14 -26 -2 -28 c-10 0 -10 12 -2 12" fill="none" stroke="#FFE3A3" stroke-width="4" stroke-linecap="round"/>
+        <rect x="236" y="140" width="128" height="34" fill="url(#gWall)" stroke="#FFF1C9" stroke-width="3"/>
+        <path d="M246 148 h108 M246 157 h108 M246 166 h108" stroke="#FFF1C9" stroke-width="1.5" opacity=".6"/>
+        <!-- lower roof -->
+        <path d="M86 214 Q300 186 514 214 L548 172 Q560 162 568 172 L528 226 Q300 200 72 226 L32 172 Q40 162 52 172 Z" fill="url(#gRoof)" stroke="#FFF1C9" stroke-width="3"/>
+        <path d="M110 208 V180 Q300 156 490 180 V208" fill="url(#gRoof)" stroke="#FFF1C9" stroke-width="3"/>
+        <path d="M130 182 V206 M160 178 V206 M190 175 V206 M220 172 V206 M250 170 V206 M280 169 V206 M310 169 V206 M340 170 V206 M370 172 V206 M400 175 V206 M430 178 V206 M460 182 V206" stroke="#FFF1C9" stroke-width="1.6" opacity=".7"/>
+        <path d="M548 172 c10 -14 30 -10 26 6 c-3 8 -12 6 -10 0" fill="none" stroke="#FFE3A3" stroke-width="4" stroke-linecap="round"/>
+        <path d="M52 172 c-10 -14 -30 -10 -26 6 c3 8 12 6 10 0" fill="none" stroke="#FFE3A3" stroke-width="4" stroke-linecap="round"/>
+        <!-- walls and pillars -->
+        <rect x="112" y="226" width="124" height="150" fill="url(#gWall)" stroke="#FFF1C9" stroke-width="3"/>
+        <rect x="364" y="226" width="124" height="150" fill="url(#gWall)" stroke="#FFF1C9" stroke-width="3"/>
+        <rect x="236" y="226" width="128" height="150" fill="#241F5E" stroke="#FFF1C9" stroke-width="3"/>
+        <path d="M130 250 h88 v88 h-88 Z M140 260 h68 v68 h-68 Z M150 270 h48 v48 h-48 Z M160 280 h28 v28 h-28 Z" fill="none" stroke="#FFF1C9" stroke-width="2.4"/>
+        <path d="M382 250 h88 v88 h-88 Z M392 260 h68 v68 h-68 Z M402 270 h48 v48 h-48 Z M412 280 h28 v28 h-28 Z" fill="none" stroke="#FFF1C9" stroke-width="2.4"/>
+        <rect x="226" y="226" width="14" height="150" fill="#8E7BE6" stroke="#FFF1C9" stroke-width="2"/>
+        <rect x="360" y="226" width="14" height="150" fill="#8E7BE6" stroke="#FFF1C9" stroke-width="2"/>
+        <rect x="96" y="376" width="408" height="14" rx="3" fill="#B9A8F2" stroke="#FFF1C9" stroke-width="2.5"/>
+        <rect x="80" y="390" width="440" height="14" rx="3" fill="#8E7BE6" stroke="#FFF1C9" stroke-width="2.5"/>
+      </g>
+    </svg>
+    <svg class="kite-svg kite-l" viewBox="0 0 160 250" aria-hidden="true"><use href="#kite"/></svg>
+    <svg class="kite-svg kite-r" viewBox="0 0 160 250" aria-hidden="true"><use href="#kite"/></svg>
+  </div>
+  <svg class="frame-bottom" viewBox="0 0 1200 170" preserveAspectRatio="xMidYMax slice" aria-hidden="true">
+    <use href="#cloud2" class="cl cl-e" x="-80" y="40" width="380" height="170"/>
+    <use href="#cloud" class="cl cl-f" x="260" y="60" width="330" height="150"/>
+    <use href="#cloud2" class="cl cl-g" x="560" y="50" width="340" height="160"/>
+    <use href="#cloud" class="cl cl-h" x="880" y="40" width="380" height="170"/>
+  </svg>
+  <a class="scroll-hint" href="#s-an">Cuộn xuống hoặc nhấn phím mũi tên phải để bắt đầu<span aria-hidden="true">⌄</span></a>
+</section>
+
+<!-- 1 · An at UEH -->
+<section class="scene" id="s-an" data-title="An, sinh viên UEH">
+  <div class="stage">
+    <svg viewBox="0 0 1000 560" role="img" aria-label="An đứng trước toà nhà UEH và tự hỏi nên mua đồ ăn ở chợ, siêu thị hay qua app">
+      <g class="ueh">
+        <rect x="430" y="120" width="420" height="330" rx="6" fill="#6F5FD6" stroke="#FFF1C9" stroke-width="3"/>
+        <rect x="560" y="70" width="160" height="60" rx="6" fill="#8E7BE6" stroke="#FFF1C9" stroke-width="3"/>
+        <text x="640" y="110" text-anchor="middle" class="svg-sign">UEH</text>
+        <g class="windows" fill="#8FE3D6" stroke="#FFF1C9" stroke-width="1.5"></g>
+        <rect x="600" y="360" width="80" height="90" fill="#241F5E" stroke="#FFF1C9" stroke-width="3"/>
+        <text x="640" y="345" text-anchor="middle" class="svg-small">Đại học Kinh tế TP.HCM</text>
+        <circle cx="400" cy="400" r="46" fill="#3E9B5B" stroke="#FFF1C9" stroke-width="3"/><rect x="394" y="430" width="12" height="22" fill="#7A4E1E"/>
+        <circle cx="890" cy="392" r="54" fill="#2F8F4E" stroke="#FFF1C9" stroke-width="3"/><rect x="884" y="428" width="12" height="24" fill="#7A4E1E"/>
+      </g>
+      <rect x="0" y="450" width="1000" height="110" fill="#3B3592"/>
+      <path d="M0 452 H1000" stroke="#FFF1C9" stroke-width="3"/>
+      <g class="bubble">
+        <path d="M150 70 H420 Q440 70 440 90 V200 Q440 220 420 220 H260 L230 256 L236 220 H150 Q130 220 130 200 V90 Q130 70 150 70 Z" fill="#FFF7E6" stroke="#2B2A6B" stroke-width="3"/>
+        <g class="bubble-icons">
+          <g class="bi bi-1" transform="translate(160 96)"><use href="#i-SP04" width="70" height="70"/><text x="35" y="96" text-anchor="middle" class="svg-label">Chợ</text></g>
+          <g class="bi bi-2" transform="translate(250 96)"><use href="#basket" x="-2" y="10" width="74" height="52"/><text x="35" y="96" text-anchor="middle" class="svg-label">Siêu thị</text></g>
+          <g class="bi bi-3" transform="translate(340 96)"><rect x="14" y="0" width="42" height="72" rx="8" fill="#2B2A6B"/><rect x="19" y="8" width="32" height="52" rx="3" fill="#9BBDD6"/><text x="35" y="96" text-anchor="middle" class="svg-label">App</text></g>
+        </g>
+        <text class="qmark" x="420" y="66">?</text>
+      </g>
+      <g class="an-slot" data-x="250" data-y="452" data-scale="1.15"></g>
+    </svg>
+  </div>
+  <article class="card">
+    <p class="tag">Nhân vật</p>
+    <h2>An, sinh viên năm hai của UEH</h2>
+    <p>An tự nấu bữa tối và đi mua đồ ăn mỗi tuần. Như nhiều sinh viên khác, tiền ăn là một khoản lớn trong ngân sách của An.</p>
+    <blockquote>Mua cùng một giỏ đồ ăn ở chợ, ở siêu thị hay qua ứng dụng giao hàng thì chênh nhau bao nhiêu?</blockquote>
+    <p>Hai quận mà nhóm em thu giá, Quận 3 và Quận 10, là nơi có cơ sở A và cơ sở B của UEH.</p>
+    <p class="note">An là nhân vật nhóm em đặt ra để dẫn dắt phần trình bày. Mọi con số trên trang đều lấy từ <b data-fact="design.prices" data-fmt="int"></b> giá mà sáu thành viên nhóm em tự ghi trong 8 tuần.</p>
+  </article>
+</section>
+
+<!-- 2 · The basket -->
+<section class="scene" id="s-gio" data-title="Giỏ hàng 12 món">
+  <div class="stage">
+    <svg viewBox="0 0 1000 560" role="img" aria-label="Mười hai món ăn lần lượt rơi vào giỏ hàng của An">
+      <g class="items-fall"></g>
+      <use href="#basket" class="basket-big" x="330" y="300" width="340" height="232"/>
+      <g class="an-slot" data-x="800" data-y="520" data-scale="1" data-pose="carry"></g>
+      <rect x="0" y="520" width="1000" height="40" fill="#3B3592"/>
+    </svg>
+  </div>
+  <article class="card">
+    <p class="tag">Giỏ hàng</p>
+    <h2>Giỏ hàng của An có 12 món</h2>
+    <p>Mỗi món bán theo cân lấy 1 kg, riêng trứng gà lấy 10 quả. Nhóm em cố định loại hàng, kích cỡ và chất lượng của từng món, để giá ở các nơi so được với nhau.</p>
+    <ul class="chips"></ul>
+    <div class="stats">
+      <div><b class="count" data-fact="design.prices" data-fmt="int"></b><span>giá đã ghi</span></div>
+      <div><b class="count" data-fact="design.usable" data-fmt="int"></b><span>giá dùng được sau khi làm sạch</span></div>
+      <div><b>6 · 8 · 3 · 2</b><span>thành viên, tuần, kênh, quận</span></div>
+    </div>
+  </article>
+</section>
+
+<!-- 3 · Three places -->
+<section class="scene" id="s-mua" data-title="Ba nơi mua">
+  <div class="stage">
+    <svg viewBox="0 0 1000 560" role="img" aria-label="An đi qua chợ, siêu thị và mở ứng dụng giao hàng; mỗi nơi treo một thẻ giá của cả giỏ hàng">
+      <g class="shop shop-cho" transform="translate(40 150)">
+        <path d="M0 70 L20 20 H240 L260 70 Z" fill="#F36FA9" stroke="#FFF1C9" stroke-width="3"/>
+        <path d="M40 20 L30 70 M80 20 L76 70 M120 20 L122 70 M160 20 L168 70 M200 20 L214 70" stroke="#FFF1C9" stroke-width="10" opacity=".85"/>
+        <path d="M0 70 q16 18 32 0 q16 18 32 0 q16 18 32 0 q16 18 32 0 q16 18 32 0 q16 18 32 0 q16 18 32 0 q16 18 32 0" fill="#F36FA9" stroke="#FFF1C9" stroke-width="3"/>
+        <rect x="20" y="88" width="220" height="16" fill="#E8B46A" stroke="#7A4E1E" stroke-width="3"/>
+        <use href="#i-SP02" x="28" y="52" width="44" height="44"/><use href="#i-SP04" x="74" y="56" width="40" height="40"/><use href="#i-SP07" x="114" y="56" width="44" height="44"/><use href="#i-SP08" x="160" y="54" width="40" height="40"/><use href="#i-SP12" x="196" y="58" width="44" height="40"/>
+        <rect x="28" y="104" width="10" height="196" fill="#7A4E1E"/><rect x="222" y="104" width="10" height="196" fill="#7A4E1E"/>
+        <rect x="80" y="-30" width="100" height="40" rx="6" fill="#FFF7E6" stroke="#2B2A6B" stroke-width="3"/><text x="130" y="-2" text-anchor="middle" class="svg-sign dark">CHỢ</text>
+        <use href="#lantern" class="swing" x="238" y="70" width="34" height="62"/>
+      </g>
+      <g class="shop shop-st" transform="translate(370 120)">
+        <rect x="0" y="40" width="250" height="290" rx="6" fill="#6F5FD6" stroke="#FFF1C9" stroke-width="3"/>
+        <rect x="20" y="0" width="210" height="52" rx="8" fill="#FFF7E6" stroke="#2B2A6B" stroke-width="3"/><text x="125" y="35" text-anchor="middle" class="svg-sign dark">SIÊU THỊ</text>
+        <rect x="22" y="80" width="206" height="110" fill="#9CCBF5" stroke="#FFF1C9" stroke-width="3"/>
+        <path d="M90 80 V190 M160 80 V190" stroke="#FFF1C9" stroke-width="3"/>
+        <rect x="80" y="220" width="90" height="110" fill="#9CCBF5" stroke="#FFF1C9" stroke-width="3"/><path d="M125 220 V330" stroke="#FFF1C9" stroke-width="3"/>
+        <g transform="translate(180 268)"><path d="M0 0 H12 L22 36 H60 L68 12 H18" fill="none" stroke="#FFF1C9" stroke-width="4" stroke-linejoin="round"/><circle cx="28" cy="48" r="6" fill="#FFF1C9"/><circle cx="54" cy="48" r="6" fill="#FFF1C9"/></g>
+      </g>
+      <g class="shop shop-app" transform="translate(720 120)">
+        <rect x="40" y="10" width="170" height="320" rx="26" fill="#2B2A6B" stroke="#FFF1C9" stroke-width="3"/>
+        <rect x="54" y="40" width="142" height="252" rx="8" fill="#FFF7E6"/>
+        <rect x="64" y="52" width="122" height="34" rx="6" fill="#9BBDD6"/><text x="125" y="75" text-anchor="middle" class="svg-small dark">ỨNG DỤNG</text>
+        <g class="app-rows"><rect x="64" y="96" width="122" height="30" rx="5" fill="#F2E6CF"/><rect x="64" y="132" width="122" height="30" rx="5" fill="#F2E6CF"/><rect x="64" y="168" width="122" height="30" rx="5" fill="#F2E6CF"/><rect x="64" y="204" width="122" height="30" rx="5" fill="#F2E6CF"/></g>
+        <use href="#i-SP05" x="68" y="98" width="26" height="26"/><use href="#i-SP03" x="68" y="134" width="26" height="26"/><use href="#i-SP11" x="68" y="170" width="26" height="26"/><use href="#i-SP06" x="68" y="206" width="26" height="26"/>
+        <rect class="app-btn" x="76" y="248" width="98" height="30" rx="15" fill="#F36FA9"/><text x="125" y="268" text-anchor="middle" class="svg-small">Đặt hàng</text>
+        <circle cx="125" cy="312" r="8" fill="#FFF1C9"/>
+      </g>
+      <g class="tags"></g>
+      <rect x="0" y="450" width="1000" height="110" fill="#3B3592"/>
+      <path d="M0 452 H1000" stroke="#FFF1C9" stroke-width="3"/>
+      <path d="M0 500 H1000" stroke="#FFF1C9" stroke-width="3" stroke-dasharray="26 22" opacity=".5"/>
+      <g class="an-slot" data-x="-80" data-y="460" data-scale=".9" data-pose="carry"></g>
+    </svg>
+  </div>
+  <article class="card">
+    <p class="tag">Ba nơi mua</p>
+    <h2>Cùng một giỏ hàng, ba mức giá</h2>
+    <p>An mang giỏ hàng đi qua ba nơi: Chợ Bàn Cờ hoặc Chợ Nguyễn Tri Phương, một siêu thị trong cùng quận, và Grab Mart hoặc Shopee Mart trên điện thoại.</p>
+    <div class="chart" id="ch-basket" role="img"></div>
+    <p>Giỏ hàng ở siêu thị đắt hơn ở chợ <b data-fact="basket.pct_over_market.Siêu thị" data-fmt="pct1"></b>, qua app đắt hơn <b data-fact="basket.pct_over_market.App" data-fmt="pct1"></b>.</p>
+    <p class="note">Trung bình của 6 tuần mà cả ba nơi đều đủ 12 món (tuần 1, 2, 3, 5, 7 và 8), tính trên hai quận. Giá app chưa gồm phí giao.</p>
+  </article>
+</section>
+
+<!-- 4 · Delivery fee -->
+<section class="scene" id="s-phi" data-title="Phí giao hàng">
+  <div class="stage">
+    <svg viewBox="0 0 1000 560" role="img" aria-label="Người giao hàng chạy xe máy đến nhà An và đưa thùng hàng; một đồng xu phí giao bay vào thẻ giá">
+      <g class="house" transform="translate(70 150)">
+        <path d="M0 110 L150 10 L300 110 Z" fill="url(#gRoof)" stroke="#FFF1C9" stroke-width="3"/>
+        <rect x="24" y="110" width="252" height="190" fill="#F36FA9" stroke="#FFF1C9" stroke-width="3"/>
+        <rect x="56" y="150" width="70" height="60" fill="#FFE3A3" stroke="#FFF1C9" stroke-width="3" class="win-light"/>
+        <rect x="170" y="190" width="70" height="110" fill="#241F5E" stroke="#FFF1C9" stroke-width="3"/>
+        <use href="#lantern" class="swing" x="128" y="96" width="36" height="66"/>
+      </g>
+      <g class="bike" transform="translate(1100 330)">
+        <rect x="70" y="-6" width="66" height="54" rx="6" fill="#8FE3D6" stroke="#FFF1C9" stroke-width="3"/>
+        <path d="M10 70 Q30 30 80 46 L130 46 Q160 50 170 70 Z" fill="#B9A8F2" stroke="#FFF1C9" stroke-width="3"/>
+        <path d="M150 48 L170 20 L186 20" fill="none" stroke="#FFF1C9" stroke-width="5" stroke-linecap="round"/>
+        <g class="wheel" transform="translate(34 84)"><circle r="22" fill="#241F5E" stroke="#FFF1C9" stroke-width="4"/><path d="M-18 0 H18 M0 -18 V18" stroke="#FFF1C9" stroke-width="3"/></g>
+        <g class="wheel" transform="translate(150 84)"><circle r="22" fill="#241F5E" stroke="#FFF1C9" stroke-width="4"/><path d="M-18 0 H18 M0 -18 V18" stroke="#FFF1C9" stroke-width="3"/></g>
+        <path d="M96 46 L110 0" stroke="#FFD3B0" stroke-width="10" stroke-linecap="round"/>
+        <rect x="92" y="-46" width="30" height="48" rx="12" fill="#F7897B" stroke="#FFF1C9" stroke-width="3"/>
+        <circle cx="110" cy="-62" r="17" fill="#F36FA9" stroke="#FFF1C9" stroke-width="3"/>
+        <path d="M120 -30 L160 20" stroke="#FFD3B0" stroke-width="8" stroke-linecap="round"/>
+      </g>
+      <g class="parcel" opacity="0"><rect x="0" y="0" width="56" height="46" rx="6" fill="#8FE3D6" stroke="#2B2A6B" stroke-width="3"/><path d="M0 16 H56 M28 0 V46" stroke="#2B2A6B" stroke-width="2.5"/></g>
+      <use href="#coin" class="fee-coin" x="0" y="0" width="54" height="54" opacity="0"/>
+      <rect x="0" y="450" width="1000" height="110" fill="#3B3592"/>
+      <path d="M0 452 H1000" stroke="#FFF1C9" stroke-width="3"/>
+      <g class="an-slot" data-x="300" data-y="452" data-scale=".95"></g>
+    </svg>
+  </div>
+  <article class="card">
+    <p class="tag">Phí giao hàng</p>
+    <h2>Đặt qua app, An trả thêm phí giao</h2>
+    <p>Phí giao trung bình của một đơn là <b data-fact="fee.one_order_vnd" data-fmt="vnd"></b>. Cộng phí này, giỏ hàng qua app là <b data-fact="fee.app_with_fee_vnd" data-fmt="vnd"></b>, đắt hơn ở chợ <b data-fact="fee.app_with_fee_pct_over_market" data-fmt="pct1"></b>.</p>
+    <div class="chart" id="ch-fee" role="img"></div>
+    <p class="note">Đi chợ cũng tốn thời gian và tiền xăng. Nhóm em chưa tính được phần này, vì cần kết quả khảo sát sinh viên.</p>
+  </article>
+</section>
+
+<!-- 5 · Item by item -->
+<section class="scene" id="s-mon" data-title="Từng món">
+  <div class="stage">
+    <svg viewBox="0 0 1000 560" role="img" aria-label="Mười hai món tách vào hai giỏ: nhóm chênh lệch lớn và nhóm chênh lệch nhỏ giữa app và chợ">
+      <use href="#basket" x="90" y="300" width="300" height="204"/>
+      <use href="#basket" x="610" y="300" width="300" height="204"/>
+      <text x="240" y="540" text-anchor="middle" class="svg-label light">Chênh lệch lớn</text>
+      <text x="760" y="540" text-anchor="middle" class="svg-label light">Chênh lệch nhỏ</text>
+      <g class="sort-items"></g>
+    </svg>
+  </div>
+  <article class="card">
+    <p class="tag">Từng món</p>
+    <h2>Mức chênh giữa app và chợ của từng món</h2>
+    <p>Nhóm em chia 12 món thành hai nhóm theo cách giá thay đổi giữa các kênh (phân cụm ở M6). Với rau muống, đậu hũ trắng, cá diêu hồng, hành tây, dưa hấu và cà chua, app đắt hơn chợ trung vị <b data-fact="groups.Large channel gap.app_median_pct" data-fmt="pct0"></b>. Với sáu món còn lại, mức này là <b data-fact="groups.Small channel gap.app_median_pct" data-fmt="pct0"></b>.</p>
+    <div class="chart" id="ch-items" role="img"></div>
+    <p class="note">Mức chênh của app so với giá chợ, giá trung bình 8 tuần. Cà chua và trứng gà nằm sát ranh giới giữa hai nhóm.</p>
+  </article>
+</section>
+
+<!-- 6 · Percent and money -->
+<section class="scene" id="s-tien" data-title="Phần trăm và tiền">
+  <div class="stage">
+    <svg viewBox="0 0 1000 560" role="img" aria-label="Những đồng xu của khoản chênh chia thành hai chồng: rau củ và thịt cá">
+      <g class="coins"></g>
+      <text x="300" y="520" text-anchor="middle" class="svg-label light">6 món chênh lớn</text>
+      <text x="700" y="520" text-anchor="middle" class="svg-label light">Thịt, cá và trứng</text>
+      <text class="pile-a svg-big" x="300" y="120" text-anchor="middle"></text>
+      <text class="pile-b svg-big" x="700" y="120" text-anchor="middle"></text>
+    </svg>
+  </div>
+  <article class="card">
+    <p class="tag">Phần trăm và tiền</p>
+    <h2>Mức chênh tính theo phần trăm và tính theo tiền</h2>
+    <p>Mỗi giỏ hàng qua app đắt hơn ở chợ <b data-fact="saving.app_minus_market_vnd" data-fmt="vnd"></b>. Sáu món chênh nhiều về phần trăm chỉ chiếm <b data-fact="saving.large_group_vnd" data-fmt="vnd"></b>, tức <b data-fact="saving.large_group_share_pct" data-fmt="pct0"></b> khoản chênh.</p>
+    <div class="chart" id="ch-split" role="img"></div>
+    <p>Thịt, cá thu và trứng chênh ít hơn về phần trăm, nhưng giá mỗi kg cao, nên chiếm phần còn lại.</p>
+  </article>
+</section>
+
+<!-- 7 · Eight weeks -->
+<section class="scene" id="s-tuan" data-title="8 tuần">
+  <div class="stage">
+    <svg viewBox="0 0 1000 560" role="img" aria-label="Tờ lịch lật từ tuần 1 đến tuần 8">
+      <g class="calendar" transform="translate(360 90)">
+        <rect x="0" y="0" width="280" height="330" rx="14" fill="#FFF7E6" stroke="#2B2A6B" stroke-width="4"/>
+        <rect x="0" y="0" width="280" height="80" rx="14" fill="#F36FA9" stroke="#2B2A6B" stroke-width="4"/>
+        <text x="140" y="52" text-anchor="middle" class="svg-sign">TUẦN</text>
+        <circle cx="70" cy="-6" r="10" fill="#2B2A6B"/><circle cx="210" cy="-6" r="10" fill="#2B2A6B"/>
+        <text class="cal-num" x="140" y="250" text-anchor="middle">1</text>
+        <g class="cal-page"><rect x="4" y="82" width="272" height="244" fill="#FFF7E6"/><text class="cal-num" x="140" y="250" text-anchor="middle">1</text></g>
+      </g>
+      <use href="#lantern" class="swing" x="170" y="40" width="54" height="100"/>
+      <use href="#lantern" class="swing s2" x="780" y="30" width="54" height="100"/>
+    </svg>
+  </div>
+  <article class="card">
+    <p class="tag">8 tuần</p>
+    <h2>Khoảng chênh qua 8 tuần</h2>
+    <p>Ở mọi tuần đủ giỏ hàng, giỏ hàng qua app đắt hơn ở chợ từ <b data-fact="weekly.app_gap_min_pct" data-fmt="pct1"></b> đến <b data-fact="weekly.app_gap_max_pct" data-fmt="pct1"></b>.</p>
+    <div class="chart" id="ch-weeks" role="img"></div>
+    <p>Giá từng món thì lên xuống: hành tây rẻ hơn tuần đầu ở cả 7 tuần sau, còn thịt bò và trứng gà đắt hơn tuần đầu ở 6 trên 7 tuần.</p>
+    <p class="note">Tuần 4 và tuần 6 thiếu giá dùng được của hành tây hoặc đậu hũ ở một số kênh, nên đường bị ngắt ở hai tuần này.</p>
+  </article>
+</section>
+
+<!-- 8 · Two districts -->
+<section class="scene" id="s-quan" data-title="Hai quận">
+  <div class="stage">
+    <svg viewBox="0 0 1000 560" role="img" aria-label="Sơ đồ minh hoạ Quận 3 và Quận 10 với hai chợ và hai cơ sở UEH; An đạp xe giữa hai quận">
+      <path class="d3" d="M120 140 C160 70 330 60 400 120 C460 170 440 300 380 350 C310 410 170 400 120 330 C80 270 90 190 120 140 Z" fill="#8E7BE6" stroke="#FFF1C9" stroke-width="4"/>
+      <path class="d10" d="M560 150 C640 80 820 90 880 160 C930 230 900 360 820 400 C740 440 600 420 560 340 C520 270 520 200 560 150 Z" fill="#F36FA9" stroke="#FFF1C9" stroke-width="4"/>
+      <text x="260" y="130" text-anchor="middle" class="svg-sign">QUẬN 3</text>
+      <text x="720" y="140" text-anchor="middle" class="svg-sign">QUẬN 10</text>
+      <path class="route-path" d="M262 300 C380 360 470 230 598 330" fill="none" stroke="#FFF1C9" stroke-width="5" stroke-dasharray="14 12"/>
+      <g class="pin p1" transform="translate(220 250)"><path d="M0 0 C-22 -22 -22 -54 0 -54 C22 -54 22 -22 0 0 Z" fill="#FFF7E6" stroke="#2B2A6B" stroke-width="3"/><use href="#i-SP02" x="-14" y="-50" width="28" height="28"/><text y="24" text-anchor="middle" class="svg-label light">Chợ Bàn Cờ</text></g>
+      <g class="pin p2" transform="translate(330 330)"><path d="M0 0 C-22 -22 -22 -54 0 -54 C22 -54 22 -22 0 0 Z" fill="#FFF7E6" stroke="#2B2A6B" stroke-width="3"/><text x="0" y="-27" text-anchor="middle" class="svg-small dark">A</text><text y="24" text-anchor="middle" class="svg-label light">UEH cơ sở A</text></g>
+      <g class="pin p3" transform="translate(740 245)"><path d="M0 0 C-22 -22 -22 -54 0 -54 C22 -54 22 -22 0 0 Z" fill="#FFF7E6" stroke="#2B2A6B" stroke-width="3"/><use href="#i-SP02" x="-14" y="-50" width="28" height="28"/><text y="24" text-anchor="middle" class="svg-label light">Chợ Nguyễn Tri Phương</text></g>
+      <g class="pin p4" transform="translate(790 365)"><path d="M0 0 C-22 -22 -22 -54 0 -54 C22 -54 22 -22 0 0 Z" fill="#FFF7E6" stroke="#2B2A6B" stroke-width="3"/><text x="0" y="-27" text-anchor="middle" class="svg-small dark">B</text><text y="24" text-anchor="middle" class="svg-label light">UEH cơ sở B</text></g>
+      <g class="cyclist"><circle cx="-16" cy="0" r="13" fill="none" stroke="#FFF1C9" stroke-width="4"/><circle cx="18" cy="0" r="13" fill="none" stroke="#FFF1C9" stroke-width="4"/><path d="M-16 0 L0 -18 L18 0 M0 -18 L-4 -26" stroke="#FFF1C9" stroke-width="4" fill="none"/><circle cx="-2" cy="-44" r="10" fill="#FFD3B0" stroke="#2B2A6B" stroke-width="2.5"/><path d="M-10 -48 Q-2 -60 8 -48" fill="#2B2A6B"/><rect x="-8" y="-36" width="12" height="20" rx="5" fill="#FFF4DC" stroke="#2B2A6B" stroke-width="2"/></g>
+      <text x="500" y="520" text-anchor="middle" class="svg-small light">Sơ đồ minh hoạ, không theo tỉ lệ</text>
+    </svg>
+  </div>
+  <article class="card">
+    <p class="tag">Hai quận</p>
+    <h2>Giá ở Quận 3 và Quận 10</h2>
+    <p>Nhóm em chỉ so những cặp giá cùng món, cùng kênh và cùng tuần ở hai quận. <b data-fact="districts.within_5pct" data-fmt="int"></b> trên 12 món chênh dưới 5%. Rau muống ở Quận 10 đắt hơn ở Quận 3 <b data-fact="districts.top_gap_pct" data-fmt="pct1"></b>, là mức chênh lớn nhất.</p>
+    <div class="chart" id="ch-dist" role="img"></div>
+    <p>Khoảng chênh giữa hai quận nhỏ hơn nhiều so với khoảng chênh giữa chợ, siêu thị và app.</p>
+  </article>
+</section>
+
+<!-- 9 · CPI -->
+<section class="scene" id="s-cpi" data-title="So với CPI">
+  <div class="stage">
+    <svg viewBox="0 0 1000 560" role="img" aria-label="Một chiếc cân đồng hồ ở chợ, kim cân dao động">
+      <g class="scale" transform="translate(500 300)">
+        <rect x="-150" y="150" width="300" height="40" rx="10" fill="#6F5FD6" stroke="#FFF1C9" stroke-width="3"/>
+        <rect x="-30" y="100" width="60" height="60" fill="#8E7BE6" stroke="#FFF1C9" stroke-width="3"/>
+        <circle r="150" fill="#FFF7E6" stroke="#2B2A6B" stroke-width="6"/>
+        <circle r="134" fill="none" stroke="#F36FA9" stroke-width="3"/>
+        <g class="ticks"></g>
+        <text y="70" text-anchor="middle" class="svg-small dark">CÂN GIÁ</text>
+        <g class="needle"><path d="M-4 10 L0 -120 L4 10 Z" fill="#B85C38"/><circle r="12" fill="#2B2A6B"/></g>
+        <path d="M-190 -160 h380 l-30 -40 h-320 Z" fill="#E8B46A" stroke="#7A4E1E" stroke-width="4"/>
+        <use href="#i-SP05" x="-120" y="-238" width="70" height="70"/><use href="#i-SP02" x="-40" y="-246" width="80" height="80"/><use href="#i-SP12" x="50" y="-236" width="76" height="70"/>
+      </g>
+    </svg>
+  </div>
+  <article class="card">
+    <p class="tag">So với CPI</p>
+    <h2>Giỏ hàng của nhóm em và CPI thực phẩm</h2>
+    <p>Sau 8 tuần, giỏ hàng ở chợ giảm <b data-fact="cpi.basket_change_pct.Chợ" data-fmt="abs1"></b>, ở siêu thị tăng <b data-fact="cpi.basket_change_pct.Siêu thị" data-fmt="abs1"></b> và qua app giảm <b data-fact="cpi.basket_change_pct.App" data-fmt="abs1"></b> so với tuần đầu. CPI thực phẩm của TP.HCM do Cục Thống kê công bố tăng <b data-fact="cpi.cpi_october_pct" data-fmt="pct2"></b> trong tháng 10.</p>
+    <div class="chart" id="ch-cpi" role="img"></div>
+    <p>CPI là mức trung bình của cả thành phố trong một tháng. Giỏ hàng của nhóm em chỉ có 12 món ở hai quận và được đo theo tuần, nên lên xuống mạnh hơn. Tám tuần là quá ngắn để nói về xu hướng.</p>
+    <p class="note">Giỏ hàng app được so với tuần đầu của chính app đó, vì Grab Mart và Shopee Mart được ghi giá xen kẽ theo tuần.</p>
+  </article>
+</section>
+
+<!-- 10 · 2D and 3D test -->
+<section class="scene" id="s-thu" data-title="Thử 2D và 3D">
+  <div class="stage">
+    <svg viewBox="0 0 1000 560" role="img" aria-label="Hai đồng hồ bấm giờ: bản phẳng dừng ở 12 giây, bản 3D dừng ở 24,5 giây">
+      <g class="watch w2d" transform="translate(290 290)">
+        <rect x="-14" y="-170" width="28" height="30" rx="6" fill="#FFE3A3" stroke="#2B2A6B" stroke-width="3"/>
+        <circle r="140" fill="#FFF7E6" stroke="#2B2A6B" stroke-width="6"/><g class="wticks"></g>
+        <g class="hand"><path d="M-4 8 L0 -118 L4 8 Z" fill="#1A1A1A"/></g><circle r="10" fill="#2B2A6B"/>
+        <text y="196" text-anchor="middle" class="svg-label light">Bản phẳng</text>
+        <text class="wtime" y="78" text-anchor="middle">0</text>
+      </g>
+      <g class="watch w3d" transform="translate(710 290)">
+        <rect x="-14" y="-170" width="28" height="30" rx="6" fill="#FFE3A3" stroke="#2B2A6B" stroke-width="3"/>
+        <circle r="140" fill="#FFF7E6" stroke="#2B2A6B" stroke-width="6"/><g class="wticks"></g>
+        <g class="hand"><path d="M-4 8 L0 -118 L4 8 Z" fill="#B85C38"/></g><circle r="10" fill="#2B2A6B"/>
+        <text y="196" text-anchor="middle" class="svg-label light">Bản 3D</text>
+        <text class="wtime" y="78" text-anchor="middle">0</text>
+      </g>
+    </svg>
+  </div>
+  <article class="card">
+    <p class="tag">Kiểm tra cách vẽ</p>
+    <h2>Nhóm em thử biểu đồ 3D và biểu đồ phẳng</h2>
+    <p><b data-fact="test.people" data-fmt="int"></b> người ngoài nhóm trả lời cùng ba câu hỏi trên hai bản: một khối 3D và ba heatmap phẳng. Năm người trong cùng một tin nhắn có đáp án giống hệt nhau nên được tính là một, còn lại <b data-fact="test.independent" data-fmt="int"></b> người độc lập.</p>
+    <p>Với bản phẳng, thời gian trung vị là <b data-fact="test.median_s.2D" data-fmt="sec"></b> mỗi câu; với bản 3D là <b data-fact="test.median_s.3D" data-fmt="sec"></b>. Số câu đúng gần như bằng nhau. Vì vậy các biểu đồ trên trang này đều là biểu đồ phẳng.</p>
+    <p class="note">Năm người, đều là sinh viên, tự bấm giờ trên điện thoại. Kết quả mô tả nhóm người này, chưa đủ để nói về mọi người đọc.</p>
+  </article>
+</section>
+
+<!-- 11 · Advice -->
+<section class="scene" id="s-goiy" data-title="Gợi ý cho An">
+  <div class="stage">
+    <svg viewBox="0 0 1000 560" role="img" aria-label="An nấu bữa tối trong căn bếp nhỏ, nồi canh bốc hơi">
+      <g class="kitchen">
+        <rect x="120" y="80" width="760" height="370" rx="18" fill="#4B47A8" stroke="#FFF1C9" stroke-width="3"/>
+        <rect x="560" y="120" width="250" height="170" rx="10" fill="#FFE3A3" stroke="#FFF1C9" stroke-width="3" class="win-light"/>
+        <path d="M685 120 V290 M560 205 H810" stroke="#FFF1C9" stroke-width="3"/>
+        <circle cx="610" cy="170" r="22" fill="#FFF7E6" opacity=".9"/>
+        <rect x="160" y="330" width="380" height="120" fill="#6F5FD6" stroke="#FFF1C9" stroke-width="3"/>
+        <rect x="200" y="314" width="140" height="18" rx="4" fill="#241F5E"/>
+        <path d="M212 314 Q210 260 270 258 Q330 260 328 314 Z" fill="#B9A8F2" stroke="#FFF1C9" stroke-width="3"/>
+        <rect x="256" y="246" width="28" height="12" rx="4" fill="#FFF1C9"/>
+        <g class="steam"><path d="M246 236 c-14 -18 14 -30 0 -50" /><path d="M270 230 c-14 -18 14 -30 0 -54" /><path d="M294 236 c-14 -18 14 -30 0 -50" /></g>
+        <path d="M380 320 Q420 360 460 320 Z" fill="#FFF7E6" stroke="#FFF1C9" stroke-width="3"/><path d="M386 320 Q420 300 454 320" fill="#FFFFFF"/>
+        <use href="#lantern" class="swing" x="440" y="80" width="50" height="92"/>
+      </g>
+      <rect x="0" y="450" width="1000" height="110" fill="#3B3592"/>
+      <path d="M0 452 H1000" stroke="#FFF1C9" stroke-width="3"/>
+      <g class="an-slot" data-x="640" data-y="452" data-scale="1.05" data-pose="happy"></g>
+    </svg>
+  </div>
+  <article class="card">
+    <p class="tag">Gợi ý</p>
+    <h2>Gợi ý cho An</h2>
+    <ol class="advice">
+      <li>Nên mua rau muống, đậu hũ, cá diêu hồng, hành tây, dưa hấu và cà chua ở chợ, vì qua app các món này đắt hơn trung vị <b data-fact="groups.Large channel gap.app_median_pct" data-fmt="pct0"></b>.</li>
+      <li>Thịt, cá thu và trứng qua app chỉ đắt hơn trung vị <b data-fact="groups.Small channel gap.app_median_pct" data-fmt="pct0"></b>, nhưng giá cao nên chiếm phần lớn số tiền chênh. Mua cả các món này ở chợ thì An bớt được nhiều tiền nhất.</li>
+      <li>Khi đặt app, nên gộp đồ vào một đơn, vì mỗi đơn có phí giao khoảng <b data-fact="fee.one_order_vnd" data-fmt="vnd"></b>.</li>
+    </ol>
+    <div class="limits">
+      <h3>Những điều trang này chưa cho biết</h3>
+      <p>Nhóm em mới thu giá của 12 món ở hai quận trong 8 tuần. Nhóm em chưa có kết quả khảo sát sinh viên, nên chưa tính thời gian đi chợ và chưa chia sinh viên theo mức ngân sách.</p>
+    </div>
+  </article>
+</section>
+
+<!-- 13 · Your turn: the door to the game "Đi chợ cùng An" of M9 (chon.js) -->
+<section class="scene" id="s-chon" data-title="Đến lượt bạn">
+  <div class="stage">
+    <svg viewBox="0 0 800 600" role="img" aria-label="An đứng ở ngã ba: một đường tới chợ, một đường tới siêu thị, một đường tới app">
+      <defs><linearGradient id="gg-wood" x1="0" x2="0" y1="0" y2="1"><stop offset="0" stop-color="#D99A5B"/><stop offset="1" stop-color="#A86A35"/></linearGradient>
+        <radialGradient id="gg-fade" cx=".5" cy=".2" r=".72"><stop offset="0" stop-color="#3B3592"/><stop offset=".72" stop-color="#3B3592" stop-opacity=".85"/><stop offset="1" stop-color="#3B3592" stop-opacity="0"/></radialGradient></defs>
+      <g class="chon-cross"></g>
+      <g class="an-slot" data-x="400" data-y="598" data-scale="1" data-pose=""></g>
+    </svg>
+  </div>
+  <article class="card">
+    <p class="tag">Đến lượt bạn</p>
+    <h2>Đi chợ cùng An</h2>
+    <p>Bạn chọn quận, chọn món và chọn nơi mua. An sẽ đi mua cho bạn xem ở chợ, ở siêu thị và qua app, rồi so sánh ba nơi bằng giá nhóm em đã ghi.</p>
+    <ol class="chon-steps"><li><b>1</b>Chọn quận</li><li><b>2</b>Chọn món</li><li><b>3</b>Chọn nơi mua</li><li><b>4</b>So sánh</li></ol>
+    <div class="chon-cta"><button type="button" class="cta big pulse" data-open-game>Bắt đầu đi chợ</button><span class="note">Khoảng ba phút</span></div>
+  </article>
+</section>
+
+<!-- 12 · Credits -->
+<section class="scene cover end" id="s-ket" data-title="Kết thúc">
+  <svg class="frame-top" viewBox="0 0 1200 170" preserveAspectRatio="xMidYMin slice" aria-hidden="true">
+    <use href="#cloud2" class="cl" x="-60" y="-30" width="360" height="160"/><use href="#cloud" class="cl" x="330" y="-50" width="300" height="140"/>
+    <use href="#cloud2" class="cl" x="560" y="-46" width="320" height="150"/><use href="#cloud" class="cl" x="900" y="-30" width="360" height="160"/>
+  </svg>
+  <div class="end-card">
+    <p class="eyebrow">Nhóm 10 · Trực quan hoá dữ liệu · UEH · 2026</p>
+    <h2>Cảm ơn thầy cô và các bạn đã theo dõi</h2>
+    <p class="members">Nguyễn Hoàng Minh · Phạm Quang Minh · Phạm Tuấn Anh · Trần Nhã Đoan · Nguyễn Minh Nguyệt · Trần Nguyễn Thanh Thảo</p>
+    <p>Nguồn dữ liệu: bảng giá nhóm em tự thu (<span data-fact="design.usable" data-fmt="int"></span> giá dùng được), CPI hằng tháng của Cục Thống kê, FAOSTAT và World Bank.</p>
+    <div class="end-cta">
+      <p>Bạn vừa xem xong câu chuyện của nhóm em. Bạn dành thêm hai phút để đánh giá giúp nhóm em nhé.</p>
+      <a class="cta" href="danh-gia.html" data-review>Đánh giá trang này</a>
+    </div>
+    <p class="links"><a href="https://github.com/hwinhwork-dot/DataViz_Final_P10">Notebook và mã nguồn</a></p>
+    <button class="restart" type="button">Xem lại từ đầu</button>
+  </div>
+  <svg class="frame-bottom" viewBox="0 0 1200 170" preserveAspectRatio="xMidYMax slice" aria-hidden="true">
+    <use href="#cloud" class="cl" x="-80" y="40" width="380" height="170"/><use href="#cloud2" class="cl" x="260" y="60" width="330" height="150"/>
+    <use href="#cloud" class="cl" x="560" y="50" width="340" height="160"/><use href="#cloud2" class="cl" x="880" y="40" width="380" height="170"/>
+  </svg>
+</section>
+
+</main>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/MotionPathPlugin.min.js"></script>
+<script src="an.js"></script>
+<script src="chon.js"></script>
+<script src="test.js"></script>
+<script src="review.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
