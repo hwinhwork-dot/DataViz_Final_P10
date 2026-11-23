@@ -1,4 +1,5 @@
-"""Copy the figures that site/index.html uses from report/figures/ into site/figures/.
+"""Copy the figures that site/index.html uses from report/figures/ into site/figures/,
+and write site/data/m9_basket.json, the prices that the M9 basket tool of the website reads.
 
 Run from the repository root after the notebook has saved new charts:
     python tools/build_site.py
@@ -8,6 +9,8 @@ then deploy from the site folder:
 import re
 import shutil
 from pathlib import Path
+
+from basket_data import write_basket_json
 
 ROOT = Path(__file__).resolve().parent.parent
 SITE = ROOT / "site"
@@ -24,3 +27,4 @@ for name in used:
         raise SystemExit(f"missing figure: {src}")
     shutil.copy2(src, OUT / name)
 print(f"copied {len(used)} figures to {OUT.relative_to(ROOT)}")
+write_basket_json(SITE / "data" / "m9_basket.json")

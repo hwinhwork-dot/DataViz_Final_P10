@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=1600">
+<meta name="robots" content="noindex">
+<title>Storyboard · Giá của bữa tối</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,700;0,800;1,700&display=swap" rel="stylesheet">
+<style>
+  /* The storyboard of M9: eight frames of the presentation site on one sheet of 1600 × 1060 pixels.
+     tools/render_storyboard.py saves it as report/figures/m9_storyboard.png (?lang=en) and m9_storyboard_vi.png. */
+  :root { --night: #26235F; --violet: #6F5FD6; --pink: #F36FA9; --cream: #FFF1C9; --gold: #FFE3A3; --paper: #FFF7E6; --edge: #E8CF9A;
+          --ink: #1A1A1A; --ink-2: #4A4458; --cho: #B85C38; --st: #1F3D55; --app: #9BBDD6; }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; width: 1600px; height: 1060px; overflow: hidden; background: var(--paper); color: var(--ink); font-family: "Be Vietnam Pro", sans-serif; }
+  body { background-image: radial-gradient(rgba(184,134,46,.13) 1.2px, transparent 1.2px); background-size: 14px 14px; }
+  .sprite { position: absolute; width: 0; height: 0; overflow: hidden; }
+  header { padding: 34px 48px 0; display: flex; justify-content: space-between; align-items: flex-end; }
+  h1 { margin: 0; font: 800 46px/1 "Playfair Display", serif; color: var(--night); }
+  header p { margin: 8px 0 0; font-size: 17px; color: var(--ink-2); max-width: 1000px; }
+  .stamp { font: 700 14px "Be Vietnam Pro"; letter-spacing: .12em; text-transform: uppercase; color: var(--cho); text-align: right; }
+  .grid { display: grid; grid-template-columns: repeat(4, 352px); gap: 34px 30px; padding: 30px 48px 0; }
+  .frame { position: relative; background: #fff; border-radius: 6px; padding: 12px 12px 14px; box-shadow: 0 6px 18px rgba(38,35,95,.16); }
+  .frame:nth-child(odd) { transform: rotate(-.6deg); } .frame:nth-child(even) { transform: rotate(.5deg); }
+  .frame::before { content: ""; position: absolute; top: -12px; left: 50%; width: 90px; height: 24px; margin-left: -45px; background: rgba(243,111,169,.35); transform: rotate(-3deg); }
+  .pic { width: 100%; height: 214px; display: block; border-radius: 4px; }
+  .no { position: absolute; top: 20px; left: 20px; width: 34px; height: 34px; border-radius: 50%; background: var(--pink); color: #fff; font: 800 17px/34px "Be Vietnam Pro"; text-align: center; z-index: 2; }
+  .mod { position: absolute; top: 196px; right: 20px; padding: 3px 9px; border-radius: 999px; background: var(--gold); color: var(--night); font: 800 12px "Be Vietnam Pro"; letter-spacing: .06em; z-index: 2; }
+  h2 { margin: 10px 2px 4px; font: 800 21px/1.15 "Playfair Display", serif; color: var(--night); }
+  .see { margin: 0 2px 6px; font-size: 14.5px; line-height: 1.4; min-height: 60px; }
+  .anim { margin: 0 2px; padding-top: 6px; border-top: 2px dashed var(--edge); font-size: 13px; line-height: 1.38; color: var(--ink-2); }
+  .anim b { color: var(--cho); }
+  .pic text { font-family: "Be Vietnam Pro", sans-serif; }
+</style>
+</head>
+<body>
+<header>
+  <div>
+    <h1 id="h1"></h1>
+    <p id="sub"></p>
+  </div>
+  <div class="stamp" id="stamp"></div>
+</header>
+<div class="grid" id="grid"></div>
+<script src="an.js"></script>
+<script src="storyboard.js"></script>
+</body>
+</html>

@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Kết quả đánh giá · Nhóm 10</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%232B2A6B'/%3E%3Cpath d='M10 40 C10 22 54 22 54 40 Z' fill='%23F36FA9'/%3E%3Crect x='8' y='40' width='48' height='6' rx='3' fill='%23FFF1C9'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,700;0,800;1,700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="forms.css">
+</head>
+<body>
+<main class="team">
+  <section class="paper team-login" id="login">
+    <p class="tag">Chỉ dành cho Nhóm 10</p>
+    <h2 style="justify-content:center">Kết quả đánh giá M10</h2>
+    <p>Nhập mật khẩu của nhóm để xem các phiếu đánh giá.</p>
+    <form id="login-form">
+      <label class="hp" for="key">Mật khẩu của nhóm</label>
+      <input type="password" id="key" autocomplete="current-password" placeholder="Mật khẩu của nhóm" required>
+      <button type="submit" class="cta">Xem</button>
+    </form>
+    <p class="rv-error" id="login-err" hidden></p>
+  </section>
+
+  <div id="dash" hidden>
+    <header class="team-head">
+      <div>
+        <p class="eyebrow">Chỉ dành cho Nhóm 10 · M10</p>
+        <h1>Kết quả đánh giá</h1>
+        <p id="stamp"></p>
+      </div>
+      <div class="team-actions">
+        <button type="button" class="cta ghost" id="reload">Tải lại</button>
+        <button type="button" class="cta" id="csv">Tải CSV</button>
+        <button type="button" class="cta ghost" id="logout">Thoát</button>
+      </div>
+    </header>
+    <div class="kpis" id="kpis"></div>
+    <div class="team-grid">
+      <section class="paper"><h2>Điểm theo tiêu chí</h2><div id="rates"></div><p class="note">Trung bình từ 1 đến 5. Tiêu chí thấp nhất được tô màu, nên sửa trước.</p></section>
+      <section class="paper"><h2>Đi chợ cùng An</h2><div class="scroll" id="tasks"></div><p class="note">Thời gian là trung vị: với hai câu hỏi, tính từ lúc câu hỏi hiện ra đến lúc chọn đáp án; với cả trò chơi, tính từ lúc mở đến lúc trả lời xong.</p></section>
+      <section class="paper"><h2>Thử 5 giây</h2><div id="five"></div></section>
+      <section class="paper"><h2>Phần khó hiểu nhất</h2><div id="hard"></div></section>
+    </div>
+    <section class="paper" style="margin-bottom:20px"><h2>Peer review theo checklist</h2><div class="scroll" id="peer"></div></section>
+    <section class="paper"><h2>Tất cả phiếu</h2><div class="scroll" id="rows"></div></section>
+  </div>
+</main>
+<script src="an.js"></script>
+<script src="nhom.js"></script>
+</body>
+</html>

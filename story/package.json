@@ -1,0 +1,9 @@
+{
+  "name": "p10-dinner-story",
+  "private": true,
+  "type": "module",
+  "description": "Presentation site of Team 10 with the M9 basket explorer, the M10 review form and the team page",
+  "dependencies": {
+    "@vercel/blob": "2.9.0"
+  }
+}
